@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: V1::ExamQuestionsController
+  
+    &mdash; Edools API
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/custom.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!V1/ExamQuestionsController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/rest_plugin.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar primary-navbar navbar-green">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header small_menu">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.edools.com">
+        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+      </a>
+    </div>
+
+    <!-- <div class="main_menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a title="Funcionalidades" href="api/index.html">API</a>
+        </li>
+        <li>
+          <a title="Planos e preços" href="tms/index.html">Temas</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div><!-- .container-fluid -->
+</nav>
+
+    <section class="doc_container">
+      <div class="container">
+        <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          </div>
+        </div>
+        <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
+          <div id="content">
+            <div class="service">
+  <h1 class="noborder title">Edools API</h1>
+    <a class="back" href="../index.html" title="back to the overview">&laquo; back to overview</a>
+    <h2>ExamQuestions [1.0.rc1]</h2>
+    <div class="description">
+  <p>Exam Questions</p>
+
+</div>
+
+
+  <div id="Services" class="method_details_list">
+    
+		<div class="method">
+      <h3>show</h3>
+			<p class="method_desc">View a content exam_question</p>
+
+      
+        <div class="resource_url even">
+          <h4>URL</h4>
+          <span class="action">GET</span>
+          <span class="url">/exam_questions/:id</span>
+        </div>
+      
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Required Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Identifier the exam_question</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+
+
+      
+        <div class="parameters even">
+          <h4>Response Object</h4>
+          <ul>
+            <li>
+              <span class="type"><tt><span class='object_link'><a href="../ExamQuestion.html" title="ExamQuestion (class)">ExamQuestion</a></span></tt></span>
+              <span class="text"><p>The requested exam_question</p>
+</span>
+            </li>
+          </ul>
+        </div>
+      
+
+			
+		</div>
+    
+		<div class="method">
+      <h3>create</h3>
+			<p class="method_desc">Create associative exam question
+Create discursive exam question
+Create multiple choice exam question</p>
+
+      
+        <div class="resource_url odd">
+          <h4>URL</h4>
+          <span class="action">POST</span>
+          <span class="url">/exam_questions</span>
+        </div>
+      
+
+      
+
+  <div class="parameters even">
+    
+      <h4>Required Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The associative exam question to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">discursive_exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The discursive exam question to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">discursive_exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">multiple_choice_exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The multiple choice exam question to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">multiple_choice_exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">options_attributes[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the multiple choice option</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Optional Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">associative_exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The associative option to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][first_assertion_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The first assertion to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][first_assertion_attributes][text]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>The text of first assertion</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][second_assertion_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The second assertion to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][second_assertion_attributes][text]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>The text of second assertion</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">discursive_exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">multiple_choice_exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">multiple_choice_exam_question[options_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The multiple choice option to create</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">options_attributes[correct]</span>
+					<span class="type"><tt>Boolean</tt></span>
+					<span class="text"><p>Defines it is correctt multiple choice option</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+        
+
+
+      
+
+			
+		</div>
+    
+		<div class="method">
+      <h3>update</h3>
+			<p class="method_desc">Update an existing associative exam question
+Update an existing discursive exam question
+Update an existing multiple choice exam question</p>
+
+      
+        <div class="resource_url even">
+          <h4>URL</h4>
+          <span class="action">PUT/PATCH</span>
+          <span class="url">/exam_question/:id</span>
+        </div>
+      
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Required Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The associative exam question to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The discursive exam question to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">quiz_id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p><span class='object_link'><a href="../Quiz.html" title="Quiz (class)">Quiz</a></span> of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The multiple choice exam question to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">options_attributes[title]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>Title of the multiple choice option</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+
+  <div class="parameters even">
+    
+      <h4>Optional Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the associative exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[options_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The associative option to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][id]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Id of the associative option to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][first_assertion_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The first assertion to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][first_assertion_attributes][text]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>The text of first assertion</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][second_assertion_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The second assertion to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">associative_exam_question[options_attributes][second_assertion_attributes][text]</span>
+					<span class="type"><tt>String</tt></span>
+					<span class="text"><p>The text of second assertion</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the discursive exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">exam_question[point]</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Point of the multiple choice exam question</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">multiple_choice_exam_question[options_attributes]</span>
+					<span class="type"><tt>Hash</tt></span>
+					<span class="text"><p>The multiple choice option to update</p>
+</span>
+				</li>
+  		
+				<li>
+					<span class="name">options_attributes[correct]</span>
+					<span class="type"><tt>Boolean</tt></span>
+					<span class="text"><p>Defines it is correctt multiple choice option</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+        
+
+
+      
+
+			
+		</div>
+    
+		<div class="method">
+      <h3>destroy</h3>
+			<p class="method_desc">Delete exam_question</p>
+
+      
+        <div class="resource_url odd">
+          <h4>URL</h4>
+          <span class="action">DELETE</span>
+          <span class="url">/exam_question/:id</span>
+        </div>
+      
+
+      
+
+  <div class="parameters even">
+    
+      <h4>Required Parameters</h4>
+    
+		<ul>
+  		
+				<li>
+					<span class="name">id</span>
+					<span class="type"><tt>Integer</tt></span>
+					<span class="text"><p>Id of an exam_question</p>
+</span>
+				</li>
+  		
+	  </ul>
+	</div>
+
+
+      
+
+
+      
+        
+
+
+      
+
+			
+		</div>
+    
+  </div>
+
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+
+    </div> <!-- /.row -->
+
+    <div class="row text-right">
+      <div class="col-md-12 col-sm-12">
+        <div class="companies">
+          <h5>Uma empresa:</h5>
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+       </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-md-12 col-sm-12">
+        <p>©2016 Edools. Todos os direitos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Edools API
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/custom.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.current_version.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/rest_plugin.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar primary-navbar navbar-green">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header small_menu">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.edools.com">
+        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+      </a>
+    </div>
+
+    <!-- <div class="main_menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a title="Funcionalidades" href="api/index.html">API</a>
+        </li>
+        <li>
+          <a title="Planos e preços" href="tms/index.html">Temas</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div><!-- .container-fluid -->
+</nav>
+
+    <section class="doc_container">
+      <div class="container">
+        <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          </div>
+        </div>
+        <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
+          <div id="content">
+            <div id="start">
+  <h1 class="noborder title">Edools API</h1>
+
+	<h2>Overview</h2>
+
+<p>This describes the resources that make up the official Edools Core API v1. If you have any problems or requests please contact <a href="mailto:dev@edools.com">support</a>.</p>
+
+<ul>
+<li><a href="#Current_Version">Current Version</a></li>
+<li><a href="#Schema">Schema</a></li>
+<li><a href="#Parameters">Parameters</a></li>
+<li><a href="#Client_Errors">Client Errors</a></li>
+<li><a href="#HTTP_Redirects">HTTP Redirects</a></li>
+<li><a href="#HTTP_Verbs">HTTP Verbs</a></li>
+<li><a href="#Authentication">Authentication</a></li>
+<li><a href="#Pagination">Pagination</a></li>
+</ul>
+
+<h2>Current Version</h2>
+
+<p>By default, all requests receive the most recent version of the API, at the moment v1. We encourage you to explicitly request this version via the <code>Accept</code> header, because that way when future upgrades occur your application will be requesting the correct API version.</p>
+
+<pre class="code ruby"><code class="ruby">Accept: application/vnd.edools.core.v1+json
+</code></pre>
+
+<h2>Schema</h2>
+
+<p>All API access will be over HTTPS, and accessed from the <code>core.edools.com</code> domain (or <code>http://edools-core.herokuapp.com/</code> for sandbox environment). All data is sent and received as JSON, but we also accept XML.</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -i https://core.edools.com/schools
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 12 May 2014 23:33:14 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: &quot;a00049ba79152d03380c34652f2cb612&quot;
+Content-Length: 5
+Cache-Control: max-age=0, private, must-revalidate
+X-Content-Type-Options: nosniff
+
+[]
+</code></pre>
+
+<p>Blank fields are included as <code>null</code> instead of being omitted.</p>
+
+<p>All timestamps are returned in ISO 8601 format:</p>
+
+<pre class="code ruby"><code class="ruby">YYYY-MM-DDTHH:MM:SSZ
+</code></pre>
+
+<p><strong>Summary Representations</strong></p>
+
+<p>When you fetch a list of resources, the response includes a subset of the attributes for that resource. This is the “summary” representation of the resource. (Some attributes are computationally expensive for the API to provide. For performance reasons, the summary representation excludes those attributes. To obtain those attributes, fetch the “detailed” representation.)</p>
+
+<p>Example: When you get a list of school products, you get the summary representation of each product. Here, we fetch the list of school products owned by the edools school:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>school_products
+</span></span></code></pre>
+
+<p><strong>Detailed Representations</strong></p>
+
+<p>When you fetch an individual resource, the response typically includes all attributes for that resource. This is the “detailed” representation of the resource. (Note that authorization sometimes influences the amount of detail included in the representation.)</p>
+
+<p>Example: When you get an individual school product, you get the detailed representation of the product. Here, we fetch the edools/demo product:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>school_products</span><span class='regexp_end'>/demo</span></span>
+</code></pre>
+
+<p>The documentation will provide an example response for each API method. The example response illustrates all attributes that are returned by that method.</p>
+
+<h2>Parameters</h2>
+
+<p>Many API methods take optional parameters. For GET requests, any parameters not specified as a segment in the path can be passed as an HTTP query string parameter:</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -i &quot;https://core.edools.com/school_products?published=true&quot;
+</code></pre>
+
+<p>In this example, the :published param is passed in the query string.</p>
+
+<p>For POST, PATCH, PUT, and DELETE requests, parameters not included in the URL should be encoded as JSON with a Content-Type of ‘application/json’, but can be encoded as XML too:</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -i -d &#39;{&quot;status&quot;:[&quot;active&quot;]}&#39; https://core.edools.com/enrollments
+</code></pre>
+
+<h2>Client Errors</h2>
+
+<p>There are three possible types of client errors on API calls that receives request bodies:</p>
+
+<ol>
+<li>Sending invalid JSON will result in a 400 Bad Request response.</li>
+</ol>
+
+<pre class="code ruby"><code class="ruby"> HTTP/1.1 400 Bad Request
+ Content-Length: 35
+
+ {&quot;message&quot;:&quot;Problems parsing JSON&quot;}
+</code></pre>
+
+<ol>
+<li>Sending the wrong type of JSON values will result in a 400 Bad Request response.</li>
+</ol>
+
+<pre class="code ruby"><code class="ruby"> HTTP/1.1 400 Bad Request
+ Content-Length: 40
+
+ {&quot;message&quot;:&quot;Body should be a JSON Hash&quot;}
+</code></pre>
+
+<ol>
+<li>Sending invalid fields will result in a 422 Unprocessable Entity response.</li>
+</ol>
+
+<pre class="code ruby"><code class="ruby"> HTTP/1.1 422 Unprocessable Entity
+ Content-Length: 149
+
+ {
+   &quot;message&quot;: &quot;Validation Failed&quot;,
+   &quot;errors&quot;: [
+     {
+       &quot;resource&quot;: &quot;Issue&quot;,
+       &quot;field&quot;: &quot;title&quot;,
+       &quot;code&quot;: &quot;missing_field&quot;
+     }
+   ]
+ }
+</code></pre>
+
+<p>All error objects have resource and field properties so that your client can tell what the problem is. There’s also an error code to let you know what is wrong with the field. These are the possible validation error codes:</p>
+
+<ul>
+<li><code>missing</code>: This means a resource does not exist.</li>
+<li><code>missing_field</code>: This means a required field on a resource has not been set.</li>
+<li><code>invalid</code>: This means the formatting of a field is invalid. The documentation for that resource should be able to give you more specific information.</li>
+<li><code>already_exists</code>: This means another resource has the same value as this field. This can happen in resources that must have some unique key (such as Label names).</li>
+</ul>
+
+<p>If resources have custom validation errors, they will be documented with the resource.</p>
+
+<h2>HTTP Redirects</h2>
+
+<p>API uses HTTP redirection where appropriate. Clients should assume that any request may result in a redirection. Receiving an HTTP redirection is not an error and clients should follow that redirect. Redirect responses will have a <code>Location</code> header field which contains the URI of the resource to which the client should repeat the requests.</p>
+
+<ul>
+<li><code>301</code>: Permanent redirection. The URI you used to make the request has been superseded by the one specified in the Location header field. This and all future requests to this resource should be directed to the new URI.</li>
+<li><code>302</code>, <code>307</code>: Temporary redirection. The request should be repeated verbatim to the URI specified in the Location header field but clients should continue to use the original URI for future requests.</li>
+</ul>
+
+<p>Other redirection status codes may be used in accordance with the HTTP 1.1 spec.</p>
+
+<h2>HTTP Verbs</h2>
+
+<p>Where possible, API v3 strives to use appropriate HTTP verbs for each action.</p>
+
+<ul>
+<li><code>HEAD</code>:  Can be issued against any resource to get just the HTTP header info.</li>
+<li><code>GET</code>:  Used for retrieving resources.</li>
+<li><code>POST</code>:  Used for creating resources, or performing custom actions (such as merging a pull request).</li>
+<li><code>PATCH</code>:  Used for updating resources with partial JSON data. For instance, an Issue resource has title and body attributes. A PATCH request may accept one or more of the attributes to update the resource. PATCH is a relatively new and uncommon HTTP verb, so resource endpoints also accept POST requests.</li>
+<li><code>PUT</code>:  Used for replacing resources or collections. For PUT requests with no body attribute, be sure to set the Content-Length header to zero.</li>
+<li><code>DELETE</code>:  Used for deleting resources.</li>
+</ul>
+
+<h2>Authentication</h2>
+
+<p>There are only one way to authenticate through Edools Core API.</p>
+
+<p><strong>Token Authentication</strong></p>
+
+<pre class="code ruby"><code class="ruby">$ curl -H &#39;Authorization: Token token=&quot;TOKEN&quot;&#39; http://core.edools.com/schools
+</code></pre>
+
+<p><strong>The Token will say if you have access to the data of one organization or if you are requesting data of a single school</strong>. That way, with a valid token for edools organization, when you make a GET request in <code>http://core.edools.com/schools</code> you will receive the list of all schools that belongs to edools.</p>
+
+<h2>Pagination</h2>
+
+<p>Requests that return multiple items will be paginated to 10 items by default. You can specify further pages with the ?page parameter. For some resources, you can also set a custom page size up to 100 with the ?per_page parameter. Note that for technical reasons not all endpoints respect the ?per_page parameter.</p>
+
+<pre class="code ruby"><code class="ruby">$ curl &#39;https://core.edools.com/enrollments?page=2&amp;per_page=100&#39;
+</code></pre>
+
+<p>Note that page numbering is 1-based and that omitting the ?page parameter will return the first page.</p>
+
+<p>For more information on pagination, check out our guide on Traversing with Pagination.</p>
+
+
+  <h2>All Resources</h2>
+  <ul id="resources">
+	
+    
+	    <li><span class='object_link'><a href="V1/ActivitiesController.html" title="V1::ActivitiesController (class)">Activities [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/AddressesController.html" title="V1::AddressesController (class)">Addresses [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ApiKeysController.html" title="V1::ApiKeysController (class)">ApiKeys [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/AssetsController.html" title="V1::AssetsController (class)">Assets [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CategoriesController.html" title="V1::CategoriesController (class)">Categories [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CertificateLayoutsController.html" title="V1::CertificateLayoutsController (class)">CertificateLayouts [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CertificatesController.html" title="V1::CertificatesController (class)">Certificates [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ChannelsController.html" title="V1::ChannelsController (class)">Channels [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ClassTeachersController.html" title="V1::ClassTeachersController (class)">ClassTeachers [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CollaborativeCommentsController.html" title="V1::CollaborativeCommentsController (class)">CollaborativeComments [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CourseClassesController.html" title="V1::CourseClassesController (class)">CourseClasses [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CourseContentsController.html" title="V1::CourseContentsController (class)">CourseContents [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CourseModulesController.html" title="V1::CourseModulesController (class)">CourseModules [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/CoursesController.html" title="V1::CoursesController (class)">Courses [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/DisciplinesController.html" title="V1::DisciplinesController (class)">Disciplines [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/EnrollmentsController.html" title="V1::EnrollmentsController (class)">Enrollments [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ExamAnswersController.html" title="V1::ExamAnswersController (class)">ExamAnswers [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ExamQuestionAnswersController.html" title="V1::ExamQuestionAnswersController (class)">ExamQuestionAnswers [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ExamQuestionsController.html" title="V1::ExamQuestionsController (class)">ExamQuestions [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ExtraContentsController.html" title="V1::ExtraContentsController (class)">ExtraContents [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ForumAnswersController.html" title="V1::ForumAnswersController (class)">ForumAnswers [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ForumQuestionsController.html" title="V1::ForumQuestionsController (class)">ForumQuestions [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ForumSectionsController.html" title="V1::ForumSectionsController (class)">ForumSections [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ForumsController.html" title="V1::ForumsController (class)">Forums [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/GalleryMediaController.html" title="V1::GalleryMediaController (class)">GalleryMedia [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/GalleryTagsController.html" title="V1::GalleryTagsController (class)">GalleryTags [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/HostCredentialsController.html" title="V1::HostCredentialsController (class)">HostCredentials [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/LessonsController.html" title="V1::LessonsController (class)">Lessons [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/LessonsProgressesController.html" title="V1::LessonsProgressesController (class)">LessonsProgresses [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/LibrariesController.html" title="V1::LibrariesController (class)">Libraries [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/LibraryResourcesController.html" title="V1::LibraryResourcesController (class)">LibraryResources [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/LibraryTagsController.html" title="V1::LibraryTagsController (class)">LibraryTags [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/MediaController.html" title="V1::MediaController (class)">Media [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/MembersController.html" title="V1::MembersController (class)">Members [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/MessagesController.html" title="V1::MessagesController (class)">Messages [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/NotificationsController.html" title="V1::NotificationsController (class)">Notifications [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/OldMessagesController.html" title="V1::OldMessagesController (class)">OldMessages [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/OrganizationsController.html" title="V1::OrganizationsController (class)">Organizations [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/PagesController.html" title="V1::PagesController (class)">Pages [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/PathsController.html" title="V1::PathsController (class)">Paths [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ProgressCardsController.html" title="V1::ProgressCardsController (class)">ProgressCards [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/RegistrationsController.html" title="V1::RegistrationsController (class)">Registrations [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ReportsController.html" title="V1::ReportsController (class)">Reports [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ReviewsController.html" title="V1::ReviewsController (class)">Reviews [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/SchoolProductTopicsController.html" title="V1::SchoolProductTopicsController (class)">SchoolProductTopics [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/SchoolProductsController.html" title="V1::SchoolProductsController (class)">SchoolProducts [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/SchoolsController.html" title="V1::SchoolsController (class)">Schools [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/ThemesController.html" title="V1::ThemesController (class)">Themes [1.0.rc1]</a></span></li>
+    
+	    <li><span class='object_link'><a href="V1/UsersController.html" title="V1::UsersController (class)">Users [1.0.rc1]</a></span></li>
+    
+  
+  </ul>
+
+  <div class="clear"></div>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+
+    </div> <!-- /.row -->
+
+    <div class="row text-right">
+      <div class="col-md-12 col-sm-12">
+        <div class="companies">
+          <h5>Uma empresa:</h5>
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+       </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-md-12 col-sm-12">
+        <p>©2016 Edools. Todos os direitos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </body>
+</html>
