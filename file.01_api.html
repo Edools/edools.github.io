@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: API
+  
+    &mdash; Edools Generic Pages
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.01_api.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar primary-navbar navbar-green">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header small_menu">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://docs.edools.com">
+        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+      </a>
+    </div>
+
+    <!-- <div class="main_menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a title="Funcionalidades" href="api/index.html">API</a>
+        </li>
+        <li>
+          <a title="Planos e preços" href="tms/index.html">Temas</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div><!-- .container-fluid -->
+</nav>
+
+    <section class="doc_container">
+      <div class="container">
+        <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          </div>
+        </div>
+        <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
+          <div id="content">
+            <div id='filecontents'><h1>O que é possível fazer com a API Edools</h1>
+
+<p>Com a nossa API você será capaz de integrar qualquer sistema externo ao Edools, realizar migrações de dados de plataformas antigas de maneira simples e direta, e construir aplicativos para extender uma funcionalidade existente ou até mesmo criar novas funcionalidades com sua lógica própria. Através da API você tem toda a flexibilidade necessária para adaptar o Edools às suas regras de negócio, tendo uma plataforma de ensino online que se encaixe perfeitamente às suas necessidades.</p>
+
+<p>Nosso modelo de dados foi todo pensado para lhe permitir a flexibilidade necessária para se adaptar ao seu domínio. Basicamente, a API tem 3 pilares com objetivos específicos:</p>
+
+<ul>
+<li><strong>Gestão de Equipe</strong>: gerenciar seus colaboradores, identificar todas as ações dentro da plataforma, definir grupos com papéis específicos.</li>
+<li><strong>Gestão de Conteúdo</strong>: gerenciar sua biblioteca com trilhas, cursos, aulas e mídias, criar produtos para comercializar online.</li>
+<li><strong>Gestão de Alunos</strong>: gerenciar seus alunos, identificar como estão progredindo ao consumirem seu conteúdo, definir gatilhos para engajar seus alunos no ambiente virtual.</li>
+</ul>
+
+<p>Nos próximos artigos iremos detalhar cada secão da API, passando por todos os pontos específicos de cada área, com exemplos reais de utilização em diferentes segmentos de mercado.</p>
+
+<h1>Endpoint</h1>
+
+<p>A URL base onde se encontra a raiz da nossa API é:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_https'>https</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id identifier rubyid_sua'>sua</span><span class='op'>-</span><span class='id identifier rubyid_escola'>escola</span><span class='period'>.</span><span class='id identifier rubyid_myedools'>myedools</span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='op'>/</span><span class='id identifier rubyid_api'>api</span>
+</code></pre>
+
+<p>Todo o acesso à nossa API é feito usando o protocolo HTTPS, sem exceção, com dados criptografados para maior segurança.</p>
+
+<h1>Versionamento</h1>
+
+<p>Por padrão, todas as requisições para a API que não especificarem um versão serão redirecionadas para a última versão da API, que no momento é a v1. Por esse motivo, nós recomendamos que sempre explicite a versão que você deseja, mesmo se estiver usando a última versão. Dessa forma, quando futuras atualizações ocorrerem, sua aplicação estará requisitando a versão correta.
+Basta informar a versão no header da requisição:</p>
+
+<pre class="code ruby"><code class="ruby">Accept: application/vnd.edools.core.v1+json
+</code></pre>
+
+<h1>Autenticação e Autoriazção</h1>
+
+<p>Ao fazer um requisição para a API, ela irá passar por um processo de autenticação e autorização. A primeira verifica se as credencias que você tem são válidas para ter acesso à API. A segunda verifica se tais credenciais tem permissão para acessar o dado, ou conjunto de dados, solicitado.</p>
+
+<p>O modelo responsável por gerenciar essa lógica na API é o <code>ApiKey</code>. Cada <code>ApiKey</code> possui um <code>token</code> e um <code>secret</code>, que são gerados automaticamente na sua criação, e combinados formam o que chamamos de <code>credentials</code>. Além deles, a <code>ApiKey</code> possui um <code>owner</code> e um <code>realm</code>. O <code>owner</code> define o <code>User</code> ou <code>App</code> a quem pertence àquela chave. Já o <code>realm</code>, indica qual o domínio da API a chave terá acesso, que no geral são sempre <code>Organization</code> ou <code>School</code>.</p>
+
+<p>No momento o único formato aceito para se autenticar na API é passando o seguinte header na chamada:</p>
+
+<pre class="code ruby"><code class="ruby">Authorization: Token token=&quot;CREDENTIALS&quot;
+</code></pre>
+
+<p>Dessa forma, a API irá identificar quem está acessando, e verificar se ele tem permissão para isso. Vamos analisar a seguinte requisição para o endpoint de produtos:</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -H &#39;Authorization: Token token=&quot;CREDENTIALS&quot; https://sua-escola.myedools.com/api/school_products
+</code></pre>
+
+<p>Após o passo de autenticação, a API irá realizar um verificação de Autorização. Por exemplo, se o domínio o qual a chave tem acesso for uma organização, esse endpoint irá retornar todos os produtos de todas as escolas da organização. Porém, se o domínio permitido for uma escola específica, será retornado apenas os produtos da escola em questão.</p>
+
+<p>Agora, analisando o caso a requisição seja por um produto específico:</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -H &#39;Authorization: Token token=&quot;CREDENTIALS&quot;&#39; https://sua-escola.myedools.com/api/school_products/100
+</code></pre>
+
+<p>Da mesma forma, se a chave tiver acesso à organização e o produto específico pertencer à organização, o passo de autorização irá retornar OK, retornando os detalhes do produto. Porém, se a chave for de uma escola e o produto não pertencer àquela escola, a autorização irá falhar e retornar um <code>401</code>.</p>
+
+<p>Quando uma requisição falhar por ter fracassado no passo de autenticação, você irá receber uma resposta HTTP com código <code>401</code> e mensagem <code>Bad credentials</code>. Caso passe pelo passo de autenticação, mas falhe na autorização, a resposta irá com o mesmo código <code>401</code>, porém com a mensagem <code>Resource not authorized</code>.</p>
+
+<p>Durante a descrição de cada recurso, explicamos as condições necessárias para o passo de autorização passar e em quais condições ele pode não autorizar.</p>
+
+<h1>Representação de dados</h1>
+
+<p>A API tem em seu cerne o fato de ser uma API JSON, ou seja, JSON é único formato suportado. Em seguido iremos expor os principais padrões adotados que suportam o esquema da API.</p>
+
+<h2>Representação de Listas</h2>
+
+<p>Ao requisitar uma lista de um determinado produto, a resposta inclui um subconjunto dos atributos daquele recurso. Isso é o que chamamos de representação resumida do recurso. O principal motivo é o fato de alguns atributos serem computacionalmente caros de serem fornecidos em grandes quantidades. Então, visando a performance como um todo, esse formato reduzido exclui esses atributos. Para obtê-los, basta requisitar a representação detalhada.</p>
+
+<p>Por exemplo, ao realizar um requisição para obter a lista de produtos, você receberá a representação resumida dos produtos.</p>
+
+<h2>Representação Detalhada</h2>
+
+<p>No caso de requisitar um objeto específico de um recurso, a resposta irá retornar por padrão a representação detalhada desse recurso. Tal formato inclui todos os atributos daquele recurso. A única observação é que alguns atributos podem ser escondidos por motivos de permissões.</p>
+
+<p>Ao descrevermos cada método da API, será fornecida os atributos da representação detalhada dos recursos.</p>
+
+<h2>Campos vazios</h2>
+
+<p>Campos vazios, ou nulos, são retornados como null ao invés de serem omitidos.</p>
+
+<h2>Timestamps</h2>
+
+<p>Todas as timestamps são retornadas no seguinte formato:
+<code>YYYY-MM-DDTHH:MM:SSZ</code></p>
+
+<h1>Parâmetros</h1>
+
+<p>Muitos métodos da API aceitam parâmetros opcionais para filtros e outras funções. Nas requisições <code>GET</code> basta adicionar os parâmetros como query string.</p>
+
+<p>No exemplo a seguir, iremos pegar todos os produtos que estão publicados:</p>
+
+<pre class="code ruby"><code class="ruby">$ curl -i &quot;https://sua-escola.myedools.com/api/school_products?published=true&quot;
+</code></pre>
+
+<p>Para os métodos HTTP POST, PATCH, PUT e DELETE, os parâmetros devem ser inseridos no body da requisição.</p>
+
+<h1>Verbos HTTP</h1>
+
+<p>Onde é possível, a API usa os verbos HTTP apropriados para cada ação:</p>
+
+<ul>
+<li><strong>HEAD</strong>: Pode ser requisitado em qualquer recurso apenas para obter a informação HTTP no header da resposta.</li>
+<li><strong>GET</strong>: Listagem ou informação detalhada.</li>
+<li><strong>POST</strong>: Criação de recursos ou realização de ações customizadas.</li>
+<li><strong>PATCH</strong>: Usado para atualizar dados parciais de recursos.</li>
+<li><strong>PUT</strong>: Usado para substituir recursos.</li>
+<li><strong>DELETE</strong>: Deletar recursos.</li>
+</ul>
+
+<h1>Erros</h1>
+
+<p>A API segue a definição padrão do protocolo HTTP, obedecendo aos códigos de resposta. Alguns erros comuns são:</p>
+
+<ul>
+<li>Enviar um JSON inválido resulta em um <code>Bad Request</code>.</li>
+</ul>
+
+<pre class="code ruby"><code class="ruby">HTTP/1.1 400 Bad Request
+Content-Length: 35
+
+{&quot;message&quot;:&quot;Problems parsing JSON&quot;}
+</code></pre>
+
+<ul>
+<li>Enviar valores com tipagem incorreta também resulta em um <code>Bad Request</code>.</li>
+</ul>
+
+<pre class="code ruby"><code class="ruby">HTTP/1.1 400 Bad Request
+Content-Length: 40
+
+{&quot;message&quot;:&quot;Body should be a JSON Hash&quot;}
+</code></pre>
+
+<ul>
+<li>Em requests para criar/atualizar objetos, enviar atributos inválidos resultam em <code>Unprocessable Entity</code></li>
+</ul>
+
+<pre class="code ruby"><code class="ruby">HTTP/1.1 422 Unprocessable Entity
+Content-Length: 157
+
+{
+    &quot;message&quot;: &quot;Validation Failed&quot;,
+    &quot;errors&quot;: [
+        {
+           &quot;resource&quot;: &quot;SchoolProduct&quot;,
+           &quot;field&quot;: &quot;title&quot;,
+           &quot;code&quot;: &quot;missing_field&quot;
+        }
+    ]
+}
+</code></pre>
+
+<p>Respostas de código <code>422</code> sempre retornam metadados que indicam o motivo pelo qual falhou a requisição, fique atento. Os recursos que possuem validações específicas estão documentados na sua descrição.</p>
+
+<h1>Paginação</h1>
+
+<p>Requisições que retornam múltiplos items são paginadas por padrão para retornar apenas 10 items. Você pode especificar as páginas através do parâmetro <code>page</code>.</p>
+
+<p>Para alguns recursos você também pode especificar o tamanho da página até o limite de 100 itens, usando o parâmetro <code>per_page</code>.</p>
+
+<p>Observe que por razões técnicas, nem todos os recursos aceitam o parâmetro <code>per_page</code>.</p>
+
+<pre class="code ruby"><code class="ruby">$ curl &#39;https://sua-escola.myedools.com/api/school_products?page=2&amp;per_page=100&#39;
+</code></pre>
+
+<p>A paginação é <code>1-based</code>, ou seja, a primeira página é a 1. Ao omitir o parâmetro <code>page</code>, sempre será retornado a primeira página.</p>
+
+<h1>Chave de acesso</h1>
+
+<p>Para obter sua chave de acesso à  API, basta mandar um email para o nosso <a href="mailto:suporte@edools.com">suporte</a>.</p>
+
+<h1>Ajuda</h1>
+
+<p>Caso esteja enfrentando alguma dificuldade que não está documentada, entre em contato com o nosso suporte no email <a href="mailto:suporte@edools.com"><a href="mailto:suporte@edools.com">suporte@edools.com</a></a> usando a tag <code>[API]</code> no assunto.</p>
+
+<p><strong>Por favor, faça uma boa descrição do problema que está enfrentando e onde precisa de ajuda.</strong></p>
+
+<p>Nosso time de suporte possui desenvolvedores experientes e preparados para auxiliar no que for necessário para que seu uso de nossa API ocorra sem problemas.</p>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+
+    </div> <!-- /.row -->
+
+    <div class="row text-right">
+      <div class="col-md-12 col-sm-12">
+        <div class="companies">
+          <h5>Uma empresa:</h5>
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+       </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-md-12 col-sm-12">
+        <p>©2016 Edools. Todos os direitos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </body>
+</html>
