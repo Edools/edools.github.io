@@ -68,7 +68,18 @@
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
-            <div id='filecontents'><p>Liquid é uma linguagem open-source de templates escrita em Ruby. Através da Liquid, os Temas Edools carregam conteúdo dinâmico no front-end das escolas.</p>
+            <div id='filecontents'><div class="well">
+<p>
+<strong>Atenção: Você está entrnado em território de desenvolvedor!</strong>
+</p>
+<p>
+Nossa API é projetada para programadores. Se você é novo com desenvolvimento Web, nós recomendamos que busque ajuda.
+</p>
+</div>
+
+<h1>Liquid</h1>
+
+<p>Liquid é uma linguagem open-source de templates escrita em Ruby. Através da Liquid, os Temas Edools carregam conteúdo dinâmico no front-end das escolas.</p>
 
 <h1>O básico</h1>
 
@@ -97,7 +108,7 @@
 <pre class="code ruby"><code class="ruby">{{ ‘sales’ | append: ‘.jpg’ }} &lt;!— Output: sales.jpg —&gt;
 </code></pre>
 
-<h2>Handles</h2>
+<h1>Handles</h1>
 
 <p>As <em>handles</em> são usadas para acessar os atributos dos objetos. Por padrão, uma handle é o título do objeto em caixa baixa, com espaços substituídos por hífens (-). A maioria dos objetos no Edools (<em>products, courses, lessons</em>) possuem <em>handles</em>.</p>
 
@@ -105,67 +116,65 @@
 {{ pages.sobre-a-escola.content }}
 </code></pre>
 
-<h3>Handles de Objetos</h3>
+<h2>Handles de Objetos</h2>
 
 <p>As <em>handles</em> são usadas para acessar os tributos dos objetos do Liquid. Por padrão, a <em>handle</em> é o título em caixa baixa do objeto, com hífen (-) no lugar dos espaços e/ou caracteres especiais. A maioria dos objetos no Edools possuem <em>handles</em>.</p>
 
 <p>Por exemplo, a página com o título “Sobre a escola” pode ser acessada no Liquid através da handle <code>sobre-a-escola</code>, como mostrado abaixo:</p>
 
-<p>```&lt;!— o conteúdo da página Sobre a Escola —&gt;
-pages.about-us.content }</p>
+<pre class="code ruby"><code class="ruby">&lt;!— o conteúdo da página Sobre a Escola —&gt;
+{{ pages.about-us.content }}
+</code></pre>
 
-<pre class="code ruby"><code class="ruby">
-### Como as handles são criadas
+<h2>Como as handles são criadas</h2>
 
-Um produto com o título “Matemática” terá, automaticamente, a handle `matematica`. Se já existir uma com o mesmo nome, ela será estendido para `matematica-1`, `matematica-2` e assim por diante.
+<p>Um produto com o título “Matemática” terá, automaticamente, a handle <code>matematica</code>. Se já existir uma com o mesmo nome, ela será estendido para <code>matematica-1</code>, <code>matematica-2</code> e assim por diante.</p>
 
-———————print———————
+<p>———————print———————</p>
 
-Espaços nos títulos são substituídos por hífens nas *handles*. O título “Este novo curso” se transforma em `este-novo-curso`.
+<p>Espaços nos títulos são substituídos por hífens nas <em>handles</em>. O título “Este novo curso” se transforma em <code>este-novo-curso</code>.</p>
 
-————print———
+<p>————print———</p>
 
-O handle também determinar a URL do objeto. Por exemplo, a página com o handle `sobre-a-escola` teria a URL `http://suaescola.myedools.com/pages/sobre-a-escola`.
+<p>O handle também determinar a URL do objeto. Por exemplo, a página com o handle <code>sobre-a-escola</code> teria a URL <code>http://suaescola.myedools.com/pages/sobre-a-escola</code>.</p>
 
-Um tema pode se utilizar da handle carregar alguns elementos. Para preservar o design do tema e evitar links quebrados, uma *handle* não é atualizada automaticamente. Por exemplo, se você deseja alterar o título da página de “Sobre a escola” para “Sobre o Edools”, a *handle* permanecerá `sobre-a-escola`.
+<p>Um tema pode se utilizar da handle carregar alguns elementos. Para preservar o design do tema e evitar links quebrados, uma <em>handle</em> não é atualizada automaticamente. Por exemplo, se você deseja alterar o título da página de “Sobre a escola” para “Sobre o Edools”, a <em>handle</em> permanecerá <code>sobre-a-escola</code>.</p>
 
-———print———
+<p>———print———</p>
 
+<p>Você pode mudar a <em>handle</em> manualmente se quiser.</p>
 
-Você pode mudar a *handle* manualmente se quiser.
+<p>——print———</p>
 
-——print———
+<p>——————————————precisa de revisão———————————————————</p>
 
+<h2>Acessando os atributos <em>handle</em></h2>
 
-——————————————precisa de revisão———————————————————
-### Acessando os atributos *handle*
+<p>Em alguns casos, você talvez conheça a handle de um objeto o qual você deseja acessar os atributos. Você pode acessar os atributos</p>
 
-Em alguns casos, você talvez conheça a handle de um objeto o qual você deseja acessar os atributos. Você pode acessar os atributos
+<p>——————————————/precisa de revisão———————————————————</p>
 
-——————————————/precisa de revisão———————————————————
+<h1>Operadores</h1>
 
-## Operadores
+<p>O Liquid tem acesso a todos os operadores lógicos e de comparação. Eles podem ser usados nas tags, como <code>if</code> e <code>unless</code>.</p>
 
-O Liquid tem acesso a todos os operadores lógicos e de comparação. Eles podem ser usados nas tags, como `if` e `unless`.
+<h2>Operadores básicos</h2>
 
-### Operadores básicos
-
-| ==  | igual                    |
+<p>| ==  | igual                    |
 | !=  | diferente de             |
 | &gt;   | maior que                |
 | &lt;   | menor que                |
 | &gt;=  | maior ou igual que       |
 | &lt;=  | menor ou igual que       |
 | or  | condição A ou condição B |
-| and | condição A e condição B  |
+| and | condição A e condição B  |</p>
 
-Por exemplo:
+<p>Por exemplo:</p>
 
-</code></pre>
-
-<p>if product.title == “Curso de Matemática” %
+<pre class="code ruby"><code class="ruby">{% if product.title == “Curso de Matemática” %}
   Esse curso é muito bom!
-endif %</p>
+{% endif %}
+</code></pre>
 
 <p>Você pode usar mais de um operador em uma tag:</p>
 
@@ -174,7 +183,7 @@ endif %</p>
 {% endif %}
 </code></pre>
 
-<h4>O operador <em>contains</em></h4>
+<h2>O operador <em>contains</em></h2>
 
 <p><em>Contains</em> verifica a presença de uma <code>substring</code> dentro de um <code>string</code>.</p>
 
@@ -182,29 +191,29 @@ endif %</p>
   O título deste produto contém a palavra “Lançamento”.
 
 {% endif %}
-
-*Contains* também pode verificar a presença de uma string dentro de um conjunto de strings.
-
 </code></pre>
 
-<p>if product.tags contains “Promoção”%
+<p><em>Contains</em> também pode verificar a presença de uma string dentro de um conjunto de strings.</p>
+
+<pre class="code ruby"><code class="ruby">{% if product.tags contains “Promoção”%}
     Este produto possui a tag “Promoção”.
-endif %</p>
+{% endif %}
+</code></pre>
 
 <p><em>Contains</em> só busca por strings. Você não pode utilizá-lo em um conjunto de objetos.</p>
 
-<h3>Tipos</h3>
+<h1>Tipos</h1>
 
 <p>Os objetos Liquid possuem seis tipos diferentes. Você pode puxar as variáveis Liquid através das tags, por <a href="http://docs.edools.com/#">atribuição</a> ou <a href="http://docs.edools.com/#">captura</a>.</p>
 
-<h4><em>Strings</em></h4>
+<h2><em>Strings</em></h2>
 
 <p>As <em>strings</em> são declaradas colocando o valor da variável entre aspas simples ou duplas.</p>
 
 <pre class="code ruby"><code class="ruby">{% assign my_string - “Olá, mundo!” %}
 </code></pre>
 
-<h4>Número</h4>
+<h2>Número</h2>
 
 <p>Números incluem inteiros e flutuantes.</p>
 
@@ -212,14 +221,14 @@ endif %</p>
 {% assign my_float = 24.346 %}
 </code></pre>
 
-<h4><em>Boolean</em></h4>
+<h2><em>Boolean</em></h2>
 
 <p><em>Booleans</em> são <code>true</code> ou <code>falso</code>. Não são necessárias aspas ao declarar um <em>boolean</em>.</p>
 
 <p>assign foo = true %
 assign bar = false %</p>
 
-<h4>Nil</h4>
+<h2>Nil</h2>
 
 <p>Nil é retornado quando o código Liquid não tem nenhum resultado.   <strong>Não</strong> é uma string com os caracteres “nil”.</p>
 
@@ -240,11 +249,11 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">ID do Produto:
 </code></pre>
 
-<h4><em>Array</em></h4>
+<h2><em>Array</em></h2>
 
 <p>Array consiste em uma lista de variáveis de qualquer tipo.</p>
 
-<h5>Acessando itens dentro de um <em>array</em>.</h5>
+<h3>Acessando itens dentro de um <em>array</em>.</h3>
 
 <p>Para acessar todos os itens de um <em>array</em>, você pode iterar sobre cada item do <em>array</em> usando uma tag <code>for</code> ou <code>tablerow</code>.</p>
 
@@ -256,7 +265,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_lançamento'>lançamento</span> <span class='id identifier rubyid_matemática'>matemática</span> <span class='id identifier rubyid_exatas'>exatas</span> <span class='id identifier rubyid_enem'>enem</span>
 </code></pre>
 
-<h5>Acessando itens específicos de um <em>array</em></h5>
+<h3>Acessando itens específicos de um <em>array</em></h3>
 
 <p>Você pode usar colchetes para acessar um item específico do <em>array</em>. O índice do <em>array</em> começa em zero.</p>
 
@@ -275,11 +284,11 @@ assign bar = false %</p>
 
 <p>————————/ta certo isso?———————</p>
 
-<h5>Puxando <em>arrays</em></h5>
+<h3>Puxando <em>arrays</em></h3>
 
 <p>Você não consegue puxar <em>arrays</em> usando apenas Liquid. Porém, você consegue usar o filtro <a href="http://docs.edools.com/#"><em>split</em></a> para quebrar uma única <em>string</em> em um <em>array</em> de <em>substrings</em>.</p>
 
-<h4><em>EmptyDrop</em></h4>
+<h2><em>EmptyDrop</em></h2>
 
 <p>Um objeto <em>EmptyDrop</em> é retornado se você tentar acessar, através do <em>handle</em>, um objeto excluído (como um página ou um post). No exemplo abaixo, <code>page_1</code>, <code>page_2</code> e <code>page_3</code> são objetos <em>EmptyDrop</em>.</p>
 
@@ -291,7 +300,7 @@ assign bar = false %</p>
 
 <p>Os objetos <code>EmptyDrop</code> possuem apenas um atributo: <code>empty?</code>. Este atributo sempre retorna <code>true</code>.</p>
 
-<h5>Verificando a existência do objeto</h5>
+<h2>Verificando a existência do objeto</h2>
 
 <p>Usando o atributo <code>empty?</code>, você pode verificar se objeto existe antes de tentar acessar seus atributos.</p>
 
@@ -323,11 +332,11 @@ assign bar = false %</p>
 
 <p>—————————/faz sentido pra gente? com categorias talvez?—————————</p>
 
-<h3><em>Truthy</em> and <em>falsy</em></h3>
+<h1><em>Truthy</em> and <em>falsy</em></h1>
 
 <p>Quando um dado não-<em>boolean</em> é usado neste contexto (verdadeiro ou falso), o Liquid decide se o defini como <code>true</code> ou <code>false</code>. Os dados que retornam <code>true</code> por padrão, neste contexto, são chamados de <em>truthy</em>. Os dados que retornam <code>false</code> por padrão são chamados de <em>falsy</em>.</p>
 
-<h4><em>Truthy</em></h4>
+<h2><em>Truthy</em></h2>
 
 <p>Todos os valores no Liquid são <em>truthy</em>, exceto <code>nil</code> e <code>false</code>.</p>
 
@@ -347,14 +356,14 @@ assign bar = false %</p>
 </code></pre>
 
 <pre class="code ruby"><code class="ruby">&lt;h1&gt;&lt;/h1&gt;
-
-Para evitar que isso aconteça, você deve verificar se a string está vazia, como no exemplo a seguir:
-
 </code></pre>
 
-<p>unless settings.p_heading == blank %
-  <h1>settings.fp_heading }</h1>
-endunless %</p>
+<p>Para evitar que isso aconteça, você deve verificar se a string está vazia, como no exemplo a seguir:</p>
+
+<pre class="code ruby"><code class="ruby">{% unless settings.p_heading == blank %}
+  &lt;h1&gt;{{ settings.fp_heading }}&lt;/h1&gt;
+{% endunless %}
+</code></pre>
 
 <p>Um <em>EmptyDrop</em> também é <em>truthy</em>. No exemplo abaixo, se <code>settings.page</code> é uma <em>string</em> vazia ou é um objeto oculto ou excluído, você vai acabar com um <em>EmptyDrop</em>. O resultado será uma <code>&lt;div&gt;</code> vazia.</p>
 
@@ -363,57 +372,55 @@ endunless %</p>
 <pre class="code ruby"><code class="ruby">{% if pages[settings.page] %}
 &lt;div&gt;{{ pages[settings.page].content }} &lt;/div&gt;
 {% endif %}
-
-O output será:
 </code></pre>
 
-<div></div>
+<p>O output será:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### Falsy
-
-Os únicos valores que são *falsy* são o `nil` e o `false`.
-
-`nil` é retornado quando um objeto Liquid não possui nada para retornar. Por exemplo, se um curso não possui uma imagem de capa, `inserir.codigo` retornará `nil`. Como `nil` é *falsy*, você pode fazer o seguinte:
-
+<pre class="code ruby"><code class="ruby">&lt;div&gt;&lt;/div&gt;
 </code></pre>
 
-<p>if inserir.codigo %
+<h2>Falsy</h2>
+
+<p>Os únicos valores que são <em>falsy</em> são o <code>nil</code> e o <code>false</code>.</p>
+
+<p><code>nil</code> é retornado quando um objeto Liquid não possui nada para retornar. Por exemplo, se um curso não possui uma imagem de capa, <code>inserir.codigo</code> retornará <code>nil</code>. Como <code>nil</code> é <em>falsy</em>, você pode fazer o seguinte:</p>
+
+<pre class="code ruby"><code class="ruby">{% if inserir.codigo %}
 &lt;!— output capa do curso —&gt;
-endif %</p>
-
-<pre class="code ruby"><code class="ruby">
-O valor `false` é retornado através de vários objetos liquid, como o `inserir.codigo`.
-
-## Tags
-
-### As tags Liquid
-
-As tags criam a lógica de programação que indica ao template o que fazer. Tags são inseridas entre os caracteres `{%}` e `{%}`.
-
-Algumas tags, como `for` e `cycle` podem se utilizar de parâmetros. Os detalhes de cada parâmetro podem ser encontrados em suas respectivas seções.
-
-### Tags de controle de fluxo
-
-As tags de controle de fluxo  determinam qual bloco de código será executado, de acordo com diferentes condições.
-
-#### *if*
-
-Executa um bloco de código se uma determinada condição é atendida.
-
-Input:
+{% endif %}
 </code></pre>
 
-<p>if product.title == “Curso de Física!” %
+<p>O valor <code>false</code> é retornado através de vários objetos liquid, como o <code>inserir.codigo</code>.</p>
+
+<h1>Tags</h1>
+
+<h2>As tags Liquid</h2>
+
+<p>As tags criam a lógica de programação que indica ao template o que fazer. Tags são inseridas entre os caracteres <code>{%}</code> e <code>{%}</code>.</p>
+
+<p>Algumas tags, como <code>for</code> e <code>cycle</code> podem se utilizar de parâmetros. Os detalhes de cada parâmetro podem ser encontrados em suas respectivas seções.</p>
+
+<h2>Tags de controle de fluxo</h2>
+
+<p>As tags de controle de fluxo  determinam qual bloco de código será executado, de acordo com diferentes condições.</p>
+
+<h3><em>if</em></h3>
+
+<p>Executa um bloco de código se uma determinada condição é atendida.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% if product.title == “Curso de Física!” %}
   Este curso é de física!
-endif %</p>
+{% endif %}
+</code></pre>
 
 <p>Output</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'>Este</span> <span class='id identifier rubyid_curso'>curso</span> <span class='id identifier rubyid_é'>é</span> <span class='id identifier rubyid_de'>de</span> <span class='id identifier rubyid_física!'>física!</span>
 </code></pre>
 
-<h4><em>elsif/else</em></h4>
+<h3><em>elsif/else</em></h3>
 
 <p>Adiciona mais condições dentro de uma condição <em>if</em> ou <em>unless</em>.</p>
 
@@ -434,7 +441,7 @@ endif %</p>
 <pre class="code ruby"><code class="ruby">Oi, anônimo!
 </code></pre>
 
-<h4><em>case/when</em></h4>
+<h3><em>case/when</em></h3>
 
 <p>Cria uma declaração <em>switch</em> para comparar uma variável com diferentes valores.<code>case</code> inicia a declaração <em>switch</em> e <code>when</code> compara os valores.</p>
 
@@ -456,7 +463,7 @@ endif %</p>
 <pre class="code ruby"><code class="ruby">Estamos falando de literatura.
 </code></pre>
 
-<h4><em>unless</em></h4>
+<h3><em>unless</em></h3>
 
 <p>Similar ao <code>if</code>, mas executa um bloco de código se uma certa condição <strong>não</strong> é atendida.</p>
 
@@ -465,184 +472,169 @@ endif %</p>
 <pre class="code ruby"><code class="ruby">{% unless product.title == ‘Curso para INSS’ %}
   Este curso não é para INSS.
 {% endunless %}
-
-Output:
 </code></pre>
 
-<p>Este curso não é para INSS.</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-Isso seria a mesma coisa que fazer o exemplo abaixo:
+<pre class="code ruby"><code class="ruby">Este curso não é para INSS.
 </code></pre>
 
-<p>if product.title != ‘Curso para INSS’ %
+<p>Isso seria a mesma coisa que fazer o exemplo abaixo:</p>
+
+<pre class="code ruby"><code class="ruby">{% if product.title != ‘Curso para INSS’ %}
   Este curso não é para INSS.
-endif %</p>
-
-<pre class="code ruby"><code class="ruby">
-### Tags de iteração
-
-As tags de iteração são usadas para executar um bloco de código repetidamente.
-
-#### *for*
-
-Executa um bloco de código repetidamente. Para uma lista completa dos atributos disponíveis dentro de um `for`, veja [*forloop* (objeto)](https://docs.edools.com/#).
-
-Input:
+{% endif %}
 </code></pre>
 
-<p>for product in collection.products %
-  product.title }
-endfor %</p>
+<h2>Tags de iteração</h2>
 
-<pre class="code ruby"><code class="ruby">
-Output:
+<p>As tags de iteração são usadas para executar um bloco de código repetidamente.</p>
+
+<h3><em>for</em></h3>
+
+<p>Executa um bloco de código repetidamente. Para uma lista completa dos atributos disponíveis dentro de um <code>for</code>, veja <a href="https://docs.edools.com/#"><em>forloop</em> (objeto)</a>.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% for product in collection.products %}
+  {{ product.title }}
+{% endfor %}
 </code></pre>
 
-<p>matemática física química</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### *break*
-
-Faz o *loop* parar de iterar quando encontra uma tag *break*.
-
-Input:
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_matemática'>matemática</span> <span class='id identifier rubyid_física'>física</span> <span class='id identifier rubyid_química'>química</span>
 </code></pre>
 
-<p>for i in (1..5) %
-  if i == 4 %
-    break %
-  else %
-    i }
-  endif %
-endfor %</p>
+<h3><em>break</em></h3>
 
-<pre class="code ruby"><code class="ruby">
-Output:
+<p>Faz o <em>loop</em> parar de iterar quando encontra uma tag <em>break</em>.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% for i in (1..5) %}
+  {% if i == 4 %}
+    {% break %}
+  {% else %}
+    {{ i }}
+  {% endif %}
+{% endfor %}
 </code></pre>
 
-<p>1 2 3</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### continue
-
-Faz o loop pular a iteração quando encontra a tag `continue`.
-
-Input:
+<pre class="code ruby"><code class="ruby">1 2 3
 </code></pre>
 
-<p>for i in (1..5) %
-  if 1==4 %
-    continue %
-  else %
-    i }
-  endif %
-endfor %</p>
+<h3>continue</h3>
 
-<pre class="code ruby"><code class="ruby">
-Output:
+<p>Faz o loop pular a iteração quando encontra a tag <code>continue</code>.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% for i in (1..5) %}
+  {% if 1==4 %}
+    {% continue %}
+  {% else %}
+    {{ i }}
+  {% endif %}
+{% endfor %}
 </code></pre>
 
-<p>1 2 3 5</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### Parâmetros *for*
-
-***limit***
-Sai do *loop* *for* em um índice específico.
-
-Input:
+<pre class="code ruby"><code class="ruby">1 2 3 5
 </code></pre>
 
-<p>&lt;!— if array = [1,2,3,4,5,6] —&gt;
-  for item in array limit:2 %
-    item }
-  endfor %</p>
+<h3>Parâmetros <em>for</em></h3>
 
-<pre class="code ruby"><code class="ruby">
-Output:
+<p><strong><em>limit</em></strong>
+Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby"> &lt;!— if array = [1,2,3,4,5,6] —&gt;
+  {% for item in array limit:2 %}
+    {{ item }}
+  {% endfor %}
 </code></pre>
 
-<p>1 2</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### ***offset***
-
-Inicia o *loop* em um índice específico.
-
-Input:
+<pre class="code ruby"><code class="ruby">1 2
 </code></pre>
 
-<p>&lt;!— if array = [1,2,3,4,5,6] —&gt;
-  for item in array offset:2 %
-    item }
-  endfor %</p>
+<h3><strong><em>offset</em></strong></h3>
 
-<pre class="code ruby"><code class="ruby">
-Output:
+<p>Inicia o <em>loop</em> em um índice específico.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">&lt;!— if array = [1,2,3,4,5,6] —&gt;
+  {% for item in array offset:2 %}
+    {{ item }}
+  {% endfor %}
 </code></pre>
 
-<p>3 4 5 6</p>
+<p>Output:</p>
 
-<pre class="code ruby"><code class="ruby">
-#### range
-
-Define o intervalo de números para executar o *loop*. O intervalo pode ser definido por números absolutos ou variáveis.
-
-Input
+<pre class="code ruby"><code class="ruby">3 4 5 6
 </code></pre>
 
-<p>assign num = 4 %
-for i in (1..num) %
-  i }
-endfor %</p>
+<h3>range</h3>
 
-<p>for i in (3..5) %
-  i }
-endfor %</p>
+<p>Define o intervalo de números para executar o <em>loop</em>. O intervalo pode ser definido por números absolutos ou variáveis.</p>
 
-<pre class="code ruby"><code class="ruby">
-<span class='const'>Output</span>
+<p>Input</p>
+
+<pre class="code ruby"><code class="ruby">{% assign num = 4 %}
+{% for i in (1..num) %}
+  {{ i }}
+{% endfor %}
+
+{% for i in (3..5) %}
+  {{ i }}
+{% endfor %}
 </code></pre>
-
-<p>1 2 3 4
-3 4 5</p>
-
-<pre class="code ruby"><code class="ruby">
-#### ***reversed***
-
-Reverte a ordem do *loop for*.
-
-Input
-</code></pre>
-
-<p>&lt;!— if array = [1,2,3,4,5,6] —&gt;
-for item in array reversed %
-    item }
-endfor %</p>
-
-<pre class="code ruby"><code class="ruby">
-<span class='const'>Output</span>
-</code></pre>
-
-<p>6 5 4 3 2 1</p>
-
-<pre class="code ruby"><code class="ruby">
-#### ***cycle***
-
-Executa o *loop* em um grupo de *strings* e as exibe na ordem na qual foram passadas como parâmetros. Cada vez que `cycle` é utilizado, a próxima *string* que for passada como parâmetro é exibida.
-
-`cycle` deve ser usada dentro do bloco de um *loop for*.
-
-Input
-</code></pre>
-
-<p>cycle ‘one’, ‘two’, ‘three’ %
-cycle ‘one’, ‘two’, ‘three’ %
-cycle ‘one’, ‘two’, ‘three’ %
-cycle ‘one’, ‘two’, ‘three’ %</p>
 
 <p>Output</p>
+
+<pre class="code ruby"><code class="ruby">1 2 3 4
+3 4 5
+</code></pre>
+
+<h3><strong><em>reversed</em></strong></h3>
+
+<p>Reverte a ordem do <em>loop for</em>.</p>
+
+<p>Input</p>
+
+<pre class="code ruby"><code class="ruby">&lt;!— if array = [1,2,3,4,5,6] —&gt;
+{% for item in array reversed %}
+    {{ item }}
+{% endfor %}
+</code></pre>
+
+<p>Output</p>
+
+<pre class="code ruby"><code class="ruby">6 5 4 3 2 1
+</code></pre>
+
+<h3><strong><em>cycle</em></strong></h3>
+
+<p>Executa o <em>loop</em> em um grupo de <em>strings</em> e as exibe na ordem na qual foram passadas como parâmetros. Cada vez que <code>cycle</code> é utilizado, a próxima <em>string</em> que for passada como parâmetro é exibida.</p>
+
+<p><code>cycle</code> deve ser usada dentro do bloco de um <em>loop for</em>.</p>
+
+<p>Input</p>
+
+<pre class="code ruby"><code class="ruby">{% cycle ‘one’, ‘two’, ‘three’ %}
+{% cycle ‘one’, ‘two’, ‘three’ %}
+{% cycle ‘one’, ‘two’, ‘three’ %}
+{% cycle ‘one’, ‘two’, ‘three’ %}
+</code></pre>
+
+<p>Output:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_one'>one</span>
 <span class='id identifier rubyid_two'>two</span>
@@ -731,9 +723,9 @@ cycle ‘one’, ‘two’, ‘three’ %</p>
 &lt;/ul&gt;
 </code></pre>
 
-<h4>tablerow</h4>
+<h3>tablerow</h3>
 
-<p>Gera um HTML <code>&lt;table&gt;</code>. Deve ser inserido entre uma tag de abertura <code>&lt;table&gt;</code> e uma de fechamento <code>&lt;/table&gt;. Para uma lista complete de atributos disponíveis dentro de um *loop*</code>tablerow`, veja <a href="http://docs.edools.com/#"><em>tablerow</em> (objeto)</a>.</p>
+<p>Gera um HTML <code>&lt;table&gt;</code>. Deve ser inserido entre uma tag de abertura <code>&lt;table&gt;</code> e uma de fechamento <code>&lt;/table&gt;</code>. Para uma lista complete de atributos disponíveis dentro de um <em>loop</em> <code>tablerow</code>, veja <a href="http://docs.edools.com/#"><em>tablerow</em> (objeto)</a>.</p>
 
 <p>Input</p>
 
@@ -826,31 +818,254 @@ Inicia a tabela após um índice específico.</p>
 <pre class="code ruby"><code class="ruby">{% table row product in collection.products cols:2 offset:3 %}
   {{ product.title }}
 {% endtablerow %}```
-
-***range***
-Define o intervalo de números que um *loop* deve ser executado. O intervalo pode ser definido tanto por números absolutos como variáveis.
-
 </code></pre>
 
-<p>&lt;!—variable number example—&gt;</p>
+<p><strong><em>range</em></strong>
+Define o intervalo de números que um <em>loop</em> deve ser executado. O intervalo pode ser definido tanto por números absolutos como variáveis.</p>
 
-<p>assign num = 4 %</p>
+<pre class="code ruby"><code class="ruby">&lt;!—variable number example—&gt;
 
-<table>
-table row i in (1..num) %
-  i }
-endtablerow %
-</table>
+{% assign num = 4 %}
+&lt;table&gt;
+{% table row i in (1..num) %}
+  {{ i }}
+{% endtablerow %}
+&lt;/table&gt;
 
-<p>&lt;!—literal number example—&gt;</p>
+&lt;!—literal number example—&gt;
 
-<table>
-table row i in (3..5) %
-  i }
-endtablerow %
-</table>
+&lt;table&gt;
+{% table row i in (3..5) %}
+  {{ i }}
+{% endtablerow %}
+&lt;/table&gt;
+</code></pre>
 
-<pre class="code ruby"><code class="ruby">&lt;/code&gt;</code></pre>
+<h1>Tags do tema</h1>
+
+<p>As tags do tema possuem vários funções diferentes, incluindo:</p>
+
+<ul>
+<li>Injetando <em>markups</em> HTML específicos de um template;</li>
+<li>Indicando ao tema quais layouts e <em>snippets</em> usar</li>
+<li>Dividindo uma <em>array</em> retornada em múltiplas páginas</li>
+</ul>
+
+<h2>Comment</h2>
+
+<p>Permite que você não renderize o código dentro de um template Liquid. Qualquer texto antes e depois da tag <em>comment</em> não será exibidas, assim como qualquer código não será executado.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">Meu nome é {% comment %} Forrest {% comment %} Gump.
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby">Meu nome é Gump.
+</code></pre>
+
+<h2>Include</h2>
+
+<p>Insere um <em>snippet</em> de dentro da pasta <em>snippets</em> de um tema.</p>
+
+<p>include <code>snippet-name</code> %</p>
+
+<p>Repare que a extensão <code>.liquid</code> é omitida no código acima.</p>
+
+<p>Quando um <em>snippet</em> é incluído, o código dentro dele terá acesso  às variáveis do seu template pai.</p>
+
+<p><strong>Incluindo múltiplas variáveis em um snippet</strong></p>
+
+<p>Há duas maneiras de incluir múltiplas variáveis em <em>snippet</em>. Você pode designá-las e incluí-las em linhas diferentes:</p>
+
+<pre class="code ruby"><code class="ruby">{% assign snippet_variable = ‘this is it’ %}
+{% assign snippet_variable_two = ‘this is also it’ %}
+{% include ‘snippet’ %}
+</code></pre>
+
+<p>Ou você pode consolidar tudo em uma linha de código:</p>
+
+<pre class="code ruby"><code class="ruby">{% include ‘snippet’, snippet_variable: ‘this is it’, snippet_variable_two: ‘this is also it’ %}
+</code></pre>
+
+<h3>Os parâmetros <em>include</em></h3>
+
+<p><strong><em>with</em></strong>
+O parâmetro <em>with</em> determina um valor para uma variável dentro de um <em>snippet</em> que possui o mesmo nome do próprio <em>snippet</em>.</p>
+
+<p>Por exemplo, é possível que haja um <em>snippet</em> chamado <strong>color.liquid</strong>, contendo o seguinte código:</p>
+
+<pre class="code ruby"><code class="ruby">color: ‘{{ color }}’
+shape: ‘{{ shape }}’
+</code></pre>
+
+<p>Dentro de <strong>theme.liquid</strong>, é possível inserir o <em>snippet</em> <strong>color.liquid</strong> da seguinte forma:</p>
+
+<pre class="code ruby"><code class="ruby">% assign shape = ‘circle’ %}
+{% include ‘color’ %}
+{% include ‘color’ with ‘red’ %}
+{% include ‘color’ with ‘blue’ %}
+{% assign shape = ‘square’ %}
+{% include ‘color’ with ‘red’ %}
+</code></pre>
+
+<p>O resultado será:</p>
+
+<pre class="code ruby"><code class="ruby">color: shape: ‘circle’
+color: ‘red’ shape: ‘circle’
+color: ‘blue’ shape: ‘circle’
+color: ‘red’ shape: ‘square’
+</code></pre>
+
+<h2>Form</h2>
+
+<p>Cria um elemento HTML <code>&lt;form&gt;</code> com todos os atributos necessários (action, id, etc), assim como <code>&lt;input&gt;</code> para enviar o <em>formulário</em>.</p>
+
+<h3>Os parâmetros <em>form</em></h3>
+
+<p>——————inserir parametros edools———————</p>
+
+<p>————/inserir parametros edools——————</p>
+
+<h2>Paginate</h2>
+
+<p>Dividir produtos e resultados de uma busca em várias páginas é uma parte necessária do tema, por existir uma limitação de 50 resultados por página em um <em>loop</em> <em>for</em>.</p>
+
+<p>A tag <em>paginate</em> trabalha em conjunto com a tag <em>for</em> para dividir o conteúdo em várias páginas. Ela deve conter um bloco da tag <em>for</em> que itera em um <em>array</em>, como mostrado no exemplo abaixo:</p>
+
+<pre class="code ruby"><code class="ruby">{% paginate collection.products by 5 %}
+  {% for product in collection.products %}
+    &lt;!—show product details here —&gt;
+  {% endfor %}
+{% endpaginate %}
+</code></pre>
+
+<p>O parâmetro <code>by</code> é seguido por um <em>integer</em> entre 1 e 50 que indica à tag <em>paginate</em> quantos resultados ela deve mostrar por página.</p>
+
+<p>Dentro da tag <em>paginate</em>, você pode acessar os atributos do objeto <a href="http://www.edools.com/#"><em>paginate</em></a>. Isso inclui os atributos para exibir os links necessários à navegação das páginas geradas.</p>
+
+<h2>Raw</h2>
+
+<p>Permite que seja exibido um código Liquid na página sem ser parseada.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% raw %}{{ 5 | mais: 6 }}{% endear %} é igual a 11.
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby">{{ 5 | mais: 6 }} é igual a 11.
+</code></pre>
+
+<h2>Tags variáveis</h2>
+
+<p>As tags variáveis são usadas para criar novas variáveis Liquid.</p>
+
+<h3>Assign</h3>
+
+<p>Cria uma nova variável.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% assign my_variable = false %}
+{% if my_variable != true %}
+Esta afirmação é válida.
+{% endif %}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby">Esta afirmação é válida.
+</code></pre>
+
+<p>Use aspas para salvar a variável como uma string.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% assign foo = “bar” %}
+{{ foo }}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_bar'>bar</span>
+</code></pre>
+
+<h3>Capture</h3>
+
+<p>Captura a string dentro das tags de abertura e fechamento e a determina como variável. Variáveis criadas através de <code>{% capture %}</code> são strings.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% capture my_variable %}Estou sendo capturado.{% end capture %}
+{{ my_variable }}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby">Estou sendo capturado.
+</code></pre>
+
+<h3>Incremet</h3>
+
+<p>Cria uma nova variável de número e aumenta seu valor a cada vez que é chamada. O valor inicial é 0.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% increment variable %}
+{% increment variable %}
+{% increment variable %}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='int'>0</span>
+<span class='int'>1</span>
+<span class='int'>2</span>
+</code></pre>
+
+<p>Variáveis criadas através da tag <code>increment</code> são independentes das variáveis criadas através das tags <code>assign</code> e <code>capture</code>.</p>
+
+<p>No exemplo abaixo, a variável de nome <code>var</code> é criada através da tag <code>assign</code>. A tag <code>increment</code>, depois, é usada várias vezes com uma variável de mesmo nome. Porém, repare que a tag <code>incremet</code> não afeta o valor da <code>var</code> criada pela tag <code>assign</code>.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">% assign var = 10 %}
+{% increment var %}
+{% increment var %}
+{% increment var %}
+{{ var }}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='int'>0</span>
+<span class='int'>1</span>
+<span class='int'>2</span>
+<span class='int'>10</span>
+</code></pre>
+
+<h3>Decrement</h3>
+
+<p>Cria uma nova variável de número e decresce seu valor todas as vezes em que é chamada. O valor inicia é -1.</p>
+
+<p>Input:</p>
+
+<pre class="code ruby"><code class="ruby">{% decrement variable %}
+{% decrement variable %}
+{% decrement variable %}
+</code></pre>
+
+<p>Output:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='op'>-</span><span class='int'>1</span>
+<span class='op'>-</span><span class='int'>2</span>
+<span class='op'>-</span><span class='int'>3</span>
+</code></pre>
+
+<p>Assim como <code>increment</code>, variáveis declaradas dentro de <code>decrement</code> são independentes das declaradas através de <code>assign</code> e <code>capture</code>.</p>
 </div>
           </div>
         </div>
