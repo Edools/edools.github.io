@@ -98,17 +98,19 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 
 <p>Os objetos contém os atributos usados para carregar o conteúdo dinâmico em uma página. [Ler mais sobre objetos.](<a href="http://docs.edools.com/objetos">http://docs.edools.com/objetos</a></p>
 
-<pre class="code ruby"><code class="ruby">{{ product.title }} &lt;!— Nome do Produto —&gt;
+<pre class="code ruby"><code class="ruby">{{ product.title }}
+&lt;!— Nome do Produto —&gt;
 </code></pre>
 
 <h2>Filtros</h2>
 
 <p>Filtros são usados para modificar o <em>output</em> de <em>strings</em>, números, variáveis e objetos. <a href="http://docs.edools.com/filtros">Ler mais sobre filtros.</a></p>
 
-<pre class="code ruby"><code class="ruby">{{ ‘sales’ | append: ‘.jpg’ }} &lt;!— Output: sales.jpg —&gt;
+<pre class="code ruby"><code class="ruby">{{ ‘sales’ | append: ‘.jpg’ }}
+&lt;!— Output: sales.jpg —&gt;
 </code></pre>
 
-<h1>Handles</h1>
+<h2>Handles</h2>
 
 <p>As <em>handles</em> são usadas para acessar os atributos dos objetos. Por padrão, uma handle é o título do objeto em caixa baixa, com espaços substituídos por hífens (-). A maioria dos objetos no Edools (<em>products, courses, lessons</em>) possuem <em>handles</em>.</p>
 
@@ -116,7 +118,7 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 {{ pages.sobre-a-escola.content }}
 </code></pre>
 
-<h2>Handles de Objetos</h2>
+<h3>Handles de Objetos</h3>
 
 <p>As <em>handles</em> são usadas para acessar os tributos dos objetos do Liquid. Por padrão, a <em>handle</em> é o título em caixa baixa do objeto, com hífen (-) no lugar dos espaços e/ou caracteres especiais. A maioria dos objetos no Edools possuem <em>handles</em>.</p>
 
@@ -126,7 +128,7 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 {{ pages.about-us.content }}
 </code></pre>
 
-<h2>Como as handles são criadas</h2>
+<h3>Como as handles são criadas</h3>
 
 <p>Um produto com o título “Matemática” terá, automaticamente, a handle <code>matematica</code>. Se já existir uma com o mesmo nome, ela será estendido para <code>matematica-1</code>, <code>matematica-2</code> e assim por diante.</p>
 
@@ -148,17 +150,17 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 
 <p>——————————————precisa de revisão———————————————————</p>
 
-<h2>Acessando os atributos <em>handle</em></h2>
+<h3>Acessando os atributos <em>handle</em></h3>
 
 <p>Em alguns casos, você talvez conheça a handle de um objeto o qual você deseja acessar os atributos. Você pode acessar os atributos</p>
 
 <p>——————————————/precisa de revisão———————————————————</p>
 
-<h1>Operadores</h1>
+<h2>Operadores</h2>
 
 <p>O Liquid tem acesso a todos os operadores lógicos e de comparação. Eles podem ser usados nas tags, como <code>if</code> e <code>unless</code>.</p>
 
-<h2>Operadores básicos</h2>
+<h3>Operadores básicos</h3>
 
 <p>| ==  | igual                    |
 | !=  | diferente de             |
@@ -183,7 +185,7 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 {% endif %}
 </code></pre>
 
-<h2>O operador <em>contains</em></h2>
+<h3>O operador <em>contains</em></h3>
 
 <p><em>Contains</em> verifica a presença de uma <code>substring</code> dentro de um <code>string</code>.</p>
 
@@ -202,18 +204,18 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 
 <p><em>Contains</em> só busca por strings. Você não pode utilizá-lo em um conjunto de objetos.</p>
 
-<h1>Tipos</h1>
+<h2>Tipos</h2>
 
 <p>Os objetos Liquid possuem seis tipos diferentes. Você pode puxar as variáveis Liquid através das tags, por <a href="http://docs.edools.com/#">atribuição</a> ou <a href="http://docs.edools.com/#">captura</a>.</p>
 
-<h2><em>Strings</em></h2>
+<h3><em>Strings</em></h3>
 
 <p>As <em>strings</em> são declaradas colocando o valor da variável entre aspas simples ou duplas.</p>
 
 <pre class="code ruby"><code class="ruby">{% assign my_string - “Olá, mundo!” %}
 </code></pre>
 
-<h2>Número</h2>
+<h3>Número</h3>
 
 <p>Números incluem inteiros e flutuantes.</p>
 
@@ -221,14 +223,14 @@ Nossa API é projetada para programadores. Se você é novo com desenvolvimento 
 {% assign my_float = 24.346 %}
 </code></pre>
 
-<h2><em>Boolean</em></h2>
+<h3><em>Boolean</em></h3>
 
 <p><em>Booleans</em> são <code>true</code> ou <code>falso</code>. Não são necessárias aspas ao declarar um <em>boolean</em>.</p>
 
 <p>assign foo = true %
 assign bar = false %</p>
 
-<h2>Nil</h2>
+<h3>Nil</h3>
 
 <p>Nil é retornado quando o código Liquid não tem nenhum resultado.   <strong>Não</strong> é uma string com os caracteres “nil”.</p>
 
@@ -249,11 +251,11 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">ID do Produto:
 </code></pre>
 
-<h2><em>Array</em></h2>
+<h3><em>Array</em></h3>
 
 <p>Array consiste em uma lista de variáveis de qualquer tipo.</p>
 
-<h3>Acessando itens dentro de um <em>array</em>.</h3>
+<h4>Acessando itens dentro de um <em>array</em>.</h4>
 
 <p>Para acessar todos os itens de um <em>array</em>, você pode iterar sobre cada item do <em>array</em> usando uma tag <code>for</code> ou <code>tablerow</code>.</p>
 
@@ -265,7 +267,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_lançamento'>lançamento</span> <span class='id identifier rubyid_matemática'>matemática</span> <span class='id identifier rubyid_exatas'>exatas</span> <span class='id identifier rubyid_enem'>enem</span>
 </code></pre>
 
-<h3>Acessando itens específicos de um <em>array</em></h3>
+<h4>Acessando itens específicos de um <em>array</em></h4>
 
 <p>Você pode usar colchetes para acessar um item específico do <em>array</em>. O índice do <em>array</em> começa em zero.</p>
 
@@ -284,11 +286,11 @@ assign bar = false %</p>
 
 <p>————————/ta certo isso?———————</p>
 
-<h3>Puxando <em>arrays</em></h3>
+<h4>Puxando <em>arrays</em></h4>
 
 <p>Você não consegue puxar <em>arrays</em> usando apenas Liquid. Porém, você consegue usar o filtro <a href="http://docs.edools.com/#"><em>split</em></a> para quebrar uma única <em>string</em> em um <em>array</em> de <em>substrings</em>.</p>
 
-<h2><em>EmptyDrop</em></h2>
+<h3><em>EmptyDrop</em></h3>
 
 <p>Um objeto <em>EmptyDrop</em> é retornado se você tentar acessar, através do <em>handle</em>, um objeto excluído (como um página ou um post). No exemplo abaixo, <code>page_1</code>, <code>page_2</code> e <code>page_3</code> são objetos <em>EmptyDrop</em>.</p>
 
@@ -300,7 +302,7 @@ assign bar = false %</p>
 
 <p>Os objetos <code>EmptyDrop</code> possuem apenas um atributo: <code>empty?</code>. Este atributo sempre retorna <code>true</code>.</p>
 
-<h2>Verificando a existência do objeto</h2>
+<h4>Verificando a existência do objeto</h4>
 
 <p>Usando o atributo <code>empty?</code>, você pode verificar se objeto existe antes de tentar acessar seus atributos.</p>
 
@@ -332,11 +334,11 @@ assign bar = false %</p>
 
 <p>—————————/faz sentido pra gente? com categorias talvez?—————————</p>
 
-<h1><em>Truthy</em> and <em>falsy</em></h1>
+<h2><em>Truthy</em> and <em>falsy</em></h2>
 
 <p>Quando um dado não-<em>boolean</em> é usado neste contexto (verdadeiro ou falso), o Liquid decide se o defini como <code>true</code> ou <code>false</code>. Os dados que retornam <code>true</code> por padrão, neste contexto, são chamados de <em>truthy</em>. Os dados que retornam <code>false</code> por padrão são chamados de <em>falsy</em>.</p>
 
-<h2><em>Truthy</em></h2>
+<h3><em>Truthy</em></h3>
 
 <p>Todos os valores no Liquid são <em>truthy</em>, exceto <code>nil</code> e <code>false</code>.</p>
 
@@ -379,7 +381,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">&lt;div&gt;&lt;/div&gt;
 </code></pre>
 
-<h2>Falsy</h2>
+<h3>Falsy</h3>
 
 <p>Os únicos valores que são <em>falsy</em> são o <code>nil</code> e o <code>false</code>.</p>
 
@@ -841,7 +843,7 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 &lt;/table&gt;
 </code></pre>
 
-<h1>Tags do tema</h1>
+<h2>Tags do tema</h2>
 
 <p>As tags do tema possuem vários funções diferentes, incluindo:</p>
 
@@ -851,7 +853,7 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 <li>Dividindo uma <em>array</em> retornada em múltiplas páginas</li>
 </ul>
 
-<h2>Comment</h2>
+<h3>Comment</h3>
 
 <p>Permite que você não renderize o código dentro de um template Liquid. Qualquer texto antes e depois da tag <em>comment</em> não será exibidas, assim como qualquer código não será executado.</p>
 
@@ -865,7 +867,7 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 <pre class="code ruby"><code class="ruby">Meu nome é Gump.
 </code></pre>
 
-<h2>Include</h2>
+<h3>Include</h3>
 
 <p>Insere um <em>snippet</em> de dentro da pasta <em>snippets</em> de um tema.</p>
 
@@ -889,7 +891,7 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 <pre class="code ruby"><code class="ruby">{% include ‘snippet’, snippet_variable: ‘this is it’, snippet_variable_two: ‘this is also it’ %}
 </code></pre>
 
-<h3>Os parâmetros <em>include</em></h3>
+<h4>Os parâmetros <em>include</em></h4>
 
 <p><strong><em>with</em></strong>
 O parâmetro <em>with</em> determina um valor para uma variável dentro de um <em>snippet</em> que possui o mesmo nome do próprio <em>snippet</em>.</p>
@@ -918,17 +920,17 @@ color: ‘blue’ shape: ‘circle’
 color: ‘red’ shape: ‘square’
 </code></pre>
 
-<h2>Form</h2>
+<h3>Form</h3>
 
 <p>Cria um elemento HTML <code>&lt;form&gt;</code> com todos os atributos necessários (action, id, etc), assim como <code>&lt;input&gt;</code> para enviar o <em>formulário</em>.</p>
 
-<h3>Os parâmetros <em>form</em></h3>
+<h4>Os parâmetros <em>form</em></h4>
 
 <p>——————inserir parametros edools———————</p>
 
 <p>————/inserir parametros edools——————</p>
 
-<h2>Paginate</h2>
+<h3>Paginate</h3>
 
 <p>Dividir produtos e resultados de uma busca em várias páginas é uma parte necessária do tema, por existir uma limitação de 50 resultados por página em um <em>loop</em> <em>for</em>.</p>
 
@@ -945,7 +947,7 @@ color: ‘red’ shape: ‘square’
 
 <p>Dentro da tag <em>paginate</em>, você pode acessar os atributos do objeto <a href="http://www.edools.com/#"><em>paginate</em></a>. Isso inclui os atributos para exibir os links necessários à navegação das páginas geradas.</p>
 
-<h2>Raw</h2>
+<h3>Raw</h3>
 
 <p>Permite que seja exibido um código Liquid na página sem ser parseada.</p>
 
@@ -959,11 +961,11 @@ color: ‘red’ shape: ‘square’
 <pre class="code ruby"><code class="ruby">{{ 5 | mais: 6 }} é igual a 11.
 </code></pre>
 
-<h2>Tags variáveis</h2>
+<h3>Tags variáveis</h3>
 
 <p>As tags variáveis são usadas para criar novas variáveis Liquid.</p>
 
-<h3>Assign</h3>
+<h4>Assign</h4>
 
 <p>Cria uma nova variável.</p>
 
@@ -993,7 +995,7 @@ Esta afirmação é válida.
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_bar'>bar</span>
 </code></pre>
 
-<h3>Capture</h3>
+<h4>Capture</h4>
 
 <p>Captura a string dentro das tags de abertura e fechamento e a determina como variável. Variáveis criadas através de <code>{% capture %}</code> são strings.</p>
 
@@ -1008,7 +1010,7 @@ Esta afirmação é válida.
 <pre class="code ruby"><code class="ruby">Estou sendo capturado.
 </code></pre>
 
-<h3>Incremet</h3>
+<h4>Incremet</h4>
 
 <p>Cria uma nova variável de número e aumenta seu valor a cada vez que é chamada. O valor inicial é 0.</p>
 
@@ -1047,7 +1049,7 @@ Esta afirmação é válida.
 <span class='int'>10</span>
 </code></pre>
 
-<h3>Decrement</h3>
+<h4>Decrement</h4>
 
 <p>Cria uma nova variável de número e decresce seu valor todas as vezes em que é chamada. O valor inicia é -1.</p>
 
@@ -1066,6 +1068,12 @@ Esta afirmação é válida.
 </code></pre>
 
 <p>Assim como <code>increment</code>, variáveis declaradas dentro de <code>decrement</code> são independentes das declaradas através de <code>assign</code> e <code>capture</code>.</p>
+
+<h1>Precisa de ajuda?</h1>
+
+<p>Comece visitando nossa <a href="http://suporte.edools.com">base de conhecimento</a>.</p>
+
+<p>Não encontrou o que procura? Envie um email para nosso time no endereço <a href="mailto:suporte@edools.com">suporte@edools.com</a>.</p>
 </div>
           </div>
         </div>
