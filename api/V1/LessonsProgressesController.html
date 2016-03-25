@@ -31,7 +31,7 @@
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
   </head>
   <body>
     <nav class="navbar primary-navbar navbar-green">
@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="http://docs.edools.com">
-        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
       </a>
     </div>
 
@@ -68,14 +68,22 @@
       <div class="container">
         <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div id="main-menu-file-incio"></div>
+            <div id="main-menu-file-personalizando-temas"></div>
+            <div id="main-menu-file-conhecendo-o-liquid"></div>
+            <div id="main-menu-file-construindo-temas"></div>
+            <div id="main-menu-file-conhecendo-a-api"></div>
+            <div id="main-menu-file-bibliotecas-de-api"></div>
+            <div id="main-menu-recursos-api"></div>
+            <div id="main-menu-objetos-api"></div>
           </div>
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
             <div class="service">
-  <h1 class="noborder title">Edools API</h1>
-    <a class="back" href="../index.html" title="back to the overview">&laquo; back to overview</a>
-    <h2>LessonsProgresses [1.0.rc1]</h2>
+  <!-- <h1 class="noborder title"></h1> -->
+    <!-- <a class="back" href="" title="back to the overview">&laquo; back to overview</a> -->
+    <h1>LessonsProgresses [1.0.rc1]</h1>
     <div class="description">
   <p>Lessons Progresses</p>
 
@@ -84,9 +92,9 @@
 
   <div id="Services" class="method_details_list">
     
-		<div class="method">
+    <div class="method">
       <h3>create</h3>
-			<p class="method_desc">Create an lesson_progress</p>
+      <p class="method_desc">Create an lesson_progress</p>
 
       
         <div class="resource_url even">
@@ -100,69 +108,87 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">enrollment_id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier of the <span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> object</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The lesson progress to create</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress[lesson_id]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier of the <span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span> object</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress[completed]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Says if the lesson progress is
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">enrollment_id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The lesson progress to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[lesson_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[completed]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Says if the lesson progress is
 completed</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters even">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson_progress[progress]</span>
-					<span class="type"><tt>Float</tt></span>
-					<span class="text"><p>The <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> or <span class='object_link'><a href="../ContentLesson.html" title="ContentLesson (class)">ContentLesson</a></span>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson_progress[progress]</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p>The <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> or <span class='object_link'><a href="../ContentLesson.html" title="ContentLesson (class)">ContentLesson</a></span>
 progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress[grade]</span>
-					<span class="type"><tt>Float</tt></span>
-					<span class="text"><p>The grade of the <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> object.
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[grade]</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p>The grade of the <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> object.
 <strong>Required</strong> if #lesson is an <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> and lesson_progress[completed] is true.</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -171,12 +197,12 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>show</h3>
-			<p class="method_desc">View an lesson_progress</p>
+      <p class="method_desc">View an lesson_progress</p>
 
       
         <div class="resource_url odd">
@@ -190,19 +216,28 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
 
   <div class="parameters even">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier the lesson_progress</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier the lesson_progress</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -210,23 +245,25 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
 
       
         <div class="parameters odd">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt>lesson_progress</tt></span>
-              <span class="text"><p>The requested lesson_progress</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt>lesson_progress</tt></span></td>
+                <td><span class="text"><p>The requested lesson_progress</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>index</h3>
-			<p class="method_desc">View list of all lessons_progresses</p>
+      <p class="method_desc">View list of all lessons_progresses</p>
 
       
         <div class="resource_url even">
@@ -242,60 +279,78 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">enrollment_id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier of the <span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> object</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">student_id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier of the <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span> object</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school_product_id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier of the <span class='object_link'><a href="../SchoolProduct.html" title="SchoolProduct (class)">SchoolProduct</a></span> object</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">enrollment_id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">student_id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product_id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../SchoolProduct.html" title="SchoolProduct (class)">SchoolProduct</a></span> object</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters even">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">page</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>The desired page of results</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">per_page</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>How many objects per page (only works when
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">page</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The desired page of results</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">per_page</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>How many objects per page (only works when
 page is provided)</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -305,28 +360,37 @@ page is provided)</p>
     
       <h4>Response Fields</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lessons_progresses</span>
-					<span class="type"><tt>Array&lt;<span class='object_link'><a href="../LessonProgress.html" title="LessonProgress (class)">LessonProgress</a></span>&gt;</tt></span>
-					<span class="text"><p>List of lessons
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lessons_progresses</span></td>
+            <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../LessonProgress.html" title="LessonProgress (class)">LessonProgress</a></span>&gt;</tt></span></td>
+            <td><span class="text"><p>List of lessons
 progresses</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>update</h3>
-			<p class="method_desc">Updates an lesson_progress</p>
+      <p class="method_desc">Updates an lesson_progress</p>
 
       
         <div class="resource_url even">
@@ -340,85 +404,104 @@ progresses</p>
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier the lesson_progress</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The lesson progress to create</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier the lesson_progress</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The lesson progress to create</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters even">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson_progress[completed]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Says if the lesson progress is
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson_progress[completed]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Says if the lesson progress is
 completed</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress[progress]</span>
-					<span class="type"><tt>Float</tt></span>
-					<span class="text"><p>The <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> or <span class='object_link'><a href="../ContentLesson.html" title="ContentLesson (class)">ContentLesson</a></span>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[progress]</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p>The <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> or <span class='object_link'><a href="../ContentLesson.html" title="ContentLesson (class)">ContentLesson</a></span>
 progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson_progress[grade]</span>
-					<span class="type"><tt>Float</tt></span>
-					<span class="text"><p>The grade of the <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> object.
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[grade]</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p>The grade of the <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> object.
 <strong>Required</strong> if #lesson is an <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> and lesson_progress[completed] is true.</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
         <div class="parameters odd">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt>lesson_progress</tt></span>
-              <span class="text"><p>The requested lesson_progress</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt>lesson_progress</tt></span></td>
+                <td><span class="text"><p>The requested lesson_progress</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
   </div>
 
 
 </div>
-
 
           </div>
         </div>
@@ -453,8 +536,8 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
       <div class="col-md-12 col-sm-12">
         <div class="companies">
           <h5>Uma empresa:</h5>
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+          <img src="/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="/images/500_startups_white.png" title="Uma empresa #500Strong">
        </div>
       </div>
     </div>

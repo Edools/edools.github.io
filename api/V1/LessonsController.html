@@ -31,7 +31,7 @@
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
   </head>
   <body>
     <nav class="navbar primary-navbar navbar-green">
@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="http://docs.edools.com">
-        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
       </a>
     </div>
 
@@ -68,14 +68,22 @@
       <div class="container">
         <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div id="main-menu-file-incio"></div>
+            <div id="main-menu-file-personalizando-temas"></div>
+            <div id="main-menu-file-conhecendo-o-liquid"></div>
+            <div id="main-menu-file-construindo-temas"></div>
+            <div id="main-menu-file-conhecendo-a-api"></div>
+            <div id="main-menu-file-bibliotecas-de-api"></div>
+            <div id="main-menu-recursos-api"></div>
+            <div id="main-menu-objetos-api"></div>
           </div>
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
             <div class="service">
-  <h1 class="noborder title">Edools API</h1>
-    <a class="back" href="../index.html" title="back to the overview">&laquo; back to overview</a>
-    <h2>Lessons [1.0.rc1]</h2>
+  <!-- <h1 class="noborder title"></h1> -->
+    <!-- <a class="back" href="" title="back to the overview">&laquo; back to overview</a> -->
+    <h1>Lessons [1.0.rc1]</h1>
     <div class="description">
   <p>Lessons</p>
 
@@ -84,9 +92,9 @@
 
   <div id="Services" class="method_details_list">
     
-		<div class="method">
+    <div class="method">
       <h3>show</h3>
-			<p class="method_desc">View a lesson</p>
+      <p class="method_desc">View a lesson</p>
 
       
         <div class="resource_url even">
@@ -102,19 +110,28 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier the lesson</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier the lesson</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -122,23 +139,25 @@
 
       
         <div class="parameters even">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt><span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span></tt></span>
-              <span class="text"><p>The requested lesson</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span></tt></span></td>
+                <td><span class="text"><p>The requested lesson</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>create</h3>
-			<p class="method_desc">Create {Lesson lesson}</p>
+      <p class="method_desc">Create {Lesson lesson}</p>
 
       
         <div class="resource_url odd">
@@ -152,94 +171,112 @@
 
   <div class="parameters even">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The lesson to create</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[title]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Title of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[type]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Type of the lesson</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The lesson to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Title of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Type of the lesson</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters odd">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson[description]</span>
-					<span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span>
-					<span class="text"><p>Description of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[available]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Available of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[media_id]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Media of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[min_grade]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Min grade of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[unlock_certificate]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Unlock certificate of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[release_at]</span>
-					<span class="type"><tt>DateTime</tt></span>
-					<span class="text"><p>Date when lesson will be released to student</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[release_after]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Number of days after enrollment when lesson will be released to student</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson[description]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Description of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[available]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Available of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[media_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Media of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[min_grade]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Min grade of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[unlock_certificate]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Unlock certificate of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[release_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date when lesson will be released to student</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[release_after]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Number of days after enrollment when lesson will be released to student</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -248,12 +285,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>update</h3>
-			<p class="method_desc">Update an existing {Lesson lesson}</p>
+      <p class="method_desc">Update an existing {Lesson lesson}</p>
 
       
         <div class="resource_url even">
@@ -267,94 +304,112 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The lesson to update</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[title]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Title of the lesson</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The lesson to update</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Title of the lesson</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters even">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">lesson[type]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Type of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[description]</span>
-					<span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span>
-					<span class="text"><p>Description of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[available]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Available of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[media_id]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Media of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[min_grade]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Min grade of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[unlock_certificate]</span>
-					<span class="type"><tt>Boolean</tt></span>
-					<span class="text"><p>Unlock certificate of the lesson</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[release_at]</span>
-					<span class="type"><tt>DateTime</tt></span>
-					<span class="text"><p>Date when lesson will be released to student</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">lesson[release_after]</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Number of days after enrollment when lesson will be released to student</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">lesson[type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Type of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[description]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Description of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[available]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Available of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[media_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Media of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[min_grade]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Min grade of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[unlock_certificate]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Unlock certificate of the lesson</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[release_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date when lesson will be released to student</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson[release_after]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Number of days after enrollment when lesson will be released to student</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -363,12 +418,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>destroy</h3>
-			<p class="method_desc">Delete lesson</p>
+      <p class="method_desc">Delete lesson</p>
 
       
         <div class="resource_url odd">
@@ -382,19 +437,28 @@
 
   <div class="parameters even">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Id of an lesson</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Id of an lesson</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -406,12 +470,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>index</h3>
-			<p class="method_desc">Get a list of lessons</p>
+      <p class="method_desc">Get a list of lessons</p>
 
       
         <div class="resource_url odd">
@@ -431,25 +495,26 @@
 
       
         <div class="parameters even">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt>Array&lt;<span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt></span>
-              <span class="text"><p>The created lesson</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../Lesson.html" title="Lesson (class)">Lesson</a></span>&gt;</tt></span></td>
+                <td><span class="text"><p>The created lesson</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
   </div>
 
 
 </div>
-
 
           </div>
         </div>
@@ -484,8 +549,8 @@
       <div class="col-md-12 col-sm-12">
         <div class="companies">
           <h5>Uma empresa:</h5>
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+          <img src="/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="/images/500_startups_white.png" title="Uma empresa #500Strong">
        </div>
       </div>
     </div>

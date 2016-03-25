@@ -31,7 +31,7 @@
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
   </head>
   <body>
     <nav class="navbar primary-navbar navbar-green">
@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="http://docs.edools.com">
-        <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/edools_logo_white.png" id="logo" class="img-responsive"/>
+        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
       </a>
     </div>
 
@@ -68,14 +68,22 @@
       <div class="container">
         <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div id="main-menu-file-incio"></div>
+            <div id="main-menu-file-personalizando-temas"></div>
+            <div id="main-menu-file-conhecendo-o-liquid"></div>
+            <div id="main-menu-file-construindo-temas"></div>
+            <div id="main-menu-file-conhecendo-a-api"></div>
+            <div id="main-menu-file-bibliotecas-de-api"></div>
+            <div id="main-menu-recursos-api"></div>
+            <div id="main-menu-objetos-api"></div>
           </div>
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
             <div class="service">
-  <h1 class="noborder title">Edools API</h1>
-    <a class="back" href="../index.html" title="back to the overview">&laquo; back to overview</a>
-    <h2>Schools [1.0.rc1]</h2>
+  <!-- <h1 class="noborder title"></h1> -->
+    <!-- <a class="back" href="" title="back to the overview">&laquo; back to overview</a> -->
+    <h1>Schools [1.0.rc1]</h1>
     <div class="description">
   <p>Schools</p>
 
@@ -84,9 +92,9 @@
 
   <div id="Services" class="method_details_list">
     
-		<div class="method">
+    <div class="method">
       <h3>index</h3>
-			<p class="method_desc">Get a list of schools</p>
+      <p class="method_desc">Get a list of schools</p>
 
       
         <div class="resource_url even">
@@ -104,23 +112,25 @@
 
       
         <div class="parameters odd">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt>Array&lt;<span class='object_link'><a href="../School.html" title="School (class)">School</a></span>&gt;</tt></span>
-              <span class="text"><p>The created schools</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../School.html" title="School (class)">School</a></span>&gt;</tt></span></td>
+                <td><span class="text"><p>The created schools</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>show</h3>
-			<p class="method_desc">View a content school</p>
+      <p class="method_desc">View a content school</p>
 
       
         <div class="resource_url even">
@@ -134,19 +144,28 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Identifier the school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier the school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -154,23 +173,25 @@
 
       
         <div class="parameters even">
-          <h4>Response Object</h4>
-          <ul>
-            <li>
-              <span class="type"><tt><span class='object_link'><a href="../School.html" title="School (class)">School</a></span></tt></span>
-              <span class="text"><p>The requested school</p>
-</span>
-            </li>
-          </ul>
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../School.html" title="School (class)">School</a></span></tt></span></td>
+                <td><span class="text"><p>The requested school</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>create</h3>
-			<p class="method_desc">Create school</p>
+      <p class="method_desc">Create school</p>
 
       
         <div class="resource_url odd">
@@ -184,129 +205,147 @@
 
   <div class="parameters even">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">school</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The school to create</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[name]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Name of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[subdomain]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Subdomain of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[status]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Status of the school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The school to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Name of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[subdomain]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Subdomain of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Status of the school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters odd">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">school[domains]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Domains of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[rdstation_token]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Rdstation_token of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[adroll_adv_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Adroll_adv_id of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[adroll_pix_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Adroll_pix_id of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[email]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Email of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[phone]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Phone of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[cnpj]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Cnpj of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_key]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba key of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_player_key]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba player key of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_access_token]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba access token of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_project_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba project id of the school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school[domains]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Domains of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[rdstation_token]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Rdstation_token of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_adv_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Adroll_adv_id of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_pix_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Adroll_pix_id of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[email]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Email of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[phone]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Phone of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[cnpj]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Cnpj of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_key]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba key of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_player_key]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba player key of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_access_token]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba access token of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_project_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba project id of the school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -315,12 +354,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>wizard</h3>
-			<p class="method_desc">Create school</p>
+      <p class="method_desc">Create school</p>
 
       
         <div class="resource_url even">
@@ -334,40 +373,49 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">school</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The school to create</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[name]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Name used at School, Organization, Admin and also to infer School&#39;s subdomain</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[email]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Email used at School and Admin</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[password]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Password set to the new Admin</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The school to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Name used at School, Organization, Admin and also to infer School&#39;s subdomain</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[email]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Email used at School and Admin</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[password]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Password set to the new Admin</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -379,12 +427,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>update</h3>
-			<p class="method_desc">Update an existing school</p>
+      <p class="method_desc">Update an existing school</p>
 
       
         <div class="resource_url even">
@@ -398,129 +446,147 @@
 
   <div class="parameters odd">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">school</span>
-					<span class="type"><tt>Hash</tt></span>
-					<span class="text"><p>The school to update</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[name]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Name of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[subdomain]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Subdomain of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[status]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Status of the school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The school to update</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Name of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[subdomain]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Subdomain of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Status of the school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
 
   <div class="parameters even">
     
-      <h4>Optional Parameters</h4>
+      <h4>Parâmetros opcionais</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">school[domains]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Domains of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[rdstation_token]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Rdstation_token of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[adroll_adv_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Adroll_adv_id of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[adroll_pix_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Adroll_pix_id of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[email]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Email of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[phone]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Phone of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[cnpj]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Cnpj of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_key]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba key of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_player_key]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba player key of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_access_token]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba access token of the school</p>
-</span>
-				</li>
-  		
-				<li>
-					<span class="name">school[samba_project_id]</span>
-					<span class="type"><tt>String</tt></span>
-					<span class="text"><p>Samba project id of the school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school[domains]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Domains of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[rdstation_token]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Rdstation_token of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_adv_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Adroll_adv_id of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_pix_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Adroll_pix_id of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[email]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Email of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[phone]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Phone of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[cnpj]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Cnpj of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_key]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba key of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_player_key]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba player key of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_access_token]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba access token of the school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[samba_project_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Samba project id of the school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -529,12 +595,12 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
-		<div class="method">
+    <div class="method">
       <h3>destroy</h3>
-			<p class="method_desc">Delete school</p>
+      <p class="method_desc">Delete school</p>
 
       
         <div class="resource_url odd">
@@ -548,19 +614,28 @@
 
   <div class="parameters even">
     
-      <h4>Required Parameters</h4>
+      <h4>Parâmetros obrigatórios</h4>
     
-		<ul>
-  		
-				<li>
-					<span class="name">id</span>
-					<span class="type"><tt>Integer</tt></span>
-					<span class="text"><p>Id of an school</p>
-</span>
-				</li>
-  		
-	  </ul>
-	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">id</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Id of an school</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       
@@ -572,14 +647,13 @@
 
       
 
-			
-		</div>
+      
+    </div>
     
   </div>
 
 
 </div>
-
 
           </div>
         </div>
@@ -614,8 +688,8 @@
       <div class="col-md-12 col-sm-12">
         <div class="companies">
           <h5>Uma empresa:</h5>
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
-          <img src="http://cdn-site.edools.com/wp-content/themes/peacock_flight/assets/images/500_startups_white.png" title="Uma empresa #500Strong">
+          <img src="/images/logo-endeavor-white.png" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="/images/500_startups_white.png" title="Uma empresa #500Strong">
        </div>
       </div>
     </div>
