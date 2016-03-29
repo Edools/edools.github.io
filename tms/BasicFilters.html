@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Top Level Namespace
+  Module: BasicFilters
   
     &mdash; Edools TMS
   
@@ -17,7 +17,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!top-level-namespace.html";
+  framesUrl = "frames.html#!BasicFilters.html";
 </script>
 
 
@@ -76,7 +76,7 @@
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
-            <h1>Top Level Namespace
+            <h1>Module: BasicFilters
   
   
   
@@ -91,29 +91,89 @@
   
   
   
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/filters/basic_filters.rb</dd>
+  
 </dl>
 <div class="clear"></div>
 
-<h2>Defined Under Namespace</h2>
-<p class="children">
+
+
+
+
+
+
+
   
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="AssetUrlFilter.html" title="AssetUrlFilter (module)">AssetUrlFilter</a></span>, <span class='object_link'><a href="BasicFilters.html" title="BasicFilters (module)">BasicFilters</a></span>, <span class='object_link'><a href="DefaultErrorsFilter.html" title="DefaultErrorsFilter (module)">DefaultErrorsFilter</a></span>, <span class='object_link'><a href="EnrollmentsStatusFilter.html" title="EnrollmentsStatusFilter (module)">EnrollmentsStatusFilter</a></span>, <span class='object_link'><a href="JsonFilter.html" title="JsonFilter (module)">JsonFilter</a></span>, <span class='object_link'><a href="MoneyFilter.html" title="MoneyFilter (module)">MoneyFilter</a></span>, <span class='object_link'><a href="ProgressFilter.html" title="ProgressFilter (module)">ProgressFilter</a></span>, <span class='object_link'><a href="RoutesFilter.html" title="RoutesFilter (module)">RoutesFilter</a></span>, <span class='object_link'><a href="StylesheetTagFilter.html" title="StylesheetTagFilter (module)">StylesheetTagFilter</a></span>, <span class='object_link'><a href="TimeFilter.html" title="TimeFilter (module)">TimeFilter</a></span>, <span class='object_link'><a href="Tms.html" title="Tms (module)">Tms</a></span>, <span class='object_link'><a href="TmsLocaleFilter.html" title="TmsLocaleFilter (module)">TmsLocaleFilter</a></span>, <span class='object_link'><a href="UserFilter.html" title="UserFilter (module)">UserFilter</a></span>
+      <a href="#truncate-instance_method" title="#truncate (instance method)">- (Object) <strong>truncate</strong>(string, size = 50, omission = &quot;...&quot;) </a>
     
+
+    
+  </span>
   
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ActivityTag.html" title="ActivityTag (class)">ActivityTag</a></span>, <span class='object_link'><a href="BaseTag.html" title="BaseTag (class)">BaseTag</a></span>, <span class='object_link'><a href="DropzoneTag.html" title="DropzoneTag (class)">DropzoneTag</a></span>, <span class='object_link'><a href="FormTag.html" title="FormTag (class)">FormTag</a></span>, <span class='object_link'><a href="PaginateTag.html" title="PaginateTag (class)">PaginateTag</a></span>, <span class='object_link'><a href="PermittedTag.html" title="PermittedTag (class)">PermittedTag</a></span>, <span class='object_link'><a href="QuizTag.html" title="QuizTag (class)">QuizTag</a></span>
-    
   
-</p>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
 
 
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="truncate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>truncate</strong>(string, size = 50, omission = &quot;...&quot;) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
+2
+3
+4</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/basic_filters.rb', line 2</span>
 
-
-
+<span class='kw'>def</span> <span class='id identifier rubyid_truncate'>truncate</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='op'>=</span><span class='int'>50</span><span class='comma'>,</span> <span class='id identifier rubyid_omission'>omission</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_truncate'>truncate</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='comma'>,</span> <span class='label'>omission:</span> <span class='id identifier rubyid_omission'>omission</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 
           </div>
