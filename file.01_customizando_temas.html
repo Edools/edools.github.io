@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Personalizando temas
+  - Documentação Edools
+  
+    
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.01_customizando_temas.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+  </head>
+  <body>
+    <nav class="navbar primary-navbar navbar-green">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header small_menu">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://docs.edools.com">
+        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
+      </a>
+    </div>
+
+    <!-- <div class="main_menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a title="Funcionalidades" href="api/index.html">API</a>
+        </li>
+        <li>
+          <a title="Planos e preços" href="tms/index.html">Temas</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div><!-- .container-fluid -->
+</nav>
+
+    <section class="doc_container">
+      <div class="container">
+        <div class="col col-lg-3 col-sm-6 col-md-3 doc_menu">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div id="main-menu-file-incio"></div>
+            <div id="main-menu-file-personalizando-temas"></div>
+            <div id="main-menu-file-conhecendo-o-liquid"></div>
+            <div id="main-menu-file-construindo-temas"></div>
+            <div id="main-menu-references-tms"></div>
+            <div id="main-menu-file-conhecendo-a-api"></div>
+            <div id="main-menu-file-bibliotecas-de-api"></div>
+            <div id="main-menu-recursos-api"></div>
+            <div id="main-menu-objetos-api"></div>
+          </div>
+        </div>
+        <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
+          <div id="content">
+            <div id='filecontents'><!-- https://docs.shopify.com/themes/customization -->
+
+<h1>Visão geral</h1>
+
+<p>Para fazer qualquer personalização na sua escola online será necessário modificar seu tema. Você pode fazer isso a partir da página de configuração de <code>Temas</code> no menu <code>Aparência</code>.</p>
+
+<p><img src="/images/temas_index-large.png" alt="Alt text" title="Personalização completa"></p>
+
+<p>Basicamente, você pode personalizar um Tema Edools de duas formas:</p>
+
+<ul>
+<li>fazendo mudanças na página de personalização de tema (para iniciantes);</li>
+<li>editando o código fonte do tema com o Editor HTML/CSS (para designers).</li>
+</ul>
+
+<h1>Como os temas funcionam</h1>
+
+<p>Cada Tema Edools é composto por um conjunto de arquivos que controlam todo o layout da sua escola online. Cada arquivo possui a extensão <code>.liquid</code> e é conhecido como um <code>Template Liquid</code> porque contém código escrito na linguagem de templates Liquid.</p>
+
+<p>Além do código Liquid, você pode usar outras linguagens em um arquivo <code>.liguid</code>, incluindo <code>HTML</code>, <code>CSS</code> e <code>JavaScript</code>. <em>Aqui não entraremos em muitos detalhes sobre como o Liquid funciona, caso queira se adiantar, separamos uma <a href="http://docs.edools.com/file.02_conhecendo_o_liquid.html">seção inteira só para isso</a></em>.</p>
+
+<p>Sua escola nasce com um tema publicado, que chamamos carinhosamente de <code>Elegance</code>, e durante todo o tempo você só pode ter um tema publicado por vez.</p>
+
+<p>Antes de começar a personalização de um tema, sempre recomendamos que você duplique o tema em uso com objetivo de manter uma cópia de segurança.</p>
+
+<p>A partir da página de configuração de temas, existem duas maneiras para personalizar seu tema. Você pode:</p>
+
+<ul>
+<li>ir para página personalização de tema, ou</li>
+<li>ir para o editor HTML/CSS.</li>
+</ul>
+
+<h2>Página de personalização</h2>
+
+<p>A página de personalização permite visualizar e alterar as configurações  nativas do seu tema.</p>
+
+<ul>
+<li><p>No menu administrativo, clique em <code>Aparência</code> e depois em <code>Temas</code>:
+<span class="img-center">
+<img src="/images/menu_admin-aparencia.gif" alt="Alt text">
+</span></p></li>
+<li><p>Clique em <code>Duplicar</code> para salvar uma cópia de segurança da versão atual do seu tema:
+<span class="img-center">
+<img src="/images/temas_duplicar-tema-medium.png" alt="Alt text">
+</span></p></li>
+<li><p>Clique em <code>Customizar</code>:
+<span class="img-center">
+<img src="/images/temas_customizar-tema-medium.png" alt="Alt text">
+</span></p></li>
+</ul>
+
+<p>Com a página de personalização aberta, você porerá fazer muitas mudanças no layout da sua escola online. A página mostra uma pré-visualização do tema e categorias de configurações que você pode mudar:</p>
+
+<p><span class="img-center">
+<img src="/images/temas_tela-personalizar.gif" alt="Alt text">
+</span></p>
+
+<h2>Editor HTML/CSS</h2>
+
+<div class="well">
+<p>
+<strong>Atenção: Você está entrando em território de desenvolvedor!</strong>
+</p>
+<p>
+Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com desenvolvimento Web.
+</p>
+</div>
+
+<p>Na página do Editor HTML/CSS você poderá alterar os arquivos <code>.liquid</code> que compõem o seu tema.</p>
+
+<ul>
+<li><p>No menu administrativo, clique em <code>Aparência</code> e depois em <code>Temas</code>:
+<span class="img-center">
+<img src="/images/menu_admin-aparencia.gif" alt="Alt text">
+</span></p></li>
+<li><p>Clique em <code>Duplicar</code> para salvar uma cópia de segurança da versão atual do seu tema:
+<span class="img-center">
+<img src="/images/temas_duplicar-tema-medium.png" alt="Alt text">
+</span></p></li>
+<li><p>Clique em <code>HTML/CSS</code>:
+<span class="img-center">
+<img src="/images/temas_abrir-editor-medium.png" alt="Alt text">
+</span></p></li>
+</ul>
+
+<p>Na página do Editor HTML/CSS você poderá editar todos os arquivos do seu tema. A página mostra uma lista de arquivos e um espaço para editá-los:
+<span class="img-center">
+<img src="/images/temas_tela-editor-html-css.gif" alt="Alt text">
+</span></p>
+
+<p>Quando você clica em um arquivo da lista, ele será aberto no painel do editor. Você pode abrir e trabalhar em vários arquivos de uma vez.</p>
+
+<p>Os arquivos do tema podem ser divididos em diferentes categorias e são organizados nas seguintes pastas:</p>
+
+<ul>
+<li><strong>Assets</strong>: arquivos de imagens, fontes, scripts e folhas de estilo.</li>
+<li><strong>Config</strong>: arquivos que contêm dados de configuração para o seu tema.</li>
+<li><strong>Layouts</strong>: arquivos que controlam o layout geral do seu tema.</li>
+<li><strong>Locales</strong>: arquivos que contêm arquivos de tradução para o seu tema.</li>
+<li><strong>Snippets</strong>:  arquivos que contêm pedaços de código que são usados ​​por outros arquivos do seu tema.</li>
+<li><strong>Templates</strong>: arquivos que controlam o layout para partes específicas do seu tema, como páginas de conteúdo ou produtos.</li>
+</ul>
+
+<h1>Como fazer backup</h1>
+
+<p>Antes de começar a experimentar algumas personalizações, a primeira coisa que você deve fazer é uma cópia do seu tema atual. Use a cópia duplicada como sua versão de de backup caso precise restaurar o tema.</p>
+
+<p><span class="img-center">
+<img src="/images/temas_duplicar-tema-medium.png" alt="Alt text">
+</span></p>
+
+<p>Caso algo aconteça de errado, basta publicar o tema duplicado e tudo voltará ao normal.</p>
+
+<h1>Precisa de ajuda?</h1>
+
+<p>Comece visitando nossa <a href="http://suporte.edools.com">base de conhecimento</a>.</p>
+
+<p>Depois dê uma conferida nas <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">discussões na nossa comunidade</a>.</p>
+
+<p>Não encontrou o que procura? Fique a vontade para enviar sua <em>dúvida/dica/sugestão/erro</em> <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">clicando aqui</a> e depois no botão <strong>+ Nova publicação</strong>.</p>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+
+    </div> <!-- /.row -->
+
+    <div class="row text-right">
+      <div class="col-md-12 col-sm-12">
+        <div class="companies">
+          <h5>Uma empresa:</h5>
+          <img src="/images/logo-endeavor-white.png" class="endeavor" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="/images/500_startups_white.png" class="strong-500" title="Uma empresa #500Strong">
+       </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-md-12 col-sm-12">
+        <p>©2016 Edools. Todos os direitos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </body>
+</html>
