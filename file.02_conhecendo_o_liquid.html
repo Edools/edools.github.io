@@ -93,11 +93,11 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <h1>O básico</h1>
 
-<p>O Liquid usa uma combinação de <strong>tags</strong>, <strong>objetos</strong> e <strong>filtros</strong> para carregar o conteúdo dinâmico. Eles são usados dentro dos arquivos de template, que são um grupo de arquivos que compõe um tema. Para mais informações sobre os templates disponíveis, leia o <a href="http://docs.edools.com/#">Desenvolvendo um tema Edools</a>.  </p>
+<p>O Liquid usa uma combinação de <strong>tags</strong>, <strong>objetos</strong> e <strong>filtros</strong> para carregar o conteúdo dinâmico. Eles são usados dentro dos arquivos de template, que são um grupo de arquivos que compõe um tema. Para mais informações sobre os templates disponíveis, leia <a href="http://docs.edools.com/file.03_construindo_temas.html">Construindo temas</a>.  </p>
 
 <h2>Tags</h2>
 
-<p>As tags criam a lógica de programação que indica ao template o que fazer. <a href="#Tags">Ler mais sobre tags.</a></p>
+<p>As tags criam a lógica de programação que indica ao template o que fazer.</p>
 
 <pre class="code ruby"><code class="ruby">{% if user.name == ‘elvis’ %}
   Hey Elvis
@@ -106,7 +106,7 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <h2>Objetos</h2>
 
-<p>Os objetos contém os atributos usados para carregar o conteúdo dinâmico em uma página. <a href="#Objetos">Ler mais sobre objetos.</a></p>
+<p>Os objetos contém os atributos usados para carregar o conteúdo dinâmico em uma página.</p>
 
 <pre class="code ruby"><code class="ruby">{{ product.title }}
 &lt;!— Nome do Produto —&gt;
@@ -114,7 +114,7 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <h2>Filtros</h2>
 
-<p>Filtros são usados para modificar o <em>output</em> de <em>strings</em>, números, variáveis e objetos. <a href="#Filtros">Ler mais sobre filtros.</a></p>
+<p>Filtros são usados para modificar a saída de <em>strings</em>, números, variáveis e objetos.</p>
 
 <pre class="code ruby"><code class="ruby">{{ ‘sales’ | append: ‘.jpg’ }}
 &lt;!— Output: sales.jpg —&gt;
@@ -122,21 +122,19 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <h2>Handles</h2>
 
-<p>As <em>handles</em> são usadas para acessar os atributos dos objetos. Por padrão, uma handle é o título do objeto em caixa baixa, com espaços substituídos por hífens (-). A maioria dos objetos no Edools (<em>products, courses, lessons</em>) possuem <em>handles</em>.</p>
+<p>As <em>handles</em> são usadas para acessar os tributos dos objetos. Por padrão, uma <em>handle</em> é o título em caixa baixa do objeto, com hífen (-) no lugar dos espaços e/ou caracteres especiais. A maioria dos objetos no Edools (<em>products, courses, lessons</em>) possuem <em>handles</em>.</p>
+
+<p>Por exemplo, a página com o título “Sobre a escola” pode ser acessada no Liquid através da handle <code>sobre-a-escola</code>, como mostrado abaixo:</p>
 
 <pre class="code ruby"><code class="ruby">&lt;!— o conteúdo da página Sobre a Escola —&gt;
 {{ pages.sobre-a-escola.content }}
 </code></pre>
 
-<h3>Handles de Objetos</h3>
-
-<p>As <em>handles</em> são usadas para acessar os tributos dos objetos do Liquid. Por padrão, a <em>handle</em> é o título em caixa baixa do objeto, com hífen (-) no lugar dos espaços e/ou caracteres especiais. A maioria dos objetos no Edools possuem <em>handles</em>.</p>
-
-<p>Por exemplo, a página com o título “Sobre a escola” pode ser acessada no Liquid através da handle <code>sobre-a-escola</code>, como mostrado abaixo:</p>
-
-<pre class="code ruby"><code class="ruby">&lt;!— o conteúdo da página Sobre a Escola —&gt;
-{{ pages.about-us.content }}
-</code></pre>
+<div class="well">
+<p>
+<strong>Revisado até aqui.</strong>
+</p>
+</div>
 
 <h3>Como as handles são criadas</h3>
 
