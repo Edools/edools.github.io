@@ -109,7 +109,7 @@
   
     
       <dt class="r2">Includes:</dt>
-      <dd class="r2">ResourceApiKey, SchoolUtils, TmsRender</dd>
+      <dd class="r2">ResourceApiKey, SchoolUtils, SegmentAnalytics, TmsRender</dd>
       
     
   
@@ -220,6 +220,7 @@
   
   
   
+  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -240,12 +241,12 @@
       <pre class="lines">
 
 
-12
 13
-14</pre>
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
   <span class='kw'>super</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_resource'>resource</span><span class='op'>|</span> <span class='id identifier rubyid_create_api_key'>create_api_key</span><span class='lparen'>(</span><span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -270,12 +271,12 @@
       <pre class="lines">
 
 
-16
 17
-18</pre>
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
   <span class='id identifier rubyid_destroy_api_key'>destroy_api_key</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='kw'>super</span>
@@ -300,12 +301,12 @@
       <pre class="lines">
 
 
-8
 9
-10</pre>
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/sessions_controller.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_render_template'>render_template</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>student/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>

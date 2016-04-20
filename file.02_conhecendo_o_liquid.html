@@ -78,7 +78,9 @@
         </div>
         <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
           <div id="content">
-            <div id='filecontents'><div class="well">
+            <div id='filecontents'><!-- https://docs.shopify.com/themes/liquid/basics -->
+
+<div class="well">
 <p>
 <strong>Atenção: Você está entrando em território de desenvolvedor!</strong>
 </p>
@@ -130,39 +132,29 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 {{ pages.sobre-a-escola.content }}
 </code></pre>
 
-<div class="well">
-<p>
-<strong>Revisado até aqui.</strong>
-</p>
-</div>
+<h3>Como as <em>handles</em> são criadas</h3>
 
-<h3>Como as handles são criadas</h3>
-
-<p>Um produto com o título “Matemática” terá, automaticamente, a handle <code>matematica</code>. Se já existir uma com o mesmo nome, ela será estendido para <code>matematica-1</code>, <code>matematica-2</code> e assim por diante.</p>
-
-<p>———————print———————</p>
+<p>Um produto com o título “Matemática” terá, automaticamente, a <em>handle</em> <code>matematica</code>. Se já existir uma com o mesmo nome, ela será estendido para <code>matematica-1</code>, <code>matematica-2</code> e assim por diante.</p>
 
 <p>Espaços nos títulos são substituídos por hífens nas <em>handles</em>. O título “Este novo curso” se transforma em <code>este-novo-curso</code>.</p>
 
-<p>————print———</p>
+<p>A handle também determinar a URL do objeto. Por exemplo, a página com a handle <code>sobre-a-escola</code> teria a URL <code>http://suaescola.myedools.com/pages/sobre-a-escola</code>.</p>
 
-<p>O handle também determinar a URL do objeto. Por exemplo, a página com o handle <code>sobre-a-escola</code> teria a URL <code>http://suaescola.myedools.com/pages/sobre-a-escola</code>.</p>
-
-<p>Um tema pode se utilizar da handle carregar alguns elementos. Para preservar o design do tema e evitar links quebrados, uma <em>handle</em> não é atualizada automaticamente. Por exemplo, se você deseja alterar o título da página de “Sobre a escola” para “Sobre o Edools”, a <em>handle</em> permanecerá <code>sobre-a-escola</code>.</p>
-
-<p>———print———</p>
-
-<p>Você pode mudar a <em>handle</em> manualmente se quiser.</p>
-
-<p>——print———</p>
-
-<p>——————————————precisa de revisão———————————————————</p>
+<p>Para preservar o design do tema e evitar links quebrados, uma <em>handle</em> não é atualizada automaticamente. Por exemplo, se você deseja alterar o título da página de “Sobre a escola” para “Sobre o Edools”, a <em>handle</em> permanecerá <code>sobre-a-escola</code>.</p>
 
 <h3>Acessando os atributos <em>handle</em></h3>
 
-<p>Em alguns casos, você talvez conheça a handle de um objeto o qual você deseja acessar os atributos. Você pode acessar os atributos</p>
+<p>Em alguns casos, você talvez conheça a handle de um objeto o qual você deseja acessar os atributos. Você pode acessar os atributos plurarizando o nome do objeto, e depois usá-lo com notação de colchetes <code>[]</code> ou ponto <code>.</code>.</p>
 
-<p>——————————————/precisa de revisão———————————————————</p>
+<pre class="code ruby"><code class="ruby">{{ pages.sobre-a-escola.title }}
+{{ pages[&quot;sobre-a-escola&quot;].title }}
+</code></pre>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Sobre</span> <span class='id identifier rubyid_a'>a</span> <span class='id identifier rubyid_escola'>escola</span>
+<span class='const'>Sobre</span> <span class='id identifier rubyid_a'>a</span> <span class='id identifier rubyid_escola'>escola</span>
+</code></pre>
+
+<p>Perceba que no exemplo usamos <code>pages</code> e não <code>page</code> como nome do objeto.</p>
 
 <h2>Operadores</h2>
 
@@ -170,14 +162,45 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <h3>Operadores básicos</h3>
 
-<p>| ==  | igual                    |
-| !=  | diferente de             |
-| &gt;   | maior que                |
-| &lt;   | menor que                |
-| &gt;=  | maior ou igual que       |
-| &lt;=  | menor ou igual que       |
-| or  | condição A ou condição B |
-| and | condição A e condição B  |</p>
+<table><thead>
+<tr>
+<th>Operador</th>
+<th>Significado</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>==</td>
+<td>igual</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>diferente de</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>maior que</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>menor que</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>maior ou igual que</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>menor ou igual que</td>
+</tr>
+<tr>
+<td>or</td>
+<td>condição A ou condição B</td>
+</tr>
+<tr>
+<td>and</td>
+<td>condição A e condição B</td>
+</tr>
+</tbody></table>
 
 <p>Por exemplo:</p>
 
@@ -235,14 +258,15 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <p><em>Booleans</em> são <code>true</code> ou <code>falso</code>. Não são necessárias aspas ao declarar um <em>boolean</em>.</p>
 
-<p>assign foo = true %
-assign bar = false %</p>
+<pre class="code ruby"><code class="ruby">{% assign foo = true %}
+{% assign bar = false %}
+</code></pre>
 
 <h3>Nil</h3>
 
-<p>Nil é retornado quando o código Liquid não tem nenhum resultado.   <strong>Não</strong> é uma string com os caracteres “nil”.</p>
+<p><em>Nil</em> é retornado quando o código Liquid não tem nenhum resultado. <strong>Não</strong> é uma string com os caracteres “nil”.</p>
 
-<p>Nil é tratado como <code>false</code> nas condições <code>if</code> e outras tags Liquid que verificam por <code>true</code> ou <code>false</code>.</p>
+<p><em>Nil</em> é tratado como <code>false</code> nas condições <code>if</code> e outras tags Liquid que verificam por <code>true</code> ou <code>false</code>.</p>
 
 <p>No exemplo a seguir, se o <em>ID do produto</em> não existe (ou seja, <code>product.id</code> retorna <code>nil</code>), o Liquid não irá exibir o texto.</p>
 
@@ -261,9 +285,9 @@ assign bar = false %</p>
 
 <h3><em>Array</em></h3>
 
-<p>Array consiste em uma lista de variáveis de qualquer tipo.</p>
+<p>Arrays armazenam uma lista lista de variáveis de qualquer tipo.</p>
 
-<h4>Acessando itens dentro de um <em>array</em>.</h4>
+<h4>Acessando itens dentro de um <em>array</em></h4>
 
 <p>Para acessar todos os itens de um <em>array</em>, você pode iterar sobre cada item do <em>array</em> usando uma tag <code>for</code> ou <code>tablerow</code>.</p>
 
@@ -279,8 +303,6 @@ assign bar = false %</p>
 
 <p>Você pode usar colchetes para acessar um item específico do <em>array</em>. O índice do <em>array</em> começa em zero.</p>
 
-<p>———————————ta certo isso?——————————</p>
-
 <pre class="code ruby"><code class="ruby">&lt;!— if product.tag = “lançamento”, “matemática”, “exatas”, “enem” —&gt;
 {{ site.users[0] }}
 {{ site.users[1] }}
@@ -292,11 +314,9 @@ assign bar = false %</p>
 <span class='id identifier rubyid_exatas'>exatas</span>
 </code></pre>
 
-<p>————————/ta certo isso?———————</p>
+<h4>Inicializando <em>arrays</em></h4>
 
-<h4>Puxando <em>arrays</em></h4>
-
-<p>Você não consegue puxar <em>arrays</em> usando apenas Liquid. Porém, você consegue usar o filtro <a href="http://docs.edools.com/#"><em>split</em></a> para quebrar uma única <em>string</em> em um <em>array</em> de <em>substrings</em>.</p>
+<p>Você não consegue inicializar <em>arrays</em> usando apenas Liquid. Porém, você consegue usar o filtro <a href="http://docs.edools.com/#"><em>split</em></a> para quebrar uma única <em>string</em> em um <em>array</em> de <em>substrings</em>.</p>
 
 <h3><em>EmptyDrop</em></h3>
 
@@ -312,7 +332,7 @@ assign bar = false %</p>
 
 <h4>Verificando a existência do objeto</h4>
 
-<p>Usando o atributo <code>empty?</code>, você pode verificar se objeto existe antes de tentar acessar seus atributos.</p>
+<p>Usando o atributo <code>empty?</code>, você pode verificar se o objeto existe antes de tentar acessar seus atributos.</p>
 
 <pre class="code ruby"><code class="ruby">% unless pages.about.empty? %}
   &lt;!— This will only print if the page with handle “about” is not empty —&gt;
@@ -326,21 +346,6 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">&lt;h1&gt;&lt;/h1&gt;
 &lt;div&gt;&lt;/div&gt;
 </code></pre>
-
-<p>—————————faz sentido pra gente? com categorias talvez?—————————</p>
-
-<p>You can perform the same verification with collections as well:</p>
-
-<pre class="code ruby"><code class="ruby">{% unless collections.frontage.empty? %}
-  {% for product in collections.frontage.products %}
-    {% include “product-grid-item” %}
-  {% else %}
-    &lt;p&gt;We have a “frontage” collection, but it’s empty.&lt;/p&gt;
-  {% endro %}
-{% endunless %}
-</code></pre>
-
-<p>—————————/faz sentido pra gente? com categorias talvez?—————————</p>
 
 <h2><em>Truthy</em> and <em>falsy</em></h2>
 
@@ -406,9 +411,9 @@ assign bar = false %</p>
 
 <h2>As tags Liquid</h2>
 
-<p>As tags criam a lógica de programação que indica ao template o que fazer. Tags são inseridas entre os caracteres <code>{%}</code> e <code>{%}</code>.</p>
+<p>Chamamos de tags Liquid a lógica de programação que indica ao template o que fazer. Tags são inseridas entre os caracteres <code>{%</code> e <code>%}</code>.</p>
 
-<p>Algumas tags, como <code>for</code> e <code>cycle</code> podem se utilizar de parâmetros. Os detalhes de cada parâmetro podem ser encontrados em suas respectivas seções.</p>
+<p>Algumas tags, como <code>for</code> e <code>cycle</code> podem utilizar parâmetros. Os detalhes de cada parâmetro podem ser encontrados em suas respectivas seções.</p>
 
 <h2>Tags de controle de fluxo</h2>
 
@@ -439,7 +444,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">&lt;!— Se student.name == ‘anônimo’ —&gt;
 {% if student.name == ‘Maria’ %}
   Oi, Maria!
-{% elsie student.name == ‘anônimo’ %}
+{% elsif student.name == ‘anônimo’ %}
   Oi, anônimo!
 {% else %}
   Oi, desconhecido!
@@ -516,7 +521,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_matemática'>matemática</span> <span class='id identifier rubyid_física'>física</span> <span class='id identifier rubyid_química'>química</span>
 </code></pre>
 
-<h3><em>break</em></h3>
+<h4><em>break</em></h4>
 
 <p>Faz o <em>loop</em> parar de iterar quando encontra uma tag <em>break</em>.</p>
 
@@ -536,7 +541,7 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">1 2 3
 </code></pre>
 
-<h3>continue</h3>
+<h4>continue</h4>
 
 <p>Faz o loop pular a iteração quando encontra a tag <code>continue</code>.</p>
 
@@ -556,10 +561,11 @@ assign bar = false %</p>
 <pre class="code ruby"><code class="ruby">1 2 3 5
 </code></pre>
 
-<h3>Parâmetros <em>for</em></h3>
+<h4>Parâmetros <em>for</em></h4>
 
-<p><strong><em>limit</em></strong>
-Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
+<h5><strong><em>limit</em></strong></h5>
+
+<p>Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
 
 <p>Input:</p>
 
@@ -574,7 +580,7 @@ Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
 <pre class="code ruby"><code class="ruby">1 2
 </code></pre>
 
-<h3><strong><em>offset</em></strong></h3>
+<h5><strong><em>offset</em></strong></h5>
 
 <p>Inicia o <em>loop</em> em um índice específico.</p>
 
@@ -591,7 +597,7 @@ Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
 <pre class="code ruby"><code class="ruby">3 4 5 6
 </code></pre>
 
-<h3>range</h3>
+<h5>range</h5>
 
 <p>Define o intervalo de números para executar o <em>loop</em>. O intervalo pode ser definido por números absolutos ou variáveis.</p>
 
@@ -613,7 +619,7 @@ Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
 3 4 5
 </code></pre>
 
-<h3><strong><em>reversed</em></strong></h3>
+<h5><strong><em>reversed</em></strong></h5>
 
 <p>Reverte a ordem do <em>loop for</em>.</p>
 
@@ -774,8 +780,9 @@ Sai do <em>loop</em> <em>for</em> em um índice específico.</p>
 
 <h4>Os parâmetros de <em>tablerow</em></h4>
 
-<p><strong><em>cols</em></strong>
-Define quantas colunas terá a tabela.</p>
+<h5><strong><em>cols</em></strong></h5>
+
+<p>Define quantas colunas terá a tabela.</p>
 
 <p>Input</p>
 
@@ -814,24 +821,27 @@ Define quantas colunas terá a tabela.</p>
 &lt;/table&gt;
 </code></pre>
 
-<p><strong><em>limit</em></strong>
-Finaliza a tabela após atingir um determinado índice.</p>
+<h5><strong><em>limit</em></strong></h5>
+
+<p>Finaliza a tabela após atingir um determinado índice.</p>
 
 <pre class="code ruby"><code class="ruby">{% table row product in collection.products cols:2 limit:3 %}
   {{ product.title }}
 {% endtablerow %}
 </code></pre>
 
-<p><strong><em>offset</em></strong>
-Inicia a tabela após um índice específico.</p>
+<h5><strong><em>offset</em></strong></h5>
+
+<p>Inicia a tabela após um índice específico.</p>
 
 <pre class="code ruby"><code class="ruby">{% table row product in collection.products cols:2 offset:3 %}
   {{ product.title }}
 {% endtablerow %}```
 </code></pre>
 
-<p><strong><em>range</em></strong>
-Define o intervalo de números que um <em>loop</em> deve ser executado. O intervalo pode ser definido tanto por números absolutos como variáveis.</p>
+<h5><strong><em>range</em></strong></h5>
+
+<p>Define o intervalo de números que um <em>loop</em> deve ser executado. O intervalo pode ser definido tanto por números absolutos como variáveis.</p>
 
 <pre class="code ruby"><code class="ruby">&lt;!—variable number example—&gt;
 
@@ -853,17 +863,17 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 
 <h2>Tags do tema</h2>
 
-<p>As tags do tema possuem vários funções diferentes, incluindo:</p>
+<p>As tags do tema possuem várias funções diferentes, incluindo:</p>
 
 <ul>
-<li>Injetando <em>markups</em> HTML específicos de um template;</li>
-<li>Indicando ao tema quais layouts e <em>snippets</em> usar</li>
-<li>Dividindo uma <em>array</em> retornada em múltiplas páginas</li>
+<li>Injetar <em>markups</em> HTML específicos de um template;</li>
+<li>Indicar ao tema quais layouts e <em>snippets</em> usar</li>
+<li>Dividir um <em>array</em> retornado em múltiplas páginas</li>
 </ul>
 
 <h3>Comment</h3>
 
-<p>Permite que você não renderize o código dentro de um template Liquid. Qualquer texto antes e depois da tag <em>comment</em> não será exibidas, assim como qualquer código não será executado.</p>
+<p>Permite que você não renderize o código dentro de um template Liquid. Qualquer texto antes e depois da tag <code>comment</code> não será exibidas, assim como qualquer código não será executado.</p>
 
 <p>Input:</p>
 
@@ -879,13 +889,14 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 
 <p>Insere um <em>snippet</em> de dentro da pasta <em>snippets</em> de um tema.</p>
 
-<p>include <code>snippet-name</code> %</p>
+<pre class="code ruby"><code class="ruby">{% include `snippet-name` %}
+</code></pre>
 
 <p>Repare que a extensão <code>.liquid</code> é omitida no código acima.</p>
 
 <p>Quando um <em>snippet</em> é incluído, o código dentro dele terá acesso  às variáveis do seu template pai.</p>
 
-<p><strong>Incluindo múltiplas variáveis em um snippet</strong></p>
+<h4>Incluindo múltiplas variáveis em um snippet</h4>
 
 <p>Há duas maneiras de incluir múltiplas variáveis em <em>snippet</em>. Você pode designá-las e incluí-las em linhas diferentes:</p>
 
@@ -901,8 +912,9 @@ Define o intervalo de números que um <em>loop</em> deve ser executado. O interv
 
 <h4>Os parâmetros <em>include</em></h4>
 
-<p><strong><em>with</em></strong>
-O parâmetro <em>with</em> determina um valor para uma variável dentro de um <em>snippet</em> que possui o mesmo nome do próprio <em>snippet</em>.</p>
+<h5><strong><em>with</em></strong></h5>
+
+<p>O parâmetro <em>with</em> determina um valor para uma variável dentro de um <em>snippet</em> que possui o mesmo nome do próprio <em>snippet</em>.</p>
 
 <p>Por exemplo, é possível que haja um <em>snippet</em> chamado <strong>color.liquid</strong>, contendo o seguinte código:</p>
 
@@ -934,13 +946,15 @@ color: ‘red’ shape: ‘square’
 
 <h4>Os parâmetros <em>form</em></h4>
 
-<p>——————inserir parametros edools———————</p>
-
-<p>————/inserir parametros edools——————</p>
+<div class="well">
+<p>
+<strong>Inserir parâmetros Edools.</strong>
+</p>
+</div>
 
 <h3>Paginate</h3>
 
-<p>Dividir produtos e resultados de uma busca em várias páginas é uma parte necessária do tema, por existir uma limitação de 50 resultados por página em um <em>loop</em> <em>for</em>.</p>
+<p>Dividir produtos e resultados de uma busca em várias páginas é uma parte necessária do tema, por existir uma limitação de 50 resultados por página em um <em>loop for</em>.</p>
 
 <p>A tag <em>paginate</em> trabalha em conjunto com a tag <em>for</em> para dividir o conteúdo em várias páginas. Ela deve conter um bloco da tag <em>for</em> que itera em um <em>array</em>, como mostrado no exemplo abaixo:</p>
 
@@ -969,11 +983,11 @@ color: ‘red’ shape: ‘square’
 <pre class="code ruby"><code class="ruby">{{ 5 | mais: 6 }} é igual a 11.
 </code></pre>
 
-<h3>Tags variáveis</h3>
+<h2>Tags variáveis</h2>
 
 <p>As tags variáveis são usadas para criar novas variáveis Liquid.</p>
 
-<h4>Assign</h4>
+<h3>Assign</h3>
 
 <p>Cria uma nova variável.</p>
 
@@ -1003,7 +1017,7 @@ Esta afirmação é válida.
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_bar'>bar</span>
 </code></pre>
 
-<h4>Capture</h4>
+<h3>Capture</h3>
 
 <p>Captura a string dentro das tags de abertura e fechamento e a determina como variável. Variáveis criadas através de <code>{% capture %}</code> são strings.</p>
 
@@ -1018,7 +1032,7 @@ Esta afirmação é válida.
 <pre class="code ruby"><code class="ruby">Estou sendo capturado.
 </code></pre>
 
-<h4>Incremet</h4>
+<h3>Incremet</h3>
 
 <p>Cria uma nova variável de número e aumenta seu valor a cada vez que é chamada. O valor inicial é 0.</p>
 
@@ -1057,7 +1071,7 @@ Esta afirmação é válida.
 <span class='int'>10</span>
 </code></pre>
 
-<h4>Decrement</h4>
+<h3>Decrement</h3>
 
 <p>Cria uma nova variável de número e decresce seu valor todas as vezes em que é chamada. O valor inicia é -1.</p>
 
@@ -1077,11 +1091,29 @@ Esta afirmação é válida.
 
 <p>Assim como <code>increment</code>, variáveis declaradas dentro de <code>decrement</code> são independentes das declaradas através de <code>assign</code> e <code>capture</code>.</p>
 
+<h1>Objetos</h1>
+
+<div class="well">
+<p>
+<strong>Adicionar conteúdo sobre os objetos.</strong>
+</p>
+</div>
+
+<h1>Filtros</h1>
+
+<div class="well">
+<p>
+<strong>Adicionar conteúdo sobre os filtros.</strong>
+</p>
+</div>
+
 <h1>Precisa de ajuda?</h1>
 
 <p>Comece visitando nossa <a href="http://suporte.edools.com">base de conhecimento</a>.</p>
 
-<p>Não encontrou o que procura? Envie um email para nosso time no endereço <a href="mailto:suporte@edools.com">suporte@edools.com</a>.</p>
+<p>Depois dê uma conferida nas <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">discussões na nossa comunidade</a>.</p>
+
+<p>Não encontrou o que procura? Fique a vontade para enviar sua <em>dúvida/dica/sugestão/erro</em> <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">clicando aqui</a> e depois no botão <strong>+ Nova publicação</strong>.</p>
 </div>
           </div>
         </div>

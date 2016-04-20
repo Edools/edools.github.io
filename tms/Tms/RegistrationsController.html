@@ -109,7 +109,7 @@
   
     
       <dt class="r2">Includes:</dt>
-      <dd class="r2">ResourceApiKey, SchoolUtils, TmsRender</dd>
+      <dd class="r2">ResourceApiKey, SchoolUtils, SegmentAnalytics, TmsRender</dd>
       
     
   
@@ -198,6 +198,7 @@
   
   
   
+  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -218,7 +219,6 @@
       <pre class="lines">
 
 
-14
 15
 16
 17
@@ -228,10 +228,11 @@
 21
 22
 23
-24</pre>
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/registrations_controller.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/registrations_controller.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
   <span class='kw'>super</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_resource'>resource</span><span class='op'>|</span>
@@ -264,12 +265,12 @@
       <pre class="lines">
 
 
-10
 11
-12</pre>
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/registrations_controller.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/registrations_controller.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_render_register'>render_register</span><span class='lparen'>(</span><span class='const'>Student</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>

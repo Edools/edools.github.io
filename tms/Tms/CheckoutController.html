@@ -108,11 +108,15 @@
     
   
     
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">SegmentAnalytics</dd>
+      
+    
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/controllers/tms/checkout_controller.rb</dd>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/tms/checkout_controller.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -269,6 +273,7 @@
 
 
   
+  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -289,18 +294,22 @@
       <pre class="lines">
 
 
-17
-18
-19
-20
-21
 22
-23</pre>
+23
+24
+25
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_complete'>complete</span>
+  <span class='id identifier rubyid_create_segment_viewed_complete_event'>create_segment_viewed_complete_event</span>
+
   <span class='id identifier rubyid_render_template'>render_template</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>checkout/complete</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>order</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_liquid_order'>current_liquid_order</span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gateway</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_school'>current_school</span><span class='period'>.</span><span class='id identifier rubyid_active_credential'>active_credential</span><span class='comma'>,</span>
@@ -327,18 +336,22 @@
       <pre class="lines">
 
 
-9
-10
-11
 12
 13
 14
-15</pre>
+15
+16
+17
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span>
+  <span class='id identifier rubyid_create_segment_viewed_connect_event'>create_segment_viewed_connect_event</span>
+
   <span class='id identifier rubyid_render_template'>render_template</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>checkout/connect</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>order</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_liquid_order'>current_liquid_order</span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gateway</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_school'>current_school</span><span class='period'>.</span><span class='id identifier rubyid_active_credential'>active_credential</span><span class='comma'>,</span>
@@ -365,17 +378,6 @@
       <pre class="lines">
 
 
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
 62
 63
 64
@@ -385,25 +387,48 @@
 68
 69
 70
-71</pre>
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pay'>pay</span>
   <span class='id identifier rubyid_form'>form</span> <span class='op'>=</span> <span class='const'>CheckoutPayForm</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='comma'>,</span> <span class='id identifier rubyid_current_order'>current_order</span><span class='comma'>,</span>
                              <span class='id identifier rubyid_current_school'>current_school</span><span class='period'>.</span><span class='id identifier rubyid_active_credential'>active_credential</span><span class='comma'>,</span> <span class='id identifier rubyid_permitted_order_params'>permitted_order_params</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_submit'>submit</span>
+    <span class='id identifier rubyid_create_segment_complete_payment_event'>create_segment_complete_payment_event</span>
+
     <span class='id identifier rubyid_remove_order_from_session!'>remove_order_from_session!</span>
+
+    <span class='id identifier rubyid_checkout_result'>checkout_result</span> <span class='op'>=</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_payment'>payment</span>
 
     <span class='kw'>if</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_external_redirection?'>external_redirection?</span>
       <span class='kw'>if</span> <span class='id identifier rubyid_capybara_request?'>capybara_request?</span>
         <span class='id identifier rubyid_render'>render</span> <span class='label'>text:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You will be redirected to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_link'>link</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>else</span>
-        <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_link'>link</span>
+        <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_checkout_result'>checkout_result</span><span class='period'>.</span><span class='id identifier rubyid_link'>link</span>
       <span class='kw'>end</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_checkout_result'>checkout_result</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Order</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_checkout_success_path'>checkout_success_path</span><span class='lparen'>(</span><span class='label'>order_id:</span> <span class='id identifier rubyid_checkout_result'>checkout_result</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
-      <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_checkout_success_path'>checkout_success_path</span><span class='lparen'>(</span><span class='label'>payment_id:</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_payment'>payment</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_checkout_success_path'>checkout_success_path</span><span class='lparen'>(</span><span class='label'>payment_id:</span> <span class='id identifier rubyid_checkout_result'>checkout_result</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_flash'>flash</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_details'>details</span><span class='period'>.</span><span class='id identifier rubyid_stringify_keys'>stringify_keys</span>
@@ -431,27 +456,31 @@
       <pre class="lines">
 
 
-37
-38
-39
-40
-41
-42
-43
-44
-45
 46
 47
 48
-49</pre>
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_payment'>payment</span>
   <span class='id identifier rubyid_gateway_credential'>gateway_credential</span> <span class='op'>=</span> <span class='id identifier rubyid_current_school'>current_school</span><span class='period'>.</span><span class='id identifier rubyid_active_credential'>active_credential</span>
   <span class='id identifier rubyid_limit'>limit</span> <span class='op'>=</span> <span class='id identifier rubyid_gateway_credential'>gateway_credential</span><span class='period'>.</span><span class='id identifier rubyid_installments_limit'>installments_limit</span>
   <span class='id identifier rubyid_amount_limit'>amount_limit</span> <span class='op'>=</span> <span class='id identifier rubyid_gateway_credential'>gateway_credential</span><span class='period'>.</span><span class='id identifier rubyid_installments_amount_limit'>installments_amount_limit</span>
+
+  <span class='id identifier rubyid_create_segment_viewed_payment_event'>create_segment_viewed_payment_event</span>
 
   <span class='id identifier rubyid_render_template'>render_template</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>checkout/payment</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>order</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_liquid_order'>current_liquid_order</span><span class='comma'>,</span>
@@ -481,22 +510,26 @@
       <pre class="lines">
 
 
-73
-74
-75
-76
-77
-78
-79</pre>
+90
+91
+92
+93
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_success'>success</span>
+  <span class='id identifier rubyid_create_segment_complete_success_event'>create_segment_complete_success_event</span>
+
   <span class='id identifier rubyid_render_template'>render_template</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>checkout/success</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>order</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@payment</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_to_liquid'>to_liquid</span><span class='lparen'>(</span><span class='id identifier rubyid_order_assigns'>order_assigns</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>order</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@order</span><span class='period'>.</span><span class='id identifier rubyid_to_liquid'>to_liquid</span><span class='lparen'>(</span><span class='id identifier rubyid_order_assigns'>order_assigns</span><span class='rparen'>)</span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>payment</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@payment</span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gateway_credential</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@payment</span><span class='period'>.</span><span class='id identifier rubyid_gateway_credential'>gateway_credential</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>gateway_credential</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='ivar'>@payment</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:gateway_credential</span><span class='rparen'>)</span>
   <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -519,25 +552,29 @@
       <pre class="lines">
 
 
-25
-26
-27
-28
-29
-30
-31
 32
 33
 34
-35</pre>
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/tms/checkout_controller.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_info'>update_info</span>
   <span class='id identifier rubyid_form'>form</span> <span class='op'>=</span> <span class='const'>CheckoutCompleteForm</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='comma'>,</span> <span class='id identifier rubyid_permitted_user_params'>permitted_user_params</span><span class='rparen'>)</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_submit'>submit</span>
+    <span class='id identifier rubyid_create_segment_complete_complete_event'>create_segment_complete_complete_event</span>
+
     <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_checkout_payment_path'>checkout_payment_path</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_flash'>flash</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_form'>form</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_details'>details</span><span class='period'>.</span><span class='id identifier rubyid_stringify_keys'>stringify_keys</span>
