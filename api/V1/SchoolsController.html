@@ -225,7 +225,7 @@
           <tr>
             <td><span class="name">school</span></td>
             <td><span class="type"><tt>Hash</tt></span></td>
-            <td><span class="text"><p>The school to create</p>
+            <td><span class="text"><p>The <span class='object_link'><a href="../School.html" title="School (class)">School</a></span> to create</p>
 </span></td>
           </tr>
         
@@ -240,13 +240,6 @@
             <td><span class="name">school[subdomain]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
             <td><span class="text"><p>Subdomain of the school</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">school[status]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Status of the school</p>
 </span></td>
           </tr>
         
@@ -273,7 +266,7 @@
         
           <tr>
             <td><span class="name">school[domains]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
             <td><span class="text"><p>Domains of the school</p>
 </span></td>
           </tr>
@@ -348,15 +341,126 @@
 </span></td>
           </tr>
         
+          <tr>
+            <td><span class="name">school[terms_of_use]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_adv_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_pix_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[facebook]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[twitter]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[linkedin]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[pinterest]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[google_plus]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[youtube]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[instagram]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[site]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[address]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[company_name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[seo_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[seo_description]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[logo]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[metadata]</span></td>
+            <td><span class="type"><tt>Json</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
     </tbody>
   </table>
   </div>
 
 
       
-        
-
-
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../School.html" title="School (class)">School</a></span></tt></span></td>
+                <td><span class="text"><p>The created school or a list of errors</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       
 
       
@@ -367,7 +471,7 @@
       <p class="method_desc">Create school</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">POST</span>
           <span class="url">/schools/wizard</span>
@@ -376,7 +480,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -440,7 +544,7 @@
       <p class="method_desc">Update an existing school</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">PUT/PATCH</span>
           <span class="url">/school/:id</span>
@@ -449,7 +553,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -466,7 +570,7 @@
           <tr>
             <td><span class="name">school</span></td>
             <td><span class="type"><tt>Hash</tt></span></td>
-            <td><span class="text"><p>The school to update</p>
+            <td><span class="text"><p>The <span class='object_link'><a href="../School.html" title="School (class)">School</a></span> to create</p>
 </span></td>
           </tr>
         
@@ -484,13 +588,6 @@
 </span></td>
           </tr>
         
-          <tr>
-            <td><span class="name">school[status]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Status of the school</p>
-</span></td>
-          </tr>
-        
     </tbody>
   </table>
   </div>
@@ -498,7 +595,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -514,7 +611,7 @@
         
           <tr>
             <td><span class="name">school[domains]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
             <td><span class="text"><p>Domains of the school</p>
 </span></td>
           </tr>
@@ -589,15 +686,134 @@
 </span></td>
           </tr>
         
+          <tr>
+            <td><span class="name">school[terms_of_use]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_adv_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[adroll_pix_id]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[facebook]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[twitter]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[linkedin]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[pinterest]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[google_plus]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[youtube]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[instagram]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[site]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[address]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[company_name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[seo_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[seo_description]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[logo]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[metadata]</span></td>
+            <td><span class="type"><tt>Json</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school[event]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Event triggered by school. Event can be
+try_out, block, active, overdue, suspend or cancel.</p>
+</span></td>
+          </tr>
+        
     </tbody>
   </table>
   </div>
 
 
       
-        
-
-
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../School.html" title="School (class)">School</a></span></tt></span></td>
+                <td><span class="text"><p>The updated school or a list of errors</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       
 
       

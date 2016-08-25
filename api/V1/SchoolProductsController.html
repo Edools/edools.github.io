@@ -169,16 +169,9 @@
           </tr>
         
           <tr>
-            <td><span class="name">school_product[name]</span></td>
+            <td><span class="name">school_product[title]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Name of the school_product</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">school_product[school_id]</span></td>
-            <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"><p>School of the school_product</p>
+            <td><span class="text"><p>Title of the school_product</p>
 </span></td>
           </tr>
         
@@ -207,6 +200,163 @@
             <td><span class="name">school_product[description]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
             <td><span class="text"><p>Status of the school_product</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[subtitle]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[logo]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_url]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_description]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[published]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[hidden]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[restricted]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[certification]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[classes_auto_generation]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[certification_min_progress]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_description]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_keys]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;time&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_unit]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;time&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[expire_date]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;date&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[library_resource_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if published == true</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[max_attendance_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[max_attendance_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if max_attendance_type is &#39;time&#39; or &#39;attempts&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[allowed_emails]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[class_teacher_ids]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">Array<Integer]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer] school_product[category_ids]</tt></span></td>
+            <td><span class="text"><p>school_product[category_ids]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">Array<Integer]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer] school_product[gallery_media_ids]</tt></span></td>
+            <td><span class="text"><p>school_product[gallery_media_ids]</p>
 </span></td>
           </tr>
         
@@ -330,16 +480,9 @@
           </tr>
         
           <tr>
-            <td><span class="name">school_product[name]</span></td>
+            <td><span class="name">school_product[title]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Name of the school_product</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">school_product[school_id]</span></td>
-            <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"><p>School of the school_product</p>
+            <td><span class="text"><p>Title of the school_product</p>
 </span></td>
           </tr>
         
@@ -368,6 +511,163 @@
             <td><span class="name">school_product[description]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
             <td><span class="text"><p>Status of the school_product</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[subtitle]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[logo]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_url]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[video_description]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[published]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[hidden]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[restricted]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[certification]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[classes_auto_generation]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[certification_min_progress]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_title]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_description]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[meta_keys]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;time&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[available_time_unit]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;time&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[expire_date]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if available_time_type == &#39;date&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[library_resource_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if published == true</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[max_attendance_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[max_attendance_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p><strong>Required</strong> if max_attendance_type is &#39;time&#39; or &#39;attempts&#39;</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[allowed_emails]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">school_product[class_teacher_ids]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">Array<Integer]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer] school_product[category_ids]</tt></span></td>
+            <td><span class="text"><p>school_product[category_ids]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">Array<Integer]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer] school_product[gallery_media_ids]</tt></span></td>
+            <td><span class="text"><p>school_product[gallery_media_ids]</p>
 </span></td>
           </tr>
         

@@ -173,14 +173,7 @@
           <tr>
             <td><span class="name">course</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>name Name of the course</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">course</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>description Description of the course</p>
+            <td><span class="text"><p>course[name] Name of the course</p>
 </span></td>
           </tr>
         
@@ -191,9 +184,69 @@
 
       
 
+  <div class="parameters even">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[description] Description of the course</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[image_url] URL of the course image</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>course[duration] Duration of the course</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[code]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>course[ready]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>course[course_modules_ids]</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -215,7 +268,7 @@
       <p class="method_desc">Get a courses information</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">GET</span>
           <span class="url">/courses/:id or
@@ -226,7 +279,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -256,7 +309,7 @@
 
 
       
-        <div class="parameters odd">
+        <div class="parameters even">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -278,7 +331,7 @@
       <p class="method_desc">Update an existing course and redirect to 'show' action</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">PUT/PATCH</span>
           <span class="url">/courses/:id</span>
@@ -287,7 +340,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -311,14 +364,7 @@
           <tr>
             <td><span class="name">course</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>name Name of the course</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">course</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>description Description of the course</p>
+            <td><span class="text"><p>course[name] Name of the course</p>
 </span></td>
           </tr>
         
@@ -328,6 +374,66 @@
 
 
       
+
+  <div class="parameters odd">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[description] Description of the course</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[image_url] URL of the course image</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>course[duration] Duration of the course</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>course[code]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>course[ready]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>course[course_modules_ids]</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
       

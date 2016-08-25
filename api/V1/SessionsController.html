@@ -95,6 +95,149 @@
 </div>
 
 
+  <div id="Services" class="method_details_list">
+    
+    <div class="method">
+      <h3>create</h3>
+      <p class="method_desc"></p>
+
+      
+        <div class="resource_url even">
+          <h4>URL</h4>
+          <span class="action">POST</span>
+          <span class="url">/users/sign_in</span>
+        </div>
+      
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Parâmetros obrigatórios</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">user</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The <span class='object_link'><a href="../User.html" title="User (class)">User</a></span> to sign in</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">user[email]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The user&#39;s email. Can pass <strong>login</strong> instead</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">user[login]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The user&#39;s username. Can pass <strong>email</strong> instead</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">user[password]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The user&#39;s password</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">realm</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The user&#39;s realm</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">realm[type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The realm type. Can be School or Organization</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">realm[id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>The realm id</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
+
+      
+
+
+      
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../User.html" title="User (class)">User</a></span></tt></span></td>
+                <td><span class="text"><p>If sign in is ok it will return the user, if not will return unauthorized</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+
+      
+    </div>
+    
+    <div class="method">
+      <h3>destroy</h3>
+      <p class="method_desc"></p>
+
+      
+        <div class="resource_url odd">
+          <h4>URL</h4>
+          <span class="action">DELETE</span>
+          <span class="url">/users/sign_out</span>
+        </div>
+      
+
+      
+
+
+      
+
+
+      
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../ApiKey.html" title="ApiKey (class)">ApiKey</a></span></tt></span></td>
+                <td><span class="text"><p>The destroyed user&#39;s <span class='object_link'><a href="../ApiKey.html" title="ApiKey (class)">ApiKey</a></span></p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+
+      
+    </div>
+    
+  </div>
+
 
 </div>
 

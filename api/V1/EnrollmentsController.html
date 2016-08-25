@@ -129,7 +129,7 @@
           <tr>
             <td><span class="name">id</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"><p>Identifier the enrollment</p>
+            <td><span class="text"><p>The identifier of the enrollment</p>
 </span></td>
           </tr>
         
@@ -167,7 +167,8 @@
         <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">GET</span>
-          <span class="url">/students/:student_id/enrollments or
+          <span class="url">/enrollments or
+/students/:student_id/enrollments or
 /course_classes/:course_class_id/enrollments or
 /school_products/:school_product_id/enrollments</span>
         </div>
@@ -258,7 +259,7 @@ page is provided)</p>
             <tbody>
               <tr>
                 <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span>&gt;</tt></span></td>
-                <td><span class="text"><p>enrollments List of enrollments</p>
+                <td><span class="text"><p>List of enrollments</p>
 </span></td>
               </tr>
             </tbody>
@@ -364,16 +365,23 @@ page is provided)</p>
           </tr>
         
           <tr>
-            <td><span class="name">enrollment[unlimited]</span></td>
-            <td><span class="type"><tt>Boolean</tt></span></td>
-            <td><span class="text"><p>Says if the enrollment is unlimited  [true, false]</p>
+            <td><span class="name">enrollment[registration_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>The identifier of the <span class='object_link'><a href="../Registration.html" title="Registration (class)">Registration</a></span> object</p>
 </span></td>
           </tr>
         
           <tr>
-            <td><span class="name">enrollment[registration_id]</span></td>
+            <td><span class="name">enrollment[school_product_id]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Registration.html" title="Registration (class)">Registration</a></span> object</p>
+            <td><span class="text"><p>The identifier of the <span class='object_link'><a href="../SchoolProduct.html" title="SchoolProduct (class)">SchoolProduct</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[max_attendance_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> type, can be indeterminate, time or attempts</p>
 </span></td>
           </tr>
         
@@ -399,9 +407,44 @@ page is provided)</p>
       <tbody>
         
           <tr>
+            <td><span class="name">enrollment[max_attendance_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Attendance length. <strong>Required</strong> if enrollment[max_attendance_type] is time or attempts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> status, can be pending, active, expired, deactivated or canceled</p>
+</span></td>
+          </tr>
+        
+          <tr>
             <td><span class="name">enrollment[available_until]</span></td>
             <td><span class="type"><tt>DateTime</tt></span></td>
             <td><span class="text"><p>Date of enrollment&#39;s expiration. <strong>Required</strong> if enrollment[unlimited] is false</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of enrollment&#39;s creation.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[activated_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of enrollment&#39;s activation.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[unlimited]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Says if the enrollment is unlimited  [true, false]</p>
 </span></td>
           </tr>
         
@@ -517,22 +560,28 @@ page is provided)</p>
           <tr>
             <td><span class="name">enrollment</span></td>
             <td><span class="type"><tt>Hash</tt></span></td>
-            <td><span class="text"><p>The enrollment to update</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">enrollment[unlimited]</span></td>
-            <td><span class="type"><tt>Boolean</tt></span></td>
-            <td><span class="text"><p>Says if the enrollment is
-unlimited  [true, false]</p>
+            <td><span class="text"><p>The enrollment to create</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">enrollment[registration_id]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Registration.html" title="Registration (class)">Registration</a></span> object</p>
+            <td><span class="text"><p>The identifier of the <span class='object_link'><a href="../Registration.html" title="Registration (class)">Registration</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[school_product_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>The identifier of the <span class='object_link'><a href="../SchoolProduct.html" title="SchoolProduct (class)">SchoolProduct</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[max_attendance_type]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> type, can be indeterminate, time or attempts</p>
 </span></td>
           </tr>
         
@@ -558,18 +607,58 @@ unlimited  [true, false]</p>
       <tbody>
         
           <tr>
+            <td><span class="name">enrollment[max_attendance_length]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Attendance length. <strong>Required</strong> if enrollment[max_attendance_type] is time or attempts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p><span class='object_link'><a href="../Enrollment.html" title="Enrollment (class)">Enrollment</a></span> status, can be pending, active, expired, deactivated or canceled</p>
+</span></td>
+          </tr>
+        
+          <tr>
             <td><span class="name">enrollment[available_until]</span></td>
             <td><span class="type"><tt>DateTime</tt></span></td>
-            <td><span class="text"><p>Date of enrollment&#39;s
-expiration. <strong>Required</strong> if enrollment[unlimited] is false</p>
+            <td><span class="text"><p>Date of enrollment&#39;s expiration. <strong>Required</strong> if enrollment[unlimited] is false</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of enrollment&#39;s creation.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[activated_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of enrollment&#39;s activation.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[unlimited]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Says if the enrollment is unlimited  [true, false]</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">enrollment[code]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Representation code of enrollment
-(uniq)</p>
+            <td><span class="text"><p>Representation code of enrollment (uniq)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment[course_class_ids]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>An array of course classes ids to associate to the enrollment</p>
 </span></td>
           </tr>
         
