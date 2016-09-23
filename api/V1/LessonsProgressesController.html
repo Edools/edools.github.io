@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -188,6 +189,14 @@ progress. <strong>Required</strong> if lesson_progress[completed] is false.</p>
             <td><span class="type"><tt>Float</tt></span></td>
             <td><span class="text"><p>The grade of the <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> object.
 <strong>Required</strong> if #lesson is an <span class='object_link'><a href="../ExamLesson.html" title="ExamLesson (class)">ExamLesson</a></span> and lesson_progress[completed] is true.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">lesson_progress[created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Creation date. Passing this
+attribute implies to not run object&#39;s callbacks</p>
 </span></td>
           </tr>
         

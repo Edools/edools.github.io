@@ -76,6 +76,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -124,26 +125,7 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    <p>Capture stores the result of a block into a variable without rendering it inplace.</p>
 
-<p>capture heading %
-    Monkeys!
-  endcapture %
-  ...
-  <h1>heading }</h1></p>
-
-<p>Capture is useful for saving content for use later in your template, such as
-in a sidebar or footer.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
   <h2>Constant Summary</h2>
   
     <dl class="constants">
@@ -250,20 +232,20 @@ in a sidebar or footer.</p>
       <pre class="lines">
 
 
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28</pre>
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/tags/form_tag.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'app/tags/form_tag.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_name'>tag_name</span><span class='comma'>,</span> <span class='id identifier rubyid_markup'>markup</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -303,28 +285,28 @@ in a sidebar or footer.</p>
       <pre class="lines">
 
 
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
 30
 31
 32
 33
 34
 35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48</pre>
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/tags/form_tag.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'app/tags/form_tag.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span>
   <span class='ivar'>@context</span>    <span class='op'>=</span> <span class='id identifier rubyid_context'>context</span>

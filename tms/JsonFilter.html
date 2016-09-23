@@ -76,6 +76,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -166,13 +167,15 @@
 
 2
 3
-4</pre>
+4
+5</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/filters/json_filter.rb', line 2</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_json'>to_json</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+  <span class='id identifier rubyid_json'>json</span> <span class='op'>=</span> <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:acts_like_time?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_acts_like_time?'>acts_like_time?</span> <span class='op'>?</span> <span class='id identifier rubyid_json'>json</span><span class='period'>.</span><span class='id identifier rubyid_tr'>tr</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_json'>json</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>

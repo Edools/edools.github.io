@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -99,7 +100,7 @@
     
     <div class="method">
       <h3>index</h3>
-      <p class="method_desc">Get a list of schools</p>
+      <p class="method_desc">Get a list of schools. This list can be filtered by user.</p>
 
       
         <div class="resource_url even">
@@ -114,9 +115,41 @@
 
       
 
+  <div class="parameters odd">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">email</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>User&#39;s email (required with type present)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">type</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>User&#39;s type (Student or Collaborator) (required with email present)</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
 
       
-        <div class="parameters odd">
+        <div class="parameters even">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -138,7 +171,7 @@
       <p class="method_desc">View a content school</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">GET</span>
           <span class="url">/schools/:id</span>
@@ -147,7 +180,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -177,7 +210,7 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -199,7 +232,7 @@
       <p class="method_desc">Create school</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">POST</span>
           <span class="url">/schools</span>
@@ -208,7 +241,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -250,7 +283,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -449,7 +482,7 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -471,7 +504,7 @@
       <p class="method_desc">Create school</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">POST</span>
           <span class="url">/schools/wizard</span>
@@ -480,7 +513,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -544,7 +577,7 @@
       <p class="method_desc">Update an existing school</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">PUT/PATCH</span>
           <span class="url">/school/:id</span>
@@ -553,7 +586,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -595,7 +628,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -802,7 +835,7 @@ try_out, block, active, overdue, suspend or cancel.</p>
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -824,7 +857,7 @@ try_out, block, active, overdue, suspend or cancel.</p>
       <p class="method_desc">Delete school</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">DELETE</span>
           <span class="url">/school/:id</span>
@@ -833,7 +866,7 @@ try_out, block, active, overdue, suspend or cancel.</p>
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     

@@ -76,6 +76,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -246,7 +247,7 @@
   <span class='kw'>if</span> <span class='id identifier rubyid_enrollment'>enrollment</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unlimited</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_t'>t</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enrollment.available_time_message.unlimited</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_enrollment'>enrollment</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>available_until</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%m/%d/%Y</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_enrollment'>enrollment</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>available_until</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%d/%m/%Y</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_t'>t</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enrollment.available_time_message.available_until</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_date'>date</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>

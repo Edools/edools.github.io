@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  SchoolFilters - API
+  - Documentação Edools
+  
+    
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!SchoolFilters.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+  </head>
+  <body>
+    <nav class="navbar primary-navbar navbar-green">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header small_menu">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://docs.edools.com">
+        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
+      </a>
+    </div>
+
+    <!-- <div class="main_menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a title="Funcionalidades" href="api/index.html">API</a>
+        </li>
+        <li>
+          <a title="Planos e preços" href="tms/index.html">Temas</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div><!-- .container-fluid -->
+</nav>
+
+    <section class="doc_container">
+      <div class="container">
+        <div class="col col-lg-3 col-sm-6 col-md-3">
+          <div class="doc_menu js-fix-on-scroll">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div id="main-menu-file-incio"></div>
+              <div id="main-menu-file-temas-edools"></div>
+              <div id="main-menu-file-personalizando-temas"></div>
+              <div id="main-menu-file-conhecendo-o-liquid"></div>
+              <div id="main-menu-file-construindo-temas"></div>
+              <div id="main-menu-references-tms"></div>
+              <div id="main-menu-file-conhecendo-a-api"></div>
+              <div id="main-menu-file-bibliotecas-de-api"></div>
+              <div id="main-menu-recursos-api"></div>
+              <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-9 col-sm-12 col-md-9 doc_content">
+          <div id="content">
+            <div class="service">
+    <h1>
+      SchoolFilters
+    </h1>
+    
+</div>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1">Filtering</dd>
+      
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/filters/school_filters.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_categories-instance_method" title="#get_categories (instance method)">- (Array) <strong>get_categories</strong>(school) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Retorna as categorias da escola.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_products_by_category_slug-instance_method" title="#get_products_by_category_slug (instance method)">- (Array) <strong>get_products_by_category_slug</strong>(school, category_slug, limit = 5) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Retorna os produtos de uma categoria.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_teachers-instance_method" title="#get_teachers (instance method)">- (Array) <strong>get_teachers</strong>(school) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Retorna os professores da escola.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_categories-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_categories</strong>(school) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Retorna as categorias da escola</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>school</span>
+      
+      
+        <span class='type'>(<tt>School</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Escola</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/school_filters.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_categories'>get_categories</span><span class='lparen'>(</span><span class='id identifier rubyid_school'>school</span><span class='rparen'>)</span>
+  <span class='const'>Category</span><span class='period'>.</span><span class='id identifier rubyid_from_school'>from_school</span> <span class='id identifier rubyid_school'>school</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_products_by_category_slug-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_products_by_category_slug</strong>(school, category_slug, limit = 5) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Retorna os produtos de uma categoria</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>school</span>
+      
+      
+        <span class='type'>(<tt>School</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Escola</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>category_slug</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Slug da Categoria</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>limit</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>5</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Limite dos resultados</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/school_filters.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_products_by_category_slug'>get_products_by_category_slug</span><span class='lparen'>(</span><span class='id identifier rubyid_school'>school</span><span class='comma'>,</span> <span class='id identifier rubyid_category_slug'>category_slug</span><span class='comma'>,</span> <span class='id identifier rubyid_limit'>limit</span> <span class='op'>=</span> <span class='int'>5</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_products'>products</span> <span class='op'>=</span> <span class='const'>SchoolProduct</span><span class='period'>
+</span><span class='id identifier rubyid_               .from_school'>               .from_school</span><span class='lparen'>(</span><span class='id identifier rubyid_school'>school</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_               .joins'>               .joins</span><span class='lparen'>(</span><span class='symbol'>:categories</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_               .where'>               .where</span><span class='lparen'>(</span><span class='label'>categories:</span> <span class='lbrace'>{</span> <span class='label'>school_id:</span> <span class='id identifier rubyid_school'>school</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>slug:</span> <span class='id identifier rubyid_category_slug'>category_slug</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_               .published'>               .published</span><span class='period'>
+</span><span class='id identifier rubyid_               .limit'>               .limit</span><span class='lparen'>(</span><span class='id identifier rubyid_limit'>limit</span><span class='rparen'>)</span>
+
+  <span class='const'>CollectionDrop</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_products'>products</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='label'>include:</span> <span class='lbracket'>[</span><span class='symbol'>:payment_options</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_teachers-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_teachers</strong>(school) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Retorna os professores da escola</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>school</span>
+      
+      
+        <span class='type'>(<tt>School</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Escola</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/school_filters.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_teachers'>get_teachers</span><span class='lparen'>(</span><span class='id identifier rubyid_school'>school</span><span class='rparen'>)</span>
+  <span class='const'>ClassTeacher</span><span class='period'>.</span><span class='id identifier rubyid_from_school'>from_school</span> <span class='id identifier rubyid_school'>school</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+      <div class="col-md-3 col-sm-3">
+
+
+
+      </div> <!-- /.col-md-3  -->
+
+    </div> <!-- /.row -->
+
+    <div class="row text-right">
+      <div class="col-md-12 col-sm-12">
+        <div class="companies">
+          <h5>Uma empresa:</h5>
+          <img src="/images/logo-endeavor-white.png" class="endeavor" alt="Uma empresa Promessa Endeavor" title="Uma empresa Promessa Endeavor">
+          <img src="/images/500_startups_white.png" class="strong-500" title="Uma empresa #500Strong">
+       </div>
+      </div>
+    </div>
+
+    <div class="row copyright text-center">
+      <div class="col-md-12 col-sm-12">
+        <p>©2016 Edools. Todos os direitos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </body>
+</html>

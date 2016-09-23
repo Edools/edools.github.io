@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -94,12 +95,233 @@
 
 </div>
 
-  <h3 class="object_properties_title">Propriedades do Objeto</h3>
-  
+
+  <div id="Services" class="method_details_list">
+    
+    <div class="method">
+      <h3>create</h3>
+      <p class="method_desc">Create and invite student or collaborator. If user exists, just invite.
+For stundents this endpoint will create a registration too.</p>
+
+      
+        <div class="resource_url even">
+          <h4>URL</h4>
+          <span class="action">POST</span>
+          <span class="url">/invitations</span>
+        </div>
+      
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Parâmetros obrigatórios</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">invitation</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The invitation to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[first_name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[last_name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[email]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[password]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[password_confirmation]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
 
 
-  
+      
 
+  <div class="parameters even">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">invitation[cpf]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[phone]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[skype]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[twitter]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[facebook]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[company_name]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[company_position]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[born_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[biography]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[cover_image_url]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[created_at]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"></span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments]</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The enrollments to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[unlimited]]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Says if the enrollment is unlimited  [true, false]</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[registration_id]]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Identifier of the <span class='object_link'><a href="../Registration.html" title="Registration (class)">Registration</a></span> object</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[available_until]]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of enrollment&#39;s expiration. <strong>Required</strong> if enrollment[unlimited] is false</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[created_at]]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of creation</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[activated_at]]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Date of activation</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[code]]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Representation code of enrollment (uniq)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">invitation[enrollments][enrollment[course_class_ids]]</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>An array of course classes ids to associate to the enrollment</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
+
+      
+        
+
+
+      
+
+      
+    </div>
+    
+  </div>
 
 
 </div>

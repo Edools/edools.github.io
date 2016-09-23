@@ -76,6 +76,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -121,6 +122,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#add_days-instance_method" title="#add_days (instance method)">- (Object) <strong>add_days</strong>(time, amount) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#time_ago_in_words-instance_method" title="#time_ago_in_words (instance method)">- (String) <strong>time_ago_in_words</strong>(time, options = {}) </a>
     
 
@@ -151,7 +174,37 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="time_ago_in_words-instance_method">
+  <h3 class="signature first" id="add_days-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_days</strong>(time, amount) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/time_filter.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_days'>add_days</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='comma'>,</span> <span class='id identifier rubyid_amount'>amount</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span> <span class='op'>+</span> <span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_days'>days</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="time_ago_in_words-instance_method">
   
     - (<tt>String</tt>) <strong>time_ago_in_words</strong>(time, options = {}) 
   

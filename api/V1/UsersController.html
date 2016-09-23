@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -90,7 +91,7 @@
       V1::UsersController
     </h1>
     <div class="description">
-  <p>Users</p>
+  <p><span class='object_link'><a href="../User.html" title="User (class)">User</a></span> resources</p>
 
 </div>
 
@@ -99,7 +100,8 @@
     
     <div class="method">
       <h3>index</h3>
-      <p class="method_desc">View list of all students or collaborators</p>
+      <p class="method_desc">View list of all students or collaborators. This list is paginated and
+filtered if needed.</p>
 
       
         <div class="resource_url even">
@@ -114,11 +116,99 @@
 
       
 
+  <div class="parameters odd">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">school_product_id</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by school_product_id. Only users that have relations with some object with the id passed in the <code>school_product_id</code> will be in the list.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course_class_id</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by course_class_id. Only users that have relations with some object with the id passed in the <code>course_class_id</code> will be in the list.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">uninitiated_lesson_id</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by uninitiated_leson_id. Only users that have relations with some object with the id passed in the <code>uninitiated_leson_id</code> will be in the list.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">course_id</span></td>
+            <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by course_id. Only users that have relations with some object with the id passed in the <code>course_id</code> will be in the list.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrollment_status</span></td>
+            <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by enrollmen_status. The available statuses are pending, active, expired, deactivated and canceled.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">status</span></td>
+            <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
+            <td><span class="text"><p>Filter by status</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">ids</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Filter by id. Return the users with the passed ids.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">full_name</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Filter by full_name. This is an espcial filter, with it you can pass any group of chars, the filter will select the users that the fullname or the email includes those chars.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">sort</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Filter to sort the users by an attribute</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">direction</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Filter to indicate the sort direction. It can be asc ou desc</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
 
       
         
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Response Fields</h4>
     
@@ -134,15 +224,15 @@
         
           <tr>
             <td><span class="name">students</span></td>
-            <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span>&gt;</tt></span></td>
-            <td><span class="text"><p>List of students if students_controller</p>
+            <td><span class="type"><tt>Array&lt;{<span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span>}&gt;</tt></span></td>
+            <td><span class="text"><p>List of students if <code>/students</code> route is used</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">collaborators</span></td>
-            <td><span class="type"><tt>Array&lt;<span class='object_link'><a href="../Collaborator.html" title="Collaborator (class)">Collaborator</a></span>&gt;</tt></span></td>
-            <td><span class="text"><p>List of collaborators if collaborators_controller</p>
+            <td><span class="type"><tt>Array&lt;{<span class='object_link'><a href="../Collaborator.html" title="Collaborator (class)">Collaborator</a></span>}&gt;</tt></span></td>
+            <td><span class="text"><p>List of collaborators if <code>/collaborators</code> route is used</p>
 </span></td>
           </tr>
         
@@ -161,7 +251,7 @@
       <p class="method_desc">View a student or collaborator</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">GET</span>
           <span class="url">/students/:id or /collaborators/:id</span>
@@ -170,7 +260,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -200,13 +290,13 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
               <tr>
-                <td><span class="type"><tt><span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span></tt></span></td>
-                <td><span class="text"><p>The requested student if students_controller</p>
+                <td><span class="type"><tt>{<span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span>}</tt></span></td>
+                <td><span class="text"><p>The requested student with its role, address and registrations if <code>/students</code> route is used</p>
 </span></td>
               </tr>
             </tbody>
@@ -222,7 +312,7 @@
       <p class="method_desc">Create student or collaborator</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">POST</span>
           <span class="url">/students/ or /collaborators/</span>
@@ -231,7 +321,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -255,25 +345,29 @@
           <tr>
             <td><span class="name">user[first_name]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User first name</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[email]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User email that should be uniq</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[password]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Should be greater than 6 chars</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[password_confirmation]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Should be equal the password</p>
+</span></td>
           </tr>
         
     </tbody>
@@ -283,7 +377,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -300,25 +394,29 @@
           <tr>
             <td><span class="name">user[last_name]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User last name</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[username]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Nickname</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[cpf]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>CPF</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[rg]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>RG</p>
+</span></td>
           </tr>
         
           <tr>
@@ -384,7 +482,7 @@
           <tr>
             <td><span class="name">user[created_at]</span></td>
             <td><span class="type"><tt>DateTime</tt></span></td>
-            <td><span class="text"><p>Exists only for <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span></p>
+            <td><span class="text"><p>Exists only for <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span>. It overwrites the default created_at, normally used to migrate old students.</p>
 </span></td>
           </tr>
         
@@ -398,7 +496,8 @@
           <tr>
             <td><span class="name">user[role_ids]</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Roles to associate to the <span class='object_link'><a href="../User.html" title="User (class)">User</a></span></p>
+</span></td>
           </tr>
         
           <tr>
@@ -410,49 +509,57 @@
           <tr>
             <td><span class="name">user[address_attributes][id]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>If not present it will create a new address</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][street]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][number]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][complement]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][city]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][state]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][zip_code]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][district]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
     </tbody>
@@ -461,7 +568,7 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -483,7 +590,7 @@
       <p class="method_desc">Update student or collaborator</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">PATCH</span>
           <span class="url">/students/:id or /collaborators/:id</span>
@@ -492,7 +599,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -509,32 +616,36 @@
           <tr>
             <td><span class="name">user</span></td>
             <td><span class="type"><tt>Hash</tt></span></td>
-            <td><span class="text"><p>The user to create</p>
+            <td><span class="text"><p>The user to update</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[first_name]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User first name</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[email]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User email that should be uniq</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[password]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Should be greater than 6 chars</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[password_confirmation]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Should be equal the password</p>
+</span></td>
           </tr>
         
     </tbody>
@@ -544,7 +655,7 @@
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -561,25 +672,29 @@
           <tr>
             <td><span class="name">user[last_name]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>User last name</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[username]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Nickname</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[cpf]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>CPF</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[rg]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>RG</p>
+</span></td>
           </tr>
         
           <tr>
@@ -645,7 +760,7 @@
           <tr>
             <td><span class="name">user[created_at]</span></td>
             <td><span class="type"><tt>DateTime</tt></span></td>
-            <td><span class="text"><p>Exists only for <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span></p>
+            <td><span class="text"><p>Exists only for <span class='object_link'><a href="../Student.html" title="Student (class)">Student</a></span>. It overwrites the default created_at, normally used to migrate old students.</p>
 </span></td>
           </tr>
         
@@ -659,7 +774,8 @@
           <tr>
             <td><span class="name">user[role_ids]</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>Roles to associate to the <span class='object_link'><a href="../User.html" title="User (class)">User</a></span></p>
+</span></td>
           </tr>
         
           <tr>
@@ -671,49 +787,57 @@
           <tr>
             <td><span class="name">user[address_attributes][id]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>If not present it will create a new address</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][street]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][number]</span></td>
             <td><span class="type"><tt>Integer</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][complement]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][city]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][state]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][zip_code]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
           <tr>
             <td><span class="name">user[address_attributes][district]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"></span></td>
+            <td><span class="text"><p>It will update the attribute if the user[address_attributes][id] is present</p>
+</span></td>
           </tr>
         
     </tbody>
@@ -722,7 +846,7 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -744,7 +868,7 @@
       <p class="method_desc">Destroy a student or collaborator</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">DELETE</span>
           <span class="url">/students/:id or /collaborators/:id</span>

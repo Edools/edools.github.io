@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -175,13 +176,6 @@
 </span></td>
           </tr>
         
-          <tr>
-            <td><span class="name">theme[role]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Role of the theme (main or unpublished)</p>
-</span></td>
-          </tr>
-        
     </tbody>
   </table>
   </div>
@@ -217,6 +211,42 @@
           <h4>URL</h4>
           <span class="action">POST</span>
           <span class="url">/themes/:id/duplicate</span>
+        </div>
+      
+
+      
+
+
+      
+
+
+      
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../Theme.html" title="Theme (class)">Theme</a></span></tt></span></td>
+                <td><span class="text"><p>The created theme or a list of errors</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+
+      
+    </div>
+    
+    <div class="method">
+      <h3>publish</h3>
+      <p class="method_desc">Publish a theme to current school</p>
+
+      
+        <div class="resource_url odd">
+          <h4>URL</h4>
+          <span class="action">POST</span>
+          <span class="url">/themes/:id/publish</span>
         </div>
       
 

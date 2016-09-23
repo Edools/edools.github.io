@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -420,6 +421,456 @@
         
 
 
+      
+
+      
+    </div>
+    
+    <div class="method">
+      <h3>import</h3>
+      <p class="method_desc">Create new order with payments, items and invoices</p>
+
+      
+        <div class="resource_url odd">
+          <h4>URL</h4>
+          <span class="action">POST</span>
+          <span class="url">/orders/import</span>
+        </div>
+      
+
+      
+
+  <div class="parameters even">
+    
+      <h4>Parâmetros obrigatórios</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">order</span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
+            <td><span class="text"><p>The order to create</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[student_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Student that the order belongs to</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[school_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>School that the order belongs to</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][school_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>School that the item belongs to</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][payment_option_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>PaymentOption that the item belongs to</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][coupon_token_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Coupon token used</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][quantity]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Product quantity</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][total]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Item&#39;s price without discounts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][school_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s School</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][amount]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s price</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][occurrence]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s occurrence</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s status (unsent, open, waiting_confirmation, paid, unpaid, overdue)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][school_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Payment school</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][kind]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment kind (0..3)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment status (unsent, failed, initiated, under_analysis, waiting_boleto, canceled, authorized, confirmed, reversed, refunded)</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
+
+      
+
+  <div class="parameters odd">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">order[gateway_credential_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Gateway used in the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[coupon_id]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Coupon used in the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[amount_to_pay]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Order&#39;s amount to pay (price with discounts)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[total]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Order&#39;s total (price without discounts)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[kind]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Type number (0..3) of the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[period]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Period number (0..4) of the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[confirmed_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>When the order was confirmed</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>When the order was created</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[next_invoice_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Next invoice</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[uuid]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Order&#39;s external id</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[status]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Order&#39;s status (initiated processing no_wait_processing confirmed canceled)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[gateway_reference]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Order&#39;s &quot;id&quot; in the gateway</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[response]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Response of the gateway</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[message]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Message of the gateway</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[test]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Gateway used um sandbox or production</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[success]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Response success to the gateway</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes]</span></td>
+            <td><span class="type"><tt>Array</tt></span></td>
+            <td><span class="text"><p>Items attributes to create with the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][amount_to_pay]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Item&#39;s price with discouts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][amount_to_pay_in_credits]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Item&#39;s price in credits with discouts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][total_in_credits]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Item&#39;s price in credits without discounts</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[items_attributes][created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Item&#39;s created date</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes]</span></td>
+            <td><span class="type"><tt>Array</tt></span></td>
+            <td><span class="text"><p>Invoices attributes to create with the order</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][uuid]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s external id</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][next_charge_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Next charging</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Invoice&#39;s created date</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes]</span></td>
+            <td><span class="type"><tt>Array</tt></span></td>
+            <td><span class="text"><p>Payments attributes to create with invoice</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][amount]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Payment price</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][uuid]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment external id</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][gateway_reference]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Gateway &quot;id&quot; for payment</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][link]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment link</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][boleto_code]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment boleto code</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][cardholder]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>Payment cardholder</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][response]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Gateway response</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][message]</span></td>
+            <td><span class="type"><tt><span class='object_link'><a href="../Text.html" title="Text (class)">Text</a></span></tt></span></td>
+            <td><span class="text"><p>Gateway message</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][success]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Gateway response sucess</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][test]</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Gateway used um sandbox or production</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][installments]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>(required with common order with credit card)</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][gateway_fees]</span></td>
+            <td><span class="type"><tt>Integer</tt></span></td>
+            <td><span class="text"><p>Gateway fees</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">order[invoices_attributes][payments_attributes][created_at]</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p>Payment created date</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
+
+      
+        <div class="parameters even">
+          <h4>Objeto resposta</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="type"><tt><span class='object_link'><a href="../Order.html" title="Order (class)">Order</a></span></tt></span></td>
+                <td><span class="text"><p>The created order or a list of errors</p>
+</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       
 
       

@@ -80,6 +80,7 @@
               <div id="main-menu-file-bibliotecas-de-api"></div>
               <div id="main-menu-recursos-api"></div>
               <div id="main-menu-objetos-api"></div>
+              <div id="main-menu-recursos-do-tema"></div>
             </div>
           </div>
         </div>
@@ -99,7 +100,11 @@
     
     <div class="method">
       <h3>create</h3>
-      <p class="method_desc"></p>
+      <p class="method_desc">This action is used to create credentials (token) to users or to check if the
+current credential (token) still valid. To create credentials a request token
+isn't required, but to check the current credential the request token is required
+but the password isn't. Note: If password is present the action
+will always check it and will generate a new credential.</p>
 
       
         <div class="resource_url even">
@@ -140,13 +145,6 @@
           </tr>
         
           <tr>
-            <td><span class="name">user[login]</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>The user&#39;s username. Can pass <strong>email</strong> instead</p>
-</span></td>
-          </tr>
-        
-          <tr>
             <td><span class="name">user[password]</span></td>
             <td><span class="type"><tt>String</tt></span></td>
             <td><span class="text"><p>The user&#39;s password</p>
@@ -155,7 +153,7 @@
         
           <tr>
             <td><span class="name">realm</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="type"><tt>Hash</tt></span></td>
             <td><span class="text"><p>The user&#39;s realm</p>
 </span></td>
           </tr>
@@ -181,15 +179,41 @@
 
       
 
+  <div class="parameters even">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">user[login]</span></td>
+            <td><span class="type"><tt>String</tt></span></td>
+            <td><span class="text"><p>The user&#39;s username. Can pass <strong>email</strong> instead</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
               <tr>
                 <td><span class="type"><tt><span class='object_link'><a href="../User.html" title="User (class)">User</a></span></tt></span></td>
-                <td><span class="text"><p>If sign in is ok it will return the user, if not will return unauthorized</p>
+                <td><span class="text"><p>If sign in is ok it will return the user with the credentials,
+if not it will return unauthorized</p>
 </span></td>
               </tr>
             </tbody>
@@ -205,7 +229,7 @@
       <p class="method_desc"></p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">DELETE</span>
           <span class="url">/users/sign_out</span>
@@ -219,7 +243,7 @@
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
