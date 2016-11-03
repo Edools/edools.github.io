@@ -4,31 +4,27 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Tms::Sso - API
+  ArrayFilters - API
   - Documentação Edools
   
     
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
-
-  <link rel="stylesheet" href="../css/custom.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
-  relpath = '../';
-  framesUrl = "../frames.html#!Tms/SsoController.html";
+  relpath = '';
+  framesUrl = "frames.html#!ArrayFilters.html";
 </script>
 
 
-  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
-  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
-
-  <script type="text/javascript" charset="utf-8" src="../js/rest_plugin.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -88,111 +84,156 @@
           <div id="content">
             <div class="service">
     <h1>
-      Tms::SsoController
+      ArrayFilters
     </h1>
-    <div class="description">
-  <p>Single sign-on (SSO)</p>
-
+    
 </div>
 
-
-  <div id="Services" class="method_details_list">
+<dl class="box">
+  
+  
     
-    <div class="method">
-      <h3>create</h3>
-      <p class="method_desc">Login and redirect the user with message</p>
-
-      
-        <div class="resource_url even">
-          <h4>URL</h4>
-          <span class="action">GET</span>
-          <span class="url">/sso</span>
-        </div>
-      
-
-      
-
-  <div class="parameters odd">
+  
     
-      <h4>Parâmetros obrigatórios</h4>
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-          <tr>
-            <td><span class="name">email</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>User&#39;s email</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">crendentials</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>User&#39;s credentials. If you are using a school&#39;s credential, you should pass it in the headers.</p>
-</span></td>
-          </tr>
-        
-    </tbody>
-  </table>
-  </div>
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/filters/array_filters.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject_by-instance_method" title="#reject_by (instance method)">- (Object) <strong>reject_by</strong>(array, attr_name, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
 
       
-
-  <div class="parameters even">
+        <li class="public ">
+  <span class="summary_signature">
     
-      <h4>Parâmetros opcionais</h4>
+      <a href="#to_sentence-instance_method" title="#to_sentence (instance method)">- (Object) <strong>to_sentence</strong>(array) </a>
     
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-          <tr>
-            <td><span class="name">redirect_to</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Path to load after login</p>
-</span></td>
-          </tr>
-        
-          <tr>
-            <td><span class="name">message</span></td>
-            <td><span class="type"><tt>String</tt></span></td>
-            <td><span class="text"><p>Mesage to show after login</p>
-</span></td>
-          </tr>
-        
-    </tbody>
-  </table>
-  </div>
 
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
 
       
-        
+    </ul>
+  
 
 
-      
 
-      
-    </div>
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
     
-  </div>
+      <div class="method_details first">
+  <h3 class="signature first" id="reject_by-instance_method">
+  
+    - (<tt>Object</tt>) <strong>reject_by</strong>(array, attr_name, value) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
+2
+3
+4</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/array_filters.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reject_by'>reject_by</span><span class='lparen'>(</span><span class='id identifier rubyid_array'>array</span><span class='comma'>,</span> <span class='id identifier rubyid_attr_name'>attr_name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_array'>array</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_el'>el</span><span class='op'>|</span> <span class='id identifier rubyid_el'>el</span><span class='lbracket'>[</span><span class='id identifier rubyid_attr_name'>attr_name</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_value'>value</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
 </div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_sentence-instance_method">
+  
+    - (<tt>Object</tt>) <strong>to_sentence</strong>(array) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/filters/array_filters.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_sentence'>to_sentence</span><span class='lparen'>(</span><span class='id identifier rubyid_array'>array</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_array'>array</span><span class='period'>.</span><span class='id identifier rubyid_to_sentence'>to_sentence</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
           </div>
         </div>

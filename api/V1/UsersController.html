@@ -133,42 +133,105 @@ filtered if needed.</p>
           <tr>
             <td><span class="name">school_product_id</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by school_product_id. Only users that have relations with some object with the id passed in the <code>school_product_id</code> will be in the list.</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by school_product_id. Only users that have relations with some object with the id passed in the <code>school_product_id</code> will be in the list.</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">course_class_id</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by course_class_id. Only users that have relations with some object with the id passed in the <code>course_class_id</code> will be in the list.</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by course_class_id. Only users that have relations with some object with the id passed in the <code>course_class_id</code> will be in the list.</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">uninitiated_lesson_id</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by uninitiated_leson_id. Only users that have relations with some object with the id passed in the <code>uninitiated_leson_id</code> will be in the list.</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by uninitiated_leson_id. Only users that have relations with some object with the id passed in the <code>uninitiated_leson_id</code> will be in the list.</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">course_id</span></td>
             <td><span class="type"><tt>Array&lt;Integer&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by course_id. Only users that have relations with some object with the id passed in the <code>course_id</code> will be in the list.</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by course_id. Only users that have relations with some object with the id passed in the <code>course_id</code> will be in the list.</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">enrollment_status</span></td>
             <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by enrollmen_status. The available statuses are pending, active, expired, deactivated and canceled.</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by enrollmen_status. The available statuses are pending, active, expired, deactivated and canceled.</p>
 </span></td>
           </tr>
         
           <tr>
             <td><span class="name">status</span></td>
             <td><span class="type"><tt>Array&lt;String&gt;</tt></span></td>
-            <td><span class="text"><p>Filter by status</p>
+            <td><span class="text"><p><em>Student</em> filter. Filter by status</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">progress</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter by progress. If used together with <code>school_product_idòr it will return only students that have that progress in the products selected. *Important*: when this filter is used the</code>progress&gt;=<code>and</code>progress&lt;=` will be ignored!</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">progress>=</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have progress equal or greater than the progress given. If used together with <code>school_product_id</code> it will return only students that have that progress in the products selected. This filter can be used together with <code>progress&lt;=</code>.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">progress<=</span></td>
+            <td><span class="type"><tt>Float</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have progress equal or less than the progress given. If used together with <code>school_product_id</code> it will return only students that have that progress in the products selected. This filter can be used together with <code>progress&lt;=</code>.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">completed_progress_at>=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have completed the progress at the given DateTime or after that. If used together with <code>school_product_id</code> it will filter by students that completed the progress in those courses.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">completed_progress_at<=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have completed the progress at the given DateTime or before that. If used together with <code>school_product_id</code> it will filter by students that completed the progress in those courses.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrolled_at>=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have activated an enrollment at the given DateTime or after that. If used together with <code>school_product_id</code> it will filter by students that activated an enrollment in those courses.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">enrolled_at<=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have activated an enrollment at the given DateTime or before that. If used together with <code>school_product_id</code> it will filter by students that activated an enrollment in those courses.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">last_progress_updated_at>=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have did some progress at the given DateTime or after that. ps: Some school&#39;s actions does not generate progress. If used together with <code>school_product_id</code> it will filter by students that have progresses in those courses.</p>
+</span></td>
+          </tr>
+        
+          <tr>
+            <td><span class="name">last_progress_updated_at<=</span></td>
+            <td><span class="type"><tt>DateTime</tt></span></td>
+            <td><span class="text"><p><em>Student</em> filter. Filter students that have did some progress at the given DateTime or before that. ps: Some school&#39;s actions does not generate progress. If used together with <code>school_product_id</code> it will filter by students that have progresses in those courses.</p>
 </span></td>
           </tr>
         

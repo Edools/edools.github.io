@@ -106,7 +106,7 @@
         <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">GET</span>
-          <span class="url">/v1/forum_sections/:forum_section_id/forum_questions or /v1/users/:user_id/forum_questions</span>
+          <span class="url">/forum_sections/:forum_section_id/forum_questions, /users/:user_id/forum_questions or /forum_questions</span>
         </div>
       
 
@@ -115,9 +115,34 @@
 
       
 
+  <div class="parameters odd">
+    
+      <h4>Parâmetros opcionais</h4>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td><span class="name">answered_by_admin</span></td>
+            <td><span class="type"><tt>Boolean</tt></span></td>
+            <td><span class="text"><p>Filter by questions answerd by collaborator or not.</p>
+</span></td>
+          </tr>
+        
+    </tbody>
+  </table>
+  </div>
+
 
       
-        <div class="parameters odd">
+        <div class="parameters even">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -139,16 +164,16 @@
       <p class="method_desc">Create new forum_questions</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">POST</span>
-          <span class="url">/v1/forum_sections/:forum_section_id/forum_questions</span>
+          <span class="url">/forum_sections/:forum_section_id/forum_questions</span>
         </div>
       
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -204,7 +229,7 @@
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros opcionais</h4>
     
@@ -232,7 +257,7 @@ attribute implies to not run object&#39;s callbacks</p>
 
 
       
-        <div class="parameters odd">
+        <div class="parameters even">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -254,16 +279,16 @@ attribute implies to not run object&#39;s callbacks</p>
       <p class="method_desc">Get a forum_question information</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">GET</span>
-          <span class="url">/v1/forum_questions/:id</span>
+          <span class="url">/forum_questions/:id</span>
         </div>
       
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -293,7 +318,7 @@ attribute implies to not run object&#39;s callbacks</p>
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -315,16 +340,16 @@ attribute implies to not run object&#39;s callbacks</p>
       <p class="method_desc">Update an existing forum_question and redirect to 'show' action</p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">PUT/PATCH</span>
-          <span class="url">v1/forum_questions/:id</span>
+          <span class="url">/forum_questions/:id</span>
         </div>
       
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -382,7 +407,7 @@ attribute implies to not run object&#39;s callbacks</p>
 
 
       
-        <div class="parameters odd">
+        <div class="parameters even">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -404,16 +429,16 @@ attribute implies to not run object&#39;s callbacks</p>
       <p class="method_desc">Update an existing forum_question with a new forum_section and redirect to 'show' action</p>
 
       
-        <div class="resource_url even">
+        <div class="resource_url odd">
           <h4>URL</h4>
           <span class="action">PUT/PATCH</span>
-          <span class="url">v1/forum_questions/:id</span>
+          <span class="url">/forum_questions/:id</span>
         </div>
       
 
       
 
-  <div class="parameters odd">
+  <div class="parameters even">
     
       <h4>Parâmetros obrigatórios</h4>
     
@@ -450,7 +475,7 @@ attribute implies to not run object&#39;s callbacks</p>
 
 
       
-        <div class="parameters even">
+        <div class="parameters odd">
           <h4>Objeto resposta</h4>
           <table>
             <tbody>
@@ -472,16 +497,16 @@ attribute implies to not run object&#39;s callbacks</p>
       <p class="method_desc"></p>
 
       
-        <div class="resource_url odd">
+        <div class="resource_url even">
           <h4>URL</h4>
           <span class="action">DELETE</span>
-          <span class="url">/v1/forum_questions/:id</span>
+          <span class="url">/forum_questions/:id</span>
         </div>
       
 
       
 
-  <div class="parameters even">
+  <div class="parameters odd">
     
       <h4>Parâmetros obrigatórios</h4>
     
