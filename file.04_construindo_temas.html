@@ -106,7 +106,7 @@
 
 <ul>
 <li><p>Verifique se o npm está instalado em seu computador. </p></li>
-<li><p>Instale o npm para a CLI (<code>npm i -g edools-theme-cli</code>)</p></li>
+<li><p>Instale a CLI (<code>npm i -g edools-theme-cli</code>), ou visite o link <code>https://www.npmjs.com/package/edools-theme-cli</code> para maiores informações referente à instalação.</p></li>
 <li><p>Para criar um novo tema com a configuração básica, você pode usar (<code>edt i</code>) para começar a editar um um tema existente baixado da sua escola.</p></li>
 </ul>
 
@@ -121,9 +121,14 @@ edt i &quot;mytheme&quot; &quot;Author Name&quot;
 </code></pre>
 
 <ul>
-<li><p>Clone o template de sua escola, ative-o e digite no final da url:  <code>/themes/params</code>
-Feito isso, você terá acesso ao id de sua escola (<code>id</code>), o id do seu tema (<code>theme_id</code>) e vários outros dados necessários para o próximo passo.</p></li>
-<li><p>Verifique que dentro do diretório criado anteriormente terá um arquivo chamado <code>theme.json</code>, onde será necessário que configure-o com as informações encontradas no passo 5, porém, para preencher o campo <code>&quot;token&quot;: &quot;put-your-token-here&quot;</code>, será necessário fazer uma requisição POST https.</p></li>
+<li>Clone o template de sua escola, ative-o e digite no final da url:  <code>/themes/params</code>
+Feito isso, você terá acesso ao id de sua escola (<code>id</code>), o id do seu tema (<code>theme_id</code>) e vários outros dados necessários para o próximo passo.</li>
+</ul>
+
+<p><em>Exemplo: suaescola.myedools.com/themes/params</em></p>
+
+<ul>
+<li>Verifique que dentro do diretório criado anteriormente terá um arquivo chamado <code>theme.json</code>, onde será necessário que configure-o com as informações encontradas no passo 5, porém, para preencher o campo <code>&quot;token&quot;: &quot;put-your-token-here&quot;</code>, será necessário fazer uma requisição POST https.</li>
 </ul>
 
 <p>Exemplo de como preencher o theme.json: </p>
