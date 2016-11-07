@@ -209,10 +209,9 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <p><b>Para implementar o dropdown no menu de sua escola, basta seguir o seguinte tutorial:</b> </p>
 
-<ul>
-<li><p>Vá na personalização avançada de sua escola ( Entre como administrador, vá em Aparência &gt; Temas &gt; Código Fonte) OBS: lembre- se que será necessário duplicar o seu tema e é importante salientar que você saiba exatamente em qual local da navbar você quer acrescentar esse link/botão.</p></li>
-<li><p>Procure por Snippets, e dentro de Snippets encontre navbar.liquid (arquivo responsável pelo menu de sua escola).Aproximadamente na linha 18 até o final do seu código, você encontrará o código que foi implementado para fazer o menu de sua escola.</p></li>
-</ul>
+<p>1- Vá na personalização avançada de sua escola ( Entre como administrador, vá em Aparência &gt; Temas &gt; Código Fonte) OBS: lembre- se que será necessário duplicar o seu tema e é importante salientar que você saiba exatamente em qual local da navbar você quer acrescentar esse link/botão.</p>
+
+<p>2- Procure por Snippets, e dentro de Snippets encontre navbar.liquid (arquivo responsável pelo menu de sua escola).Aproximadamente na linha 18 até o final do seu código, você encontrará o código que foi implementado para fazer o menu de sua escola.</p>
 
 <p>Exemplo:</p>
 
@@ -237,63 +236,27 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <p><b>Vamos à explicação deste código:</b> </p>
 
-<ul>
-<li><p><code>&lt;li class=&quot;dropdown&quot;&gt;</code></p>
+<p>1-<code>&lt;li class=&quot;dropdown&quot;&gt;</code>  ----&gt; Quando você for colocar o dropdown, copie essa linha exatamente como está escrita, pois ela é responsável pelo início do dropdown.</p>
 
-<ul>
-<li>Quando você for colocar o dropdown, copie essa linha exatamente como está escrita, pois ela é responsável pelo início do dropdown.</li>
-</ul></li>
-<li><p><code>&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle user-options&quot; data-toggle=&quot;dropdown&quot;&gt;</code></p>
+<p>2-<code>&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle user-options&quot; data-toggle=&quot;dropdown&quot;&gt;</code> ----&gt; Nessa linha se localiza o href (link para onde você será mandado quando clicar. No caso está # pois para funcionar o dropdown, o botão inicial não tem que mandar o usuário para nenhum link, ou seja, isso também deve ser igual no seu código.), o class (responsável pelo nome da classe, no caso você deve colocar:  class =”dropdown-toggle abcd”, onde esse abcd você pode escrever o que quiser, mas para melhor entendimento do código coloque a ação resumida do botão como no exemplo acima user-options) e o data-toggle que deve permanecer igual.</p>
 
-<ul>
-<li>Nessa linha se localiza o href (link para onde você será mandado quando clicar. No caso está # pois para funcionar o dropdown, o botão inicial não tem que mandar o usuário para nenhum link, ou seja, isso também deve ser igual no seu código.), o class (responsável pelo nome da classe, no caso você deve colocar:  class =”dropdown-toggle abcd”, onde esse abcd você pode escrever o que quiser, mas para melhor entendimento do código coloque a ação resumida do botão como no exemplo acima user-options) e o data-toggle que deve permanecer igual.</li>
-</ul></li>
-<li><p><code>&lt;span class=&quot;logged-user&quot;&gt;AQUI FICA O NOME DO LINK/BOTAO&lt;/span&gt;</code></p>
+<p>3-<code>&lt;span class=&quot;logged-user&quot;&gt;AQUI FICA O NOME DO LINK/BOTAO&lt;/span&gt;</code>----&gt; Onde está class=”logged-user”, você poderá trocar pelo nome que preferir.</p>
 
-<ul>
-<li>Onde está class=”logged-user”, você poderá trocar pelo nome que preferir.</li>
-</ul></li>
-<li><p><code>&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</code></p>
+<p>4-<code>&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</code> ----&gt; Essa classe vem do bootstrap, é uma imagem de uma setinha pra baixo, caso queira referenciar que o link/botão é um dropdown (opcional colocar).</p>
 
-<ul>
-<li>Essa classe vem do bootstrap, é uma imagem de uma setinha pra baixo, caso queira referenciar que o link/botão é um dropdown (opcional colocar).</li>
-</ul></li>
-<li><p><code>&lt;/a&gt;</code></p>
-
-<ul>
-<li>Tag para fechar o href e terminar o primeiro link/botão.</li>
-</ul></li>
-</ul>
+<p>5-<code>&lt;/a&gt;</code> ----&gt; Tag para fechar o href e terminar o primeiro link/botão.</p>
 
 <p><b>Com a estrutura toda montada acima, basta apenas colocar os subitens e para onde eles redirecionarão o usuário no momento em que eles clicarem.</b></p>
 
-<ul>
-<li><p><code>&lt;ul class=&quot;dropdown-menu&quot;&gt;</code></p>
+<p>6-<code>&lt;ul class=&quot;dropdown-menu&quot;&gt;</code>  ----&gt; Esta linha se refere ao subitem do dropdown, ou seja, deve ser copiada exatamente igual.</p>
 
-<ul>
-<li>Esta linha se refere ao subitem do dropdown, ou seja, deve ser copiada exatamente igual.</li>
-</ul></li>
-<li><p><code>{% if current_user.type == &#39;Student&#39; %}</code></p>
+<p>7-<code>{% if current_user.type == &#39;Student&#39; %}</code> -----&gt; A condição IF está fazendo a seguinte verificação: SE o usuário é um aluno, ele mostrará o código abaixo (no caso seria o subitem do link/botão) para este usuário. Outro exemplo seria <code>{% if current_user == nil %}</code> , onde caso o usuário esteja deslogado, irá aparecer para ele o subitem. Caso queira outros exemplos de condições, basta olhar nesse local mesmo (navbar.liquid), há vários exemplos.</p>
 
-<ul>
-<li>A condição IF está fazendo a seguinte verificação: SE o usuário é um aluno, ele mostrará o código abaixo (no caso seria o subitem do link/botão) para este usuário. Outro exemplo seria <code>{% if current_user == nil %}</code> , onde caso o usuário esteja deslogado, irá aparecer para ele o subitem. Caso queira outros exemplos de condições, basta olhar nesse local mesmo (navbar.liquid), há vários exemplos.</li>
-</ul></li>
-<li><p><code>&lt;a href=&quot;{{ current_user | profile_path }}&quot;</code>&gt;</p>
+<p>8-<code>&lt;a href=&quot;{{ current_user | profile_path }}&quot;</code>&gt; -----&gt; Aqui é onde se encontra o caminho que o usuário vai ser levado quando ele clicar no link/botão. Um exemplo para melhor entendimento seria : <code>&lt;a href=&quot;/forums&quot;&gt;</code>, onde levará o aluno para os fóruns do curso.</p>
 
-<ul>
-<li>Aqui é onde se encontra o caminho que o usuário vai ser levado quando ele clicar no link/botão. Um exemplo para melhor entendimento seria : <code>&lt;a href=&quot;/forums&quot;&gt;</code>, onde levará o aluno para os fóruns do curso.</li>
-</ul></li>
-<li><p><code>&lt;i class=&quot;icon-user&quot;&gt;&lt;/i&gt;</code></p>
+<p>9-<code>&lt;i class=&quot;icon-user&quot;&gt;&lt;/i&gt;</code> -----&gt; aqui se encontra o ícone que ficará ao lado do link/botão (opcional) caso queira colocar outros ícones, vá em <a href="http://bootstrapmaster.com/live/real-static/icons-simple-line-icons.html">http://bootstrapmaster.com/live/real-static/icons-simple-line-icons.html</a></p>
 
-<ul>
-<li>Aqui se encontra o ícone que ficará ao lado do link/botão (opcional) caso queira colocar outros ícones, vá em <a href="http://bootstrapmaster.com/live/real-static/icons-simple-line-icons.html">http://bootstrapmaster.com/live/real-static/icons-simple-line-icons.html</a></li>
-</ul></li>
-<li><p><code>&lt;span&gt;NOME DO SUBITEM&lt;/span&gt;</code></p>
-
-<ul>
-<li>Aqui será onde você colocará o nome do subitem que você desejar.</li>
-</ul></li>
-</ul>
+<p>10-<code>&lt;span&gt;NOME DO SUBITEM&lt;/span&gt;</code> ----&gt; Aqui será onde você colocará o nome do subitem que você desejar.</p>
 
 <p>Caso tenha interesse em aprender mais sobre dropdowns e implementar de diferentes formas, vá neste turotial do bootstrap: <a href="http://getbootstrap.com/components/#dropdowns">http://getbootstrap.com/components/#dropdowns</a></p>
 
@@ -303,7 +266,7 @@ Nós recomendamos fortemente que busque ajuda caso não tenha familiaridade com 
 
 <p>Depois dê uma conferida nas <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">discussões na nossa comunidade</a>.</p>
 
-<p>Não encontrou o que procura? Fique a vontade para enviar sua <em>dúvida/dica/sugestão/erro</em> <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">clicando aqui</a> e depois no botão * Nova publicação**.</p>
+<p>Não encontrou o que procura? Fique a vontade para enviar sua <em>dúvida/dica/sugestão/erro</em> <a href="http://suporte.edools.com/hc/pt-br/community/topics/200347376-Temas-Edools">clicando aqui</a> e depois no botão <strong>+ Nova publicação</strong>.</p>
 </div>
           </div>
         </div>
