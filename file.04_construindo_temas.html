@@ -88,7 +88,102 @@
 
 <h1>Ambiente de desenvolvimento</h1>
 
-<p>Para iniciar seu ambiente de desenvolvimento ...</p>
+<p><strong>Edools CLI - Criando um ambiente de desenvolvimento</strong></p>
+
+<p>Neste tutorial você aprenderá a criar um ambiente de desenvolvimento na sua máquina para que possa trabalhar nos seus temas personalizados de maneira ágil e com o editor de código de sua preferência.</p>
+
+<p>Antes de começar verifique se você já tem instalado o npm, que é um gerenciador de pacotes que possibilita que você instale plugins na sua máquina. Caso você não possua o npm você pode instalar usando as instruções desse <a href="https://github.com/npm/npm">link</a>.</p>
+
+<p><strong>Requisitos</strong></p>
+
+<ul>
+<li>Além do npm é importante verificar que você está instalado a versão mais atualizada da nossa linha de comando</li>
+<li>Esse tutorial só é válido para ambientes Unix, como Linux e Mac. Ainda não possuímos suporte a Windows</li>
+<li>É necessário que você tenha instalado o Node.js</li>
+</ul>
+
+<p><strong>Segue o passo a passo abaixo para utilizar o npm no seu ambiente de desenvolvimento:</strong></p>
+
+<ul>
+<li><p>Verifique se o npm está instalado em seu computador. </p></li>
+<li><p>Instale a CLI (<code>npm i -g edools-theme-cli</code>), ou visite o link <code>https://www.npmjs.com/package/edools-theme-cli</code> para maiores informações referente à instalação.</p></li>
+<li><p>Para criar um novo tema com a configuração básica, você pode usar (<code>edt i</code>) para começar a editar um um tema existente baixado da sua escola.</p></li>
+</ul>
+
+<p>Exemplo:</p>
+
+<pre class="code ruby"><code class="ruby">mkdir my-theme
+
+cd my-theme
+
+edt i &quot;mytheme&quot; &quot;Author Name&quot; 
+*OBS: Não crie o nome da pasta nem do tema com letras maiúsculas ou com espaço.
+</code></pre>
+
+<ul>
+<li>Clone o template de sua escola, ative-o e digite no final da url:  <code>/themes/params</code>
+Feito isso, você terá acesso ao id de sua escola (<code>id</code>), o id do seu tema (<code>theme_id</code>) e vários outros dados necessários para o próximo passo.</li>
+</ul>
+
+<p><em>Exemplo: suaescola.myedools.com/themes/params</em></p>
+
+<ul>
+<li>Verifique que dentro do diretório criado anteriormente terá um arquivo chamado <code>theme.json</code>, onde será necessário que configure-o com as informações encontradas no passo anterior, porém, para preencher o campo <code>&quot;token&quot;: &quot;put-your-token-here&quot;</code>, será necessário fazer uma requisição POST https.</li>
+</ul>
+
+<p>Exemplo de como preencher o theme.json: </p>
+
+<pre class="code ruby"><code class="ruby">{
+  &quot;name&quot;: &quot;NOME DA ESCOLA&quot;,
+  &quot;description&quot;: &quot;DESCRIÇÃO&quot;,
+  &quot;author&quot;: &quot;NOME DO AUTOR&quot;,
+  &quot;folder_name&quot;: &quot;NOME DA PASTA&quot;,
+  &quot;sandbox_url&quot;: &quot;URL DA ESCOLA&quot;,
+  &quot;sandbox_school_id&quot;: ID DA ESCOLA,
+  &quot;sandbox_theme_id&quot;: ID DO TEMA,
+  &quot;token&quot;: &quot;TOKEN&quot; (VERIFIQUE  O TUTORIAL ABAIXO)
+}
+</code></pre>
+
+<p>Segue tutorial para fazer esta requisição: 
+Recomendamos o site <code>https://www.hurl.it/</code> para a realização da requisição, mas caso deseje utilizar outro, não tem problema.</p>
+
+<div class="well">
+<p>
+<strong>Primeiramente é necessário que convide um admin para a sua escola só para realizar essa requisição, NÃO logue com esse admin em sua escola novamente, pois isso fará com que a token seja trocada, assim tendo que refazer o processo de verificação de token novamente.</strong>
+</p>
+</div>
+
+<p>Abaixo, está localizado um print de exemplo de como você deverá preencher as informações para realizar a requisição: </p>
+
+<p><span class="img-center">
+<img src="/images/post_img1-large.png" alt="Alt text">
+</span></p>
+
+<p>Feito isso, basta descer a página até BODY e utilizar a token gerada, localizada em <code>Credentials</code>. Segue imagem exemplo: </p>
+
+<p><span class="img-center">
+<img src="/images/post_img2-large.png" alt="Alt text">
+</span></p>
+
+<ul>
+<li><p>Caso deseje ter acesso ao helper, execute edools-theme (ou  o alias <code>edt -h</code>) no diretório do tema criado, e para saber a versão basta digitar <code>edt -v</code>.</p></li>
+<li><p>Para fazer a build dos assets do seu tema (scss, js, arquivos do bower js) basta utilizar o comando <code>edt build</code> ou <code>edt b</code>.</p></li>
+<li><p>Para iniciar a CLI, basta digitar o comando <code>edt s</code> ou <code>edt serve</code>, assim será criado um servidor local onde ocorre toda as alterações feitas localmente e faz o upload dos arquivos para a sua url de sandbox.</p></li>
+</ul>
+
+<pre class="code ruby"><code class="ruby">Comandos Opcionais: 
+
+
+O `edt upload` ou `edt u`carrega um único arquivo ou todo o tema se nenhum caminho de arquivo for fornecido.
+
+OBS: Esse comando sobrescreve o arquivo remoto, se você não colocar um caminho de arquivo de entrada, todos os arquivos remotos serão sobrescritos pelos arquivos locais.
+
+
+O `edt download` ou `edt d` faz o download de um único arquivo ou todo o tema se nenhum caminho de arquivo for fornecido.
+
+OBS: Esse comando sobrescreve o arquivo remoto, se você não colocar um caminho de arquivo de entrada, todos os arquivos remotos serão sobrescritos pelos arquivos locais.
+</code></pre>
 
 <h1>Precisa de ajuda?</h1>
 
