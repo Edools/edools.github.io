@@ -6,9 +6,9 @@
 <title>
   Bibliotecas de API
   - Documentação Edools
-  
-    
-  
+
+
+
 </title>
 
   <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
@@ -43,7 +43,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="http://docs.edools.com">
-        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
+        <img src="https://edools-3-production.s3.amazonaws.com/org-6732%2Fschool-6878%2F428f91a4592222d51baa23a54d68da46%2Flogonovo_branco.png" id="logo" class="img-responsive"/>
       </a>
     </div>
 
@@ -62,6 +62,10 @@
 </nav>
 
     <section class="doc_container">
+      <div class="beta">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Conheça a versão BETA da nossa nova documentação API <a href="http://plataforma.edools.com/desenvolvedores" target="_blank" style="color:white;text-decoration: underline">aqui</a></strong>.
+      </div>
       <div class="container">
         <div class="col col-lg-3 col-sm-6 col-md-3">
           <div class="doc_menu js-fix-on-scroll">
@@ -156,12 +160,38 @@ $school-&gt;name;
 
     <div class="row copyright text-center">
       <div class="col-md-12 col-sm-12">
-        <p>©2016 Edools. Todos os direitos reservados.</p>
+        <p>©2018 Edools. Todos os direitos reservados.</p>
       </div>
     </div>
 
   </div>
 </section>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    .beta {
+        padding: 11px;
+        background-color: #208d87 !important;
+        color: white;
+        margin-bottom: 25px;
+        margin-top: -40px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
 
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+  </style>
   </body>
 </html>
