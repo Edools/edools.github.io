@@ -6,9 +6,9 @@
 <title>
   Construindo temas
   - Documentação Edools
-  
-    
-  
+
+
+
 </title>
 
   <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
@@ -43,7 +43,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="http://docs.edools.com">
-        <img src="/images/logo_edools.png" id="logo" class="img-responsive"/>
+        <img src="https://edools-3-production.s3.amazonaws.com/org-6732%2Fschool-6878%2F428f91a4592222d51baa23a54d68da46%2Flogonovo_branco.png" id="logo" class="img-responsive"/>
       </a>
     </div>
 
@@ -62,6 +62,10 @@
 </nav>
 
     <section class="doc_container">
+      <div class="beta">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Conheça a versão BETA da nossa nova documentação API <a href="http://plataforma.edools.com/desenvolvedores" target="_blank" style="color:white;text-decoration: underline">aqui</a></strong>.
+      </div>
       <div class="container">
         <div class="col col-lg-3 col-sm-6 col-md-3">
           <div class="doc_menu js-fix-on-scroll">
@@ -84,7 +88,7 @@
           <div id="content">
             <div id='filecontents'><!-- https://docs.shopify.com/themes/development -->
 
-<p>Quando estiver construindo um tema para um cliente, para você mesmo está seção vai guiá-lo por todas as etapas.</p>
+<p>Está construindo um tema para um cliente ou para você mesmo? Esta seção irá guiá-lo por todas as etapas.</p>
 
 <h1>Ambiente de desenvolvimento</h1>
 
@@ -116,7 +120,7 @@
 
 cd my-theme
 
-edt i &quot;mytheme&quot; &quot;Author Name&quot; 
+edt i &quot;mytheme&quot; &quot;Author Name&quot;
 *OBS: Não crie o nome da pasta nem do tema com letras maiúsculas ou com espaço.
 </code></pre>
 
@@ -145,7 +149,7 @@ Feito isso, você terá acesso ao id de sua escola (<code>id</code>), o id do se
 }
 </code></pre>
 
-<p>Segue tutorial para fazer esta requisição: 
+<p>Segue tutorial para fazer esta requisição:
 Recomendamos o site <code>https://www.hurl.it/</code> para a realização da requisição, mas caso deseje utilizar outro, não tem problema.</p>
 
 <div class="well">
@@ -172,7 +176,7 @@ Recomendamos o site <code>https://www.hurl.it/</code> para a realização da req
 <li><p>Para iniciar a CLI, basta digitar o comando <code>edt s</code> ou <code>edt serve</code>, assim será criado um servidor local onde ocorre toda as alterações feitas localmente e faz o upload dos arquivos para a sua url de sandbox.</p></li>
 </ul>
 
-<pre class="code ruby"><code class="ruby">Comandos Opcionais: 
+<pre class="code ruby"><code class="ruby">Comandos Opcionais:
 
 
 O `edt upload` ou `edt u`carrega um único arquivo ou todo o tema se nenhum caminho de arquivo for fornecido.
@@ -232,12 +236,38 @@ OBS: Esse comando sobrescreve o arquivo local, se você não colocar um caminho 
 
     <div class="row copyright text-center">
       <div class="col-md-12 col-sm-12">
-        <p>©2016 Edools. Todos os direitos reservados.</p>
+        <p>©2018 Edools. Todos os direitos reservados.</p>
       </div>
     </div>
 
   </div>
 </section>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    .beta {
+        padding: 11px;
+        background-color: #208d87 !important;
+        color: white;
+        margin-bottom: 25px;
+        margin-top: -40px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
 
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+  </style>
   </body>
 </html>
